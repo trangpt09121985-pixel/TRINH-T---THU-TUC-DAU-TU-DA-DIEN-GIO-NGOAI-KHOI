@@ -9,7 +9,7 @@ const RAW = window.APP_DATA;
 if (!RAW) { document.body.innerHTML = '<p style="padding:40px">Không tải được data/data.js. Chạy: python tools/build_data.py</p>'; return; }
 
 const KEY = 'pvep-dgnk-v1';
-const TABLES = { thu_tuc: 'ma', cong_quyet_dinh: 'ma', van_ban: 'ma_vb', ma_tran_phap_ly: 'ma', rui_ro: 'ma', ke_hoach: 'ma' };
+const TABLES = { thu_tuc: 'ma', cong_quyet_dinh: 'ma', van_ban: 'ma_vb', ma_tran_phap_ly: 'ma', rui_ro: 'ma', ke_hoach: 'ma', giai_doan: 'ma' };
 const TODAY = new Date(); TODAY.setHours(0, 0, 0, 0);
 
 /* ---------------- lưu trữ cục bộ ---------------- */
@@ -98,7 +98,12 @@ const ICON = {
   xay_dung: '<path d="M3 21h18M6 21V10h12v11M4 10l8-6 8 6M10 21v-5h4v5"/>',
   van_hanh: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/>',
   du_lieu: '<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>',
-  rui_ro: '<path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17v.5"/>'
+  rui_ro: '<path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17v.5"/>',
+  tai_lieu: '<path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 11h7M9 15h7M9 19h4"/>',
+  tim_kiem: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/>',
+  thiet_ke: '<path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3M4 20h16"/>',
+  phe_duyet: '<path d="M6 3h9l4 4v6M6 3v18h7"/><path d="M15 3v4h4M9 9h6M9 13h4"/><circle cx="17.5" cy="17.5" r="4"/><path d="M15.8 17.5l1.2 1.2 2.2-2.4"/>',
+  tai_che: '<path d="M7 19H4l3-5M17 19h3l-3-5M9 5l3-2 3 2M7.5 14L12 6l4.5 8M7 19h10"/>'
 };
 const icon = (k, x, y, s, col) => `<g transform="translate(${x},${y}) scale(${s / 24})" fill="none" stroke="${col}" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${ICON[k] || ICON.phap_ly}</g>`;
 
@@ -192,6 +197,64 @@ function renderOverview() {
     return `<li><span class="code">◆ ${g.ma}</span><div><button class="linkish t" data-g="${g.ma}">${esc(g.cau_hoi)}</button><div class="m">Cấp quyết định: ${esc(g.cap_quyet_dinh)} · Đầu vào hoàn thành ${done}/${ins.length} · ${unclear} đầu vào cần xác minh</div></div><span class="chip c-idle">${esc(g.trang_thai)}</span></li>`;
   }).join('');
 }
+
+/* ---------------- 2a. HÀNH TRÌNH 10 GIAI ĐOẠN ---------------- */
+const PCOL = ['#003C66', '#004E86', '#00639E', '#0077A8', '#008596', '#008F78', '#00985C', '#12A24C', '#2CB04A', '#3DB85B'];
+const iconSvg = (k, sz, col) => `<svg viewBox="0 0 24 24" width="${sz}" height="${sz}" fill="none" stroke="${col}" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[k] || ICON.phap_ly}</svg>`;
+let bTab = ST.bTab || 'journey', curPhase = ST.phase || '1';
+const phases = () => DB.giai_doan || [];
+const phaseItems = ma => DB.thu_tuc.filter(p => p.giai_doan_10 === ma);
+const shortRef = s => { const x = String(s || '').split(';')[0]; return x.length > 90 ? x.slice(0, 88) + '…' : x; };
+function renderJourney() {
+  document.querySelectorAll('#bTabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.t === bTab));
+  $('#bJourney').hidden = bTab !== 'journey'; $('#bBoard').hidden = bTab !== 'board'; $('#bTree').hidden = bTab !== 'tree';
+  const P = phases(); if (!P.length) return;
+  if (!P.find(p => p.ma === curPhase)) curPhase = P[0].ma;
+  $('#timeline').innerHTML = P.map((ph, i) => {
+    const it = phaseItems(ph.ma), cnt = { ok: 0, warn: 0, risk: 0, idle: 0 }; it.forEach(p => cnt[colorOf(p)]++);
+    const sel = ph.ma === curPhase, c = PCOL[i % PCOL.length];
+    return `<button class="tstep${sel ? ' on' : ''}" role="tab" aria-selected="${sel}" data-ph="${ph.ma}" style="--c:${c}">
+      <span class="tnum">${String(ph.ma).padStart(2, '0')}</span>
+      <span class="tico">${iconSvg(ph.bieu_tuong, 26, c)}</span>
+      <span class="tname">${esc(ph.ten)}</span><span class="ten">${esc(ph.ten_tieng_anh)}</span>
+      <span class="tcnt">${['ok', 'warn', 'risk', 'idle'].map(k => cnt[k] ? `<i style="background:${COL[k]}" title="${COLNAME[k]}: ${cnt[k]}"></i>`.repeat(cnt[k]) : '').join('')}</span>
+      ${ph.cong_quyet_dinh ? `<span class="tgate" title="Cổng quyết định ${ph.cong_quyet_dinh}">◆ ${ph.cong_quyet_dinh}</span>` : ''}</button>`;
+  }).join('');
+  const i = P.findIndex(p => p.ma === curPhase), ph = P[i], c = PCOL[i % PCOL.length], it = phaseItems(ph.ma);
+  const gate = DB.cong_quyet_dinh.find(g => g.ma === ph.cong_quyet_dinh);
+  const cnt = { ok: 0, warn: 0, risk: 0, idle: 0 }; it.forEach(p => cnt[colorOf(p)]++);
+  $('#phase').innerHTML = `<div class="pcard" style="--c:${c}">
+    <header><span class="pbig">${String(ph.ma).padStart(2, '0')}</span><div><h3>${esc(ph.ten)}</h3><span>${esc(ph.ten_tieng_anh)} · ${it.length} thủ tục, đầu việc</span></div>
+      <span class="pico">${iconSvg(ph.bieu_tuong, 40, '#fff')}</span></header>
+    <div class="pbody">
+      <div class="pinfo">
+        <div><b>Mục tiêu giai đoạn</b><p>${esc(ph.muc_tieu)}</p></div>
+        <div><b>Kết quả đầu ra chính</b><p>${esc(ph.dau_ra_chinh)}</p></div>
+        <div><b>Tình trạng căn cứ</b><p class="pstat">${['ok', 'warn', 'risk', 'idle'].map(k => `<span><i class="dot" style="background:${COL[k]}"></i>${cnt[k]} ${COLNAME[k].toLowerCase()}</span>`).join('')}</p></div>
+        ${ph.luu_y ? `<div class="pwarn">${cv(esc(ph.luu_y))}</div>` : ''}
+      </div>
+      <ol class="psteps">${it.map((p, k) => { const col = colorOf(p); return `<li class="pstep${match(p) ? '' : ' dim'}" style="--s:${COL[col]}">
+        <button type="button" data-p="${esc(p.ma)}"><span class="sn">${k + 1}</span>
+          <span class="st"><span class="sc">${esc(p.ma)} <span class="chip ${legalClass(p.nhan_xac_minh)}">${esc(p.nhan_xac_minh)}</span>${p.luong && p.luong !== 'Chung' ? ` <span class="chip c-navy">Luồng ${esc(p.luong)}</span>` : ''}${p.pham_vi && p.pham_vi !== 'Chung' ? ` <span class="chip c-navy">${esc(p.pham_vi)}</span>` : ''}</span>
+          <span class="sname">${esc(p.ten)}</span>
+          <span class="smeta">${iconSvg('nha_dau_tu', 15, '#6B7A90')} ${cv(esc(split(p.co_quan_chu_tri).join(', ') || p.co_quan_chu_tri))}</span>
+          <span class="smeta"><span class="ref">${esc(shortRef(p.can_cu_phap_ly))}</span></span></span>
+          <span class="sgo">Xem chi tiết ›</span></button></li>`; }).join('')}
+        ${gate ? `<li class="pgate"><button type="button" data-g="${gate.ma}"><span class="gd">◆</span><span class="st"><span class="sc">Cổng quyết định ${gate.ma} · ${esc(gate.cap_quyet_dinh)}</span><span class="sname">${esc(gate.cau_hoi)}</span></span><span class="sgo">Xem chi tiết ›</span></button></li>` : ''}
+      </ol>
+    </div>
+    <footer><button class="btn sm" id="phPrev" ${i === 0 ? 'disabled' : ''}>‹ Giai đoạn trước</button><button class="btn sm pri" id="phNext" ${i === P.length - 1 ? 'disabled' : ''}>Giai đoạn tiếp theo ›</button></footer></div>`;
+  $('#timeline').querySelectorAll('.tstep').forEach(b => b.onclick = () => setPhase(b.dataset.ph));
+  $('#timeline').onkeydown = e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { const j = Math.max(0, Math.min(P.length - 1, i + (e.key === 'ArrowRight' ? 1 : -1))); setPhase(P[j].ma); $(`#timeline .tstep[data-ph="${P[j].ma}"]`).focus(); } };
+  $('#phPrev').onclick = () => setPhase(P[i - 1].ma); $('#phNext').onclick = () => setPhase(P[i + 1].ma);
+  const sel = $('#timeline .tstep.on'); if (sel && sel.scrollIntoView && $('#timeline').scrollWidth > $('#timeline').clientWidth) sel.scrollIntoView({ block: 'nearest', inline: 'center' });
+  // toàn cảnh
+  $('#board').innerHTML = P.map((g, j) => { const cc = PCOL[j % PCOL.length], gt = DB.cong_quyet_dinh.find(x => x.ma === g.cong_quyet_dinh);
+    return `<div class="bcol" style="--c:${cc}"><header><span>${String(g.ma).padStart(2, '0')}</span>${iconSvg(g.bieu_tuong, 22, '#fff')}<b>${esc(g.ten)}</b></header>
+      <ul>${phaseItems(g.ma).map(p => `<li class="${match(p) ? '' : 'dim'}"><button type="button" data-p="${esc(p.ma)}" title="${esc(p.ma + ': ' + p.ten + ' – ' + p.nhan_xac_minh)}"><i class="dot" style="background:${COL[colorOf(p)]}"></i><span><b>${esc(p.ma)}</b> ${esc(p.ten)}</span></button></li>`).join('')}</ul>
+      ${gt ? `<button type="button" class="bgate" data-g="${gt.ma}">◆ ${gt.ma}: ${esc(gt.cau_hoi)}</button>` : ''}</div>`; }).join('');
+}
+function setPhase(m) { curPhase = m; ST.phase = m; save(); renderJourney(); }
 
 /* ---------------- 2. SƠ ĐỒ CÂY ---------------- */
 const LNAME = { A: 'A · vận hành 2025–2030', B: 'B · vận hành 2031–2035', Chung: 'chung' };
@@ -349,7 +412,8 @@ function renderMatrix() {
     <div class="alert"><b>${nUnver}</b>&nbsp;văn bản chưa được kiểm chứng với bản gốc hoặc Công báo.</div>
     <div class="alert red"><b>${nLink}</b>&nbsp;văn bản chưa có liên kết nguồn chính thức. Bổ sung đường dẫn từ Cơ sở dữ liệu quốc gia về pháp luật, Công báo hoặc Cổng Thông tin điện tử Chính phủ.</div>`;
   const q = $('#qMat').value.trim().toLowerCase(), topic = ft.value;
-  document.querySelectorAll('#mTabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.t === mTab));
+  document.querySelectorAll('#bTabs button').forEach(b => b.onclick = () => { bTab = b.dataset.t; ST.bTab = bTab; save(); renderJourney(); });
+document.querySelectorAll('#mTabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.t === mTab));
   const M = DB.ma_tran_phap_ly.map(m => Object.assign({}, m, { vb: vbById(m.ma_vb) || {} }))
     .filter(m => (!topic || m.vb.nhom_chu_de === topic) && (!q || (Object.values(m).join(' ') + ' ' + Object.values(m.vb).join(' ')).toLowerCase().includes(q)));
   const B = $('#mBody');
@@ -477,7 +541,7 @@ function openProc(ma) {
       <label>Ghi chú cập nhật<textarea id="eNote" rows="2" placeholder="Nội dung đã xác minh, văn bản, người cung cấp…">${esc(p.ghi_chu_cap_nhat || '')}</textarea></label>
       <div><button class="btn pri sm" id="eSave">Lưu và ghi nhật ký</button></div></div>` : `<p class="ro" style="margin-top:16px">Chế độ Người xem: chỉ tra cứu.</p>`;
   openDrawer(`${p.ma} · Nhánh ${p.nhanh} – ${BR[p.nhanh]}`, p.ten, `
-    <div class="chips"><span class="chip ${legalClass(p.nhan_xac_minh)}">${esc(p.nhan_xac_minh)}</span><span class="chip" style="background:${COL[c]};color:${c === 'warn' ? '#3A2A00' : '#fff'}">${COLNAME[c]}</span><span class="chip c-navy">Ưu tiên: ${esc(p.uu_tien)}</span><span class="chip c-idle">${esc(p.thoi_diem)}</span><span class="chip c-navy">${esc(p.trang_thai_thuc_hien)}</span>${p.luong ? `<span class="chip c-navy">Luồng ${esc(LNAME[p.luong])}</span>` : ''}${p.pham_vi ? `<span class="chip c-navy">Phạm vi: ${esc(p.pham_vi)}</span>` : ''}</div>
+    <div class="chips"><span class="chip ${legalClass(p.nhan_xac_minh)}">${esc(p.nhan_xac_minh)}</span><span class="chip" style="background:${COL[c]};color:${c === 'warn' ? '#3A2A00' : '#fff'}">${COLNAME[c]}</span><span class="chip c-navy">Ưu tiên: ${esc(p.uu_tien)}</span><span class="chip c-idle">${esc(p.thoi_diem)}</span><span class="chip c-navy">${esc(p.trang_thai_thuc_hien)}</span>${(DB.giai_doan || []).find(g => g.ma === p.giai_doan_10) ? `<span class="chip c-navy">Giai đoạn ${p.giai_doan_10}: ${esc(DB.giai_doan.find(g => g.ma === p.giai_doan_10).ten)}</span>` : ''}${p.luong ? `<span class="chip c-navy">Luồng ${esc(LNAME[p.luong])}</span>` : ''}${p.pham_vi ? `<span class="chip c-navy">Phạm vi: ${esc(p.pham_vi)}</span>` : ''}</div>
     <dl><dt>Việc cần làm/mục tiêu</dt><dd>${esc(p.muc_tieu)}</dd><dt>Điều kiện đầu vào</dt><dd>${esc(p.dieu_kien_dau_vao)}</dd><dt>Hồ sơ/dữ liệu đầu vào</dt><dd>${esc(p.ho_so_du_lieu)}</dd>
     <dt>Cơ quan có thẩm quyền</dt><dd>${cv(esc(p.co_quan_chu_tri))}</dd><dt>Cơ quan phối hợp</dt><dd>${esc(p.co_quan_phoi_hop) || '—'}</dd><dt>Kết quả đầu ra</dt><dd>${esc(p.ket_qua_dau_ra)}</dd>
     <dt>Điều kiện tiên quyết</dt><dd>${p.dieu_kien_tien_quyet ? 'Thực hiện sau khi xong: ' + linkCodes(p.dieu_kien_tien_quyet.replace(/;/g, ', ')) : 'Không có'}</dd><dt>Làm song song với</dt><dd>${p.song_song_voi ? linkCodes(p.song_song_voi.replace(/;/g, ', ')) : '—'}</dd><dt>Bước kế tiếp</dt><dd>${linkCodes(p.buoc_ke_tiep)}</dd><dt>Trách nhiệm PVEP</dt><dd>Đầu mối: <b>${esc(p.don_vi_dau_moi_pvep)}</b><br>Phối hợp: ${esc(p.don_vi_phoi_hop_pvep)}</dd>
@@ -531,7 +595,7 @@ function route() {
   document.querySelectorAll('.side nav a').forEach(a => { if (a.dataset.v === v) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
   window.scrollTo(0, 0);
 }
-function renderAll() { renderOverview(); renderTree(); renderCatalog(); renderMatrix(); renderRisk(); renderPlan(); renderAdmin(); }
+function renderAll() { renderOverview(); renderJourney(); renderTree(); renderCatalog(); renderMatrix(); renderRisk(); renderPlan(); renderAdmin(); }
 
 document.addEventListener('click', e => {
   const t = e.target.closest('[data-p],[data-g],[data-vb],[data-r],[data-kh-open]'); if (!t) return;

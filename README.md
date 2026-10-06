@@ -1,6 +1,6 @@
 # PVEP · Bản đồ trình tự và thủ tục pháp lý đầu tư dự án điện gió ngoài khơi (phiên bản 2)
 
-Website tĩnh hướng dẫn trình tự, thủ tục pháp lý đầu tư dự án điện gió ngoài khơi, có dẫn chiếu điều, khoản văn bản pháp luật Việt Nam. Gồm 6 phân hệ: Tổng quan lãnh đạo · Bản đồ quy trình dạng cây · Danh mục thủ tục · Ma trận pháp lý · Rủi ro và nội dung xin ý kiến · Lộ trình hành động; kèm trang Dữ liệu và nhật ký.
+Website tĩnh hướng dẫn trình tự, thủ tục pháp lý đầu tư dự án điện gió ngoài khơi, có dẫn chiếu điều, khoản văn bản pháp luật Việt Nam. Gồm 6 phân hệ: Tổng quan lãnh đạo · Bản đồ quy trình (hành trình 10 giai đoạn, toàn cảnh, sơ đồ cây 6 nhánh) · Danh mục thủ tục · Ma trận pháp lý · Rủi ro và nội dung xin ý kiến · Lộ trình hành động; kèm trang Dữ liệu và nhật ký.
 
 Thư mục `data/` trong bộ mã là **bộ dữ liệu công khai**, dùng được cho GitHub Pages. Bộ dữ liệu nội bộ được bàn giao riêng và không đưa lên GitHub.
 

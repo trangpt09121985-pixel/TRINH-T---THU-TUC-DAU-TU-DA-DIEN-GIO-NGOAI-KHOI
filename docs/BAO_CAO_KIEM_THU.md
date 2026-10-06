@@ -1,6 +1,6 @@
 # Báo cáo kiểm thử chức năng – phiên bản 2
 
-Kết quả: **44/44 trường hợp đạt, 0 trường hợp không đạt.** Kiểm thử tự động ngày 05/10/2026 bằng Chromium (Playwright) trên bộ dữ liệu công khai (44 đầu việc, 6 cổng quyết định, 26 văn bản, 28 dòng ma trận, 14 rủi ro, 14 việc lộ trình); máy tính 1440×900 và điện thoại 390×844.
+Kết quả: **51/51 trường hợp đạt, 0 trường hợp không đạt.** Kiểm thử tự động ngày 05/10/2026 bằng Chromium (Playwright) trên bộ dữ liệu công khai (44 đầu việc, 10 giai đoạn, 6 cổng quyết định, 26 văn bản, 28 dòng ma trận, 14 rủi ro, 14 việc lộ trình); máy tính 1440×900 và điện thoại 390×844.
 
 Trong quá trình kiểm thử có 1 lỗi được phát hiện và đã sửa: trên điện thoại, ô chọn bộ lọc có nội dung dài làm trang tràn ngang (rộng 799 px). Sau khi sửa, trang vừa khung 390 px (KT42).
 
@@ -52,6 +52,13 @@ Trong quá trình kiểm thử có 1 lỗi được phát hiện và đã sửa:
 | KT42 | Điện thoại: không tràn ngang, có nút menu và logo | ĐẠT | scrollWidth=390 |
 | KT43 | Điện thoại: mở menu, chuyển phân hệ, menu tự đóng | ĐẠT |  |
 | KT44 | Không lỗi JavaScript trong toàn bộ phiên kiểm thử | ĐẠT |  |
+| KT45 | Hành trình hiển thị đủ 10 giai đoạn, tên tiếng Việt | ĐẠT |  |
+| KT46 | Mỗi thủ tục thuộc đúng một giai đoạn | ĐẠT |  |
+| KT47 | Chọn giai đoạn 5 hiển thị đúng thủ tục và cổng G3 | ĐẠT | 9 thủ tục |
+| KT48 | Bấm thủ tục trong giai đoạn mở khung chi tiết có nhãn giai đoạn | ĐẠT |  |
+| KT49 | Nút “Giai đoạn tiếp theo” chuyển sang giai đoạn 6 | ĐẠT |  |
+| KT50 | Điều khiển hành trình bằng phím mũi tên | ĐẠT |  |
+| KT51 | Toàn cảnh 10 cột chứa đủ thủ tục và 6 cổng | ĐẠT |  |
 
 ## Giới hạn
 

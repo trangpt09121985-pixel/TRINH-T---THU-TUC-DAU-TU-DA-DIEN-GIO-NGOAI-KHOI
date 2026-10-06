@@ -30,8 +30,24 @@ with sync_playwright() as p:
     rec('KT08', '05 việc ưu tiên và cổng quyết định gần nhất', pg.locator('#prio li').count() == 5 and pg.locator('#gates li').count() == 3)
     pg.locator('.qa button[data-p="TT-1.7"]').click(); pg.wait_for_timeout(200)
     rec('KT09', 'Liên kết trong Hướng dẫn nhanh mở chi tiết thủ tục', 'nội bộ' in pg.locator('#dTitle').inner_text()); pg.keyboard.press('Escape')
-    # sơ đồ
+    # hành trình 10 giai đoạn
     pg.goto(URL + '#ban-do'); pg.wait_for_timeout(300)
+    PH = DATA['giai_doan']
+    rec('KT45', 'Hành trình hiển thị đủ 10 giai đoạn, tên tiếng Việt', pg.locator('#timeline .tstep').count() == len(PH) == 10 and 'Khởi tạo dự án' in pg.locator('#timeline').inner_text())
+    rec('KT46', 'Mỗi thủ tục thuộc đúng một giai đoạn', sorted(t['giai_doan_10'] for t in TT) == sorted(t['giai_doan_10'] for t in TT if t['giai_doan_10'] in {p_['ma'] for p_ in PH}) and len(TT) == sum(1 for t in TT if t['giai_doan_10']))
+    pg.click('#timeline .tstep[data-ph="5"]'); pg.wait_for_timeout(200)
+    n5 = sum(t['giai_doan_10'] == '5' for t in TT)
+    rec('KT47', 'Chọn giai đoạn 5 hiển thị đúng thủ tục và cổng G3', pg.locator('#phase .pstep').count() == n5 and pg.locator('#phase .pgate button[data-g="G3"]').count() == 1, f'{n5} thủ tục')
+    pg.locator('#phase .pstep button').first.click(); pg.wait_for_timeout(200)
+    rec('KT48', 'Bấm thủ tục trong giai đoạn mở khung chi tiết có nhãn giai đoạn', 'Giai đoạn 5' in pg.locator('#dBody').inner_text()); pg.keyboard.press('Escape')
+    pg.click('#phNext'); pg.wait_for_timeout(150)
+    rec('KT49', 'Nút “Giai đoạn tiếp theo” chuyển sang giai đoạn 6', pg.locator('#timeline .tstep.on').get_attribute('data-ph') == '6')
+    pg.locator('#timeline .tstep.on').focus(); pg.keyboard.press('ArrowLeft'); pg.wait_for_timeout(150)
+    rec('KT50', 'Điều khiển hành trình bằng phím mũi tên', pg.locator('#timeline .tstep.on').get_attribute('data-ph') == '5')
+    pg.click('#bTabs button[data-t="board"]'); pg.wait_for_timeout(200)
+    rec('KT51', 'Toàn cảnh 10 cột chứa đủ thủ tục và 6 cổng', pg.locator('#board .bcol').count() == 10 and pg.locator('#board li').count() == len(TT) and pg.locator('#board .bgate').count() == 6)
+    # sơ đồ cây
+    pg.click('#bTabs button[data-t="tree"]'); pg.wait_for_timeout(300)
     n = pg.locator('#tree g.node').count()
     rec('KT10', 'Sơ đồ cây đủ nút (thủ tục + 6 cổng)', n == len(TT) + 6, f'{n} nút')
     grp = pg.locator('#tree g.grp').evaluate_all('e=>e.map(x=>x.textContent)')

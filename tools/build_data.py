@@ -23,6 +23,7 @@ TABLES = {
     'ma_tran_phap_ly':  ('ma_tran_phap_ly.csv', 'ma'),
     'rui_ro':           ('rui_ro.csv', 'ma'),
     'ke_hoach':         ('ke_hoach.csv', 'ma'),
+    'giai_doan':        ('giai_doan.csv', 'ma'),
 }
 LABELS = {'ĐÃ XÁC MINH', 'CẦN XÁC MINH', 'CHƯA CÓ HƯỚNG DẪN CHI TIẾT', 'CẦN Ý KIẾN CƠ QUAN CÓ THẨM QUYỀN'}
 ALLOWED = {
@@ -78,7 +79,14 @@ def validate(db):
                     errs.append(f'thu_tuc {r["ma"]}: mã {m} ở cột {col} không tồn tại')
                 if m == r['ma']:
                     errs.append(f'thu_tuc {r["ma"]}: cột {col} tham chiếu chính nó')
+    ph_ids = {r['ma'] for r in db['giai_doan']}
+    for r in db['thu_tuc']:
+        if r.get('giai_doan_10', '') not in ph_ids:
+            errs.append(f'thu_tuc {r["ma"]}: giai_doan_10 “{r.get("giai_doan_10", "")}” không có trong bảng giai_doan')
     gate_ids = {r['ma'] for r in db['cong_quyet_dinh']}
+    for r in db['giai_doan']:
+        if r.get('cong_quyet_dinh') and r['cong_quyet_dinh'] not in gate_ids:
+            errs.append(f'giai_doan {r["ma"]}: cổng {r["cong_quyet_dinh"]} không tồn tại')
     for r in db['cong_quyet_dinh']:
         for m in filter(None, (x.strip() for x in r.get('thu_tuc_dau_vao', '').split(';'))):
             if m not in tt_ids:

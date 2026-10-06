@@ -128,6 +128,65 @@ button,input,select,textarea{font:inherit; color:inherit}
 #tree .dim{opacity:.22}
 #tree .branch{cursor:pointer}
 
+/* ---------- HÀNH TRÌNH 10 GIAI ĐOẠN ---------- */
+.timeline{position:relative; display:grid; grid-template-columns:repeat(10,minmax(96px,1fr)); gap:6px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px 12px 14px; overflow-x:auto; margin-bottom:16px}
+.tstep::after{content:""; position:absolute; left:50%; top:18px; width:calc(100% + 6px); height:4px; background:var(--c); z-index:-1}
+.tstep:last-child::after{width:40px; clip-path:polygon(0 0,70% 0,70% 0,100% 50%,70% 100%,0 100%)}
+.tstep{all:unset; box-sizing:border-box; position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; text-align:center; gap:6px; padding:0 4px 8px; border-radius:10px; cursor:pointer; min-width:0}
+.tstep:hover{background:#F2F7FB}
+.tstep:focus-visible{outline:3px solid var(--logo-green)}
+.tnum{width:40px; height:40px; border-radius:50%; background:var(--c); color:#fff; font-weight:700; display:grid; place-items:center; font-size:1rem; box-shadow:0 0 0 4px #fff}
+.tico{width:50px; height:50px; border-radius:50%; border:2px solid var(--c); background:#fff; display:grid; place-items:center}
+.tname{font-weight:700; font-size:.8rem; color:var(--ink); line-height:1.25}
+.ten{font-size:.68rem; color:var(--mute); line-height:1.2}
+.tcnt{display:flex; flex-wrap:wrap; justify-content:center; gap:2px; max-width:80px}
+.tcnt i{width:7px; height:7px; border-radius:2px; display:block}
+.tgate{font-size:.66rem; font-weight:700; color:var(--navy); background:var(--navy-l); border-radius:999px; padding:1px 7px}
+.tstep.on{background:#EEF5FA; box-shadow:inset 0 -4px 0 var(--c)}
+.tstep.on .tnum{transform:scale(1.12)}
+.tstep.on .tico{background:var(--c)}
+.tstep.on .tico svg{stroke:#fff}
+.pcard{background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden}
+.pcard>header{background:linear-gradient(100deg,var(--c),color-mix(in srgb,var(--c) 70%,#fff)); color:#fff; display:flex; align-items:center; gap:18px; padding:16px 22px}
+.pcard>header h3{color:#fff; font-size:1.35rem}
+.pcard>header span{font-size:.85rem; color:#EAF3FA}
+.pbig{font-size:2.4rem !important; font-weight:700; color:#fff !important; border-right:2px solid rgba(255,255,255,.5); padding-right:16px; line-height:1}
+.pico{margin-left:auto; opacity:.9}
+.pbody{display:grid; grid-template-columns:300px 1fr; gap:22px; padding:20px 22px}
+.pinfo{display:flex; flex-direction:column; gap:14px; font-size:.9rem}
+.pinfo b{color:var(--navy-d); font-size:.85rem}
+.pinfo p{margin:4px 0 0; line-height:1.6}
+.pstat{display:flex; flex-direction:column; gap:3px; font-size:.82rem}
+.pstat span{display:flex; align-items:center; gap:6px}
+.pwarn{background:var(--warn-l); border:1px solid #EBD38A; border-radius:8px; padding:10px 12px; font-size:.85rem}
+.psteps{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; position:relative}
+.psteps::before{content:""; position:absolute; left:19px; top:20px; bottom:20px; width:2px; background:var(--line)}
+.pstep button,.pgate button{all:unset; box-sizing:border-box; display:grid; grid-template-columns:40px 1fr auto; gap:14px; align-items:start; width:100%; cursor:pointer; background:#fff; border:1px solid var(--line); border-left:6px solid var(--s); border-radius:10px; padding:12px 14px 12px 8px; position:relative}
+.pstep button:hover,.pgate button:hover{background:#F6FAFD; border-color:var(--navy)}
+.pstep button:focus-visible,.pgate button:focus-visible{outline:3px solid var(--logo-green)}
+.sn{width:30px; height:30px; border-radius:50%; background:var(--s); color:#fff; font-weight:700; display:grid; place-items:center; font-size:.85rem; margin-left:2px}
+.st{display:flex; flex-direction:column; gap:4px; min-width:0}
+.sc{font-weight:700; color:var(--navy); font-size:.8rem; display:flex; gap:6px; flex-wrap:wrap; align-items:center}
+.sname{font-weight:600; font-size:.98rem; color:var(--ink)}
+.smeta{font-size:.82rem; color:var(--ink2); display:flex; gap:6px; align-items:flex-start}
+.sgo{font-weight:700; color:var(--navy); font-size:.82rem; white-space:nowrap; align-self:center}
+.pstep.dim{opacity:.3}
+.pgate button{border:2px dashed var(--navy); border-left-width:2px}
+.gd{width:30px; height:30px; display:grid; place-items:center; color:var(--navy); font-size:1.5rem; margin-left:2px}
+.pcard>footer{display:flex; justify-content:space-between; padding:0 22px 18px}
+.board{display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:12px}
+.bcol{background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden; display:flex; flex-direction:column}
+.bcol header{background:var(--c); color:#fff; display:flex; align-items:center; gap:8px; padding:10px 12px; min-height:58px}
+.bcol header span{font-weight:700; font-size:1.1rem; border-right:1px solid rgba(255,255,255,.5); padding-right:8px}
+.bcol header b{font-size:.85rem; line-height:1.25}
+.bcol ul{list-style:none; margin:0; padding:8px; display:flex; flex-direction:column; gap:4px; flex:1}
+.bcol li button{all:unset; box-sizing:border-box; display:flex; gap:8px; align-items:flex-start; width:100%; padding:6px 8px; border-radius:6px; font-size:.78rem; line-height:1.35; cursor:pointer}
+.bcol li button:hover{background:#F2F7FB}
+.bcol li button .dot{margin-top:4px; flex:none}
+.bcol li.dim{opacity:.25}
+.bgate{all:unset; box-sizing:border-box; margin:0 8px 8px; padding:8px 10px; border:2px dashed var(--navy); border-radius:8px; font-size:.75rem; font-weight:600; color:var(--navy-d); cursor:pointer}
+.bgate:hover{background:var(--navy-l)}
+
 /* ---------- BẢNG ---------- */
 .tbl{background:#fff; border:1px solid var(--line); border-radius:10px; overflow:auto; max-height:calc(100vh - 260px)}
 table{border-collapse:separate; border-spacing:0; width:100%; font-size:.85rem}
@@ -235,7 +294,14 @@ thead th.sticky{z-index:3; background:var(--navy-d)}
   .drawer dl{grid-template-columns:1fr; gap:2px 0}
   .drawer dd{margin-bottom:8px}
   .kpi .v{font-size:1.7rem}
+  .timeline{grid-template-columns:repeat(10,104px)}
+  .pbody{grid-template-columns:1fr}
+  .pcard>header{padding:12px 14px} .pico{display:none}
+  .pstep button,.pgate button{grid-template-columns:34px 1fr}
+  .sgo{grid-column:2}
+  .board{grid-template-columns:1fr 1fr}
 }
+@media (min-width:901px) and (max-width:1300px){.board{grid-template-columns:repeat(3,minmax(0,1fr))} .pbody{grid-template-columns:240px 1fr}}
 
 /* ---------- IN ---------- */
 @media print{

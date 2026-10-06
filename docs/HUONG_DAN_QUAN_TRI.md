@@ -1,6 +1,6 @@
 # Hướng dẫn quản trị dữ liệu và cập nhật căn cứ pháp lý
 
-Áp dụng cho trang “Bản đồ trình tự và thủ tục pháp lý đầu tư dự án điện gió ngoài khơi” của PVEP. Dữ liệu tách khỏi giao diện: giao diện chỉ đọc tệp `data/data.js`, tệp này được sinh từ 06 bảng CSV hoặc từ tệp Excel mẫu.
+Áp dụng cho trang “Bản đồ trình tự và thủ tục pháp lý đầu tư dự án điện gió ngoài khơi” của PVEP. Dữ liệu tách khỏi giao diện: giao diện chỉ đọc tệp `data/data.js`, tệp này được sinh từ 07 bảng CSV hoặc từ tệp Excel mẫu.
 
 ## 1. Cấu trúc dữ liệu
 
@@ -12,6 +12,7 @@
 | `ma_tran_phap_ly` | Điều khoản, nội dung, tác động, hành động, loại “Quy định đã rõ/Khoảng trống” | `ma` (MTxx) |
 | `rui_ro` | Sổ rủi ro, khoảng trống pháp lý, cấp xin ý kiến | `ma` (RRxx) |
 | `ke_hoach` | Lộ trình hành động Quý IV/2026 và năm 2027 | `ma` (KHxx) |
+| `giai_doan` | 10 giai đoạn phát triển dự án (tên, mô tả, đầu ra, biểu tượng, cổng quyết định) dùng cho trang “Hành trình 10 giai đoạn” | `ma` (1–10) |
 
 Quy tắc liên kết: cột `ma_van_ban` của `thu_tuc` và cột `ma_vb` của `ma_tran_phap_ly` phải trỏ tới mã có trong `van_ban`. Các mã TT-x.y, RRxx, KHxx, “Cổng Gx” ghi trong cột `buoc_ke_tiep`, `lien_quan` tự động thành liên kết trên giao diện.
 
@@ -37,6 +38,8 @@ Quy tắc liên kết: cột `ma_van_ban` của `thu_tuc` và cột `ma_vb` củ
 2. Đỏ: `muc_rui_ro` = “Cao”.
 3. Xanh đậm: `nhan_xac_minh` = “ĐÃ XÁC MINH” hoặc “NGHIỆP VỤ NỘI BỘ”.
 4. Vàng: các trường hợp còn lại (CẦN XÁC MINH, CHƯA CÓ HƯỚNG DẪN CHI TIẾT, CẦN Ý KIẾN CƠ QUAN CÓ THẨM QUYỀN).
+
+Cột `thu_tuc.giai_doan_10` gán mỗi đầu việc vào một trong 10 giai đoạn; công cụ báo lỗi nếu mã giai đoạn không có trong bảng `giai_doan`. Cách chia 10 giai đoạn theo thông lệ quốc tế, độc lập với 6 nhánh pháp lý (cột `nhanh`).
 
 Nhánh 3 được vẽ rẽ theo cột `luong`; Nhánh 4 được nhóm theo cột `pham_vi`. Quan hệ trình tự (`dieu_kien_tien_quyet`, `song_song_voi`) là đề xuất nghiệp vụ của Ban, không phải quy định pháp luật; cập nhật khi Ban thống nhất.
 

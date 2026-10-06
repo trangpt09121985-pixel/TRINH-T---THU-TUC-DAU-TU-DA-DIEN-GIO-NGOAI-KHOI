@@ -1,0 +1,11 @@
+﻿ma,ten,ten_tieng_anh,bieu_tuong,muc_tieu,dau_ra_chinh,cong_quyet_dinh,luu_y
+1,Khởi tạo dự án,Project setup,tai_lieu,"Xác định khu vực, mô hình dự án, mô hình tham gia của PVEP; có chủ trương nghiên cứu nội bộ",Báo cáo sàng lọc; bản đồ chồng lấn; chủ trương nội bộ,G1,
+2,Nghiên cứu tiền khả thi,Pre-feasibility,tim_kiem,Đánh giá sơ bộ kỹ thuật – kinh tế; xác định luồng thủ tục và điều kiện nhà đầu tư; chọn phương án tham gia,Báo cáo đánh giá sơ bộ; kết luận luồng A/B; phương án độc lập hoặc liên danh,,
+3,Khảo sát hiện trường,Site investigation,ban_do,"Được giao khu vực biển để khảo sát; khảo sát gió, địa hình, địa chất, hải văn, môi trường, hàng hải",Quyết định giao khu vực biển khảo sát; báo cáo kết quả khảo sát đã thẩm tra,G2,
+4,Thiết kế ý tưởng,Concept & design,thiet_ke,"Lập Pre-FS/FS; phương án bố trí, tuyến cáp biển, điểm tiếp bờ và đấu nối",Pre-FS cho hồ sơ chủ trương; phương án đấu nối,,
+5,Phê duyệt và cấp phép,Approval & permitting,phe_duyet,"Chấp thuận chủ trương và nhà đầu tư; giao khu vực biển thực hiện dự án; môi trường, hàng hải, đất đai","Quyết định chấp thuận chủ trương, nhà đầu tư; quyết định giao biển; phê duyệt hồ sơ môi trường",G3,
+6,Thiết kế chi tiết,Detailed engineering,van_hanh,"Khảo sát chi tiết; thiết kế kỹ thuật, thẩm định; cảng và căn cứ vận hành – bảo dưỡng",Hồ sơ thiết kế được thẩm định; giấy phép xây dựng hoặc thủ tục thay thế,G4,
+7,Thu xếp vốn và mua sắm,Funding & procurement,von,"Hợp đồng mua bán điện, ưu đãi, thu xếp vốn, quyết định đầu tư, hợp đồng EPC/EPCI",PPA; quyết định đầu tư (FID); hợp đồng tín dụng và hợp đồng EPC,G5,
+8,Xây dựng và lắp đặt,Construction & installation,xay_dung,"Thi công ngoài khơi, lắp đặt tua-bin, cáp; nghiệm thu, đóng điện",Công trình nghiệm thu; ngày vận hành thương mại,,
+9,Vận hành phát điện,Operation & powering,dau_noi,"Giấy phép phát điện; báo cáo định kỳ; an toàn, môi trường, dữ liệu; chuyển nhượng nếu có",Giấy phép hoạt động điện lực; hồ sơ tuân thủ,G6,
+10,"Bảo trì, thay mới và tháo dỡ",Repowering & maintenance,tai_che,"Bảo trì, thay thế thiết bị cuối vòng đời; tháo dỡ, hoàn trả khu vực biển","Hoàn thành tháo dỡ, khôi phục môi trường",,"Thay thế, nâng cấp tua-bin (repowering): chưa tìm thấy quy định riêng – CẦN XÁC MINH"

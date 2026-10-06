@@ -106,11 +106,24 @@
 
     <!-- 2. BẢN ĐỒ -->
     <section class="view" id="v-ban-do" aria-labelledby="h2v">
-      <div class="vhead"><div><h2 id="h2v">Bản đồ quy trình pháp lý</h2><p>Sơ đồ từ trái sang phải: gốc là cơ hội đầu tư, mỗi nhánh là một giai đoạn, mỗi nút là một thủ tục hoặc đầu việc. Bấm vào nút để xem chi tiết; bấm vào nhánh để thu gọn hoặc mở rộng.</p></div>
-        <div style="display:flex; gap:8px"><button class="btn sm" id="expandAll">Mở rộng tất cả</button><button class="btn sm" id="collapseAll">Thu gọn tất cả</button></div></div>
+      <div class="vhead"><div><h2 id="h2v">Bản đồ quy trình</h2><p>Hành trình phát triển dự án điện gió ngoài khơi qua 10 giai đoạn. Mỗi giai đoạn gắn với các thủ tục pháp lý cụ thể; bấm vào thủ tục để xem căn cứ và cơ quan có thẩm quyền.</p></div></div>
+      <div class="tabs" role="tablist" id="bTabs">
+        <button role="tab" data-t="journey" aria-selected="true">Hành trình 10 giai đoạn</button>
+        <button role="tab" data-t="board" aria-selected="false">Toàn cảnh trên một màn hình</button>
+        <button role="tab" data-t="tree" aria-selected="false">Sơ đồ cây theo 6 nhánh pháp lý</button>
+      </div>
       <div class="filters" id="fTree"></div>
       <div class="legend" id="legend2" style="margin-bottom:12px"></div>
-      <div class="treewrap"><div id="tree"></div></div>
+      <div id="bJourney">
+        <div class="timeline" id="timeline" role="tablist" aria-label="10 giai đoạn"></div>
+        <div id="phase"></div>
+      </div>
+      <div id="bBoard" hidden><div class="board" id="board"></div></div>
+      <div id="bTree" hidden>
+        <div style="display:flex; gap:8px; margin-bottom:10px"><button class="btn sm" id="expandAll">Mở rộng tất cả</button><button class="btn sm" id="collapseAll">Thu gọn tất cả</button></div>
+        <div class="treewrap"><div id="tree"></div></div>
+      </div>
+      <p class="ro" style="margin-top:12px">Cách chia 10 giai đoạn theo thông lệ phát triển dự án điện gió ngoài khơi quốc tế, dùng để dễ hình dung. Trình tự pháp lý theo pháp luật Việt Nam có thể chồng lấn giữa các giai đoạn (ví dụ: với dự án vận hành 2025–2030, hồ sơ chủ trương có thể nộp trước khi khảo sát hiện trường). Thời gian từng giai đoạn chưa được đưa vào vì chưa có nguồn xác minh.</p>
     </section>
 
     <!-- 3. DANH MỤC -->
@@ -185,6 +198,7 @@
                 <option value="ma_tran_phap_ly">ma_tran_phap_ly – Ma trận pháp lý</option>
                 <option value="rui_ro">rui_ro – Rủi ro</option>
                 <option value="ke_hoach">ke_hoach – Lộ trình hành động</option>
+                <option value="giai_doan">giai_doan – 10 giai đoạn phát triển</option>
               </select></label>
             <label>Tệp CSV (UTF-8, cùng tên cột với tệp mẫu) <input type="file" id="impFile" accept=".csv,text/csv"></label>
             <div style="display:flex; gap:8px; flex-wrap:wrap">
