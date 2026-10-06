@@ -91,6 +91,13 @@ def validate(db):
         for m in filter(None, (x.strip() for x in r.get('thu_tuc_dau_vao', '').split(';'))):
             if m not in tt_ids:
                 errs.append(f'cong_quyet_dinh {r["ma"]}: mã đầu vào {m} không tồn tại')
+    for r in db['van_ban']:
+        if r.get('cap_van_ban', '') not in ('', '1', '2', '3', '4', '5'):
+            errs.append(f'van_ban {r["ma_vb"]}: cap_van_ban phải là 1–5')
+        for col in ('quy_dinh_chi_tiet_cho', 'sua_doi_cho', 'ap_dung_uu_tien_cho'):
+            for m in filter(None, (x.strip() for x in r.get(col, '').split(';'))):
+                if m not in vb_ids:
+                    errs.append(f'van_ban {r["ma_vb"]}: mã {m} ở cột {col} không có trong van_ban')
     for r in db['ma_tran_phap_ly']:
         if r['ma_vb'] not in vb_ids:
             errs.append(f'ma_tran_phap_ly {r["ma"]}: mã văn bản {r["ma_vb"]} không có trong van_ban')

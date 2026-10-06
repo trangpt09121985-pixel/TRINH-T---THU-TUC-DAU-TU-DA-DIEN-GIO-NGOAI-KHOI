@@ -46,7 +46,9 @@ const uniq = a => [...new Set(a.filter(Boolean))].sort((x, y) => x.localeCompare
 const fmtD = d => d ? d.split('-').reverse().join('/') : '';
 const daysTo = d => d ? Math.round((new Date(d + 'T00:00:00') - TODAY) / 864e5) : null;
 const split = s => String(s || '').split(';').map(x => x.replace(/\(.*?\)/g, '').replace(/^hoặc\s+/i, '').trim()).filter(Boolean);
-const cv = (s) => /CẦN XÁC MINH/.test(s) ? String(s).replace(/CẦN XÁC MINH/g, '<span class="chip c-warn">CẦN XÁC MINH</span>') : s;
+const chipCv = s => /CẦN XÁC MINH/.test(s) ? String(s).replace(/CẦN XÁC MINH/g, '<span class="chip c-warn">CẦN XÁC MINH</span>') : s;
+// cv: gắn nút xem nguyên văn cho mọi dẫn chiếu điều khoản + tô nhãn CẦN XÁC MINH (đầu vào đã escape)
+const cv = (s, vb) => chipCv(window.LEGAL ? LEGAL.linkify(s, vb) : s);
 const BR = {}; RAW.cong_quyet_dinh.forEach(g => BR[g.nhanh] = g.ten_nhanh);
 
 const OKL = ['ĐÃ XÁC MINH', 'NGHIỆP VỤ NỘI BỘ'];
@@ -237,9 +239,9 @@ function renderJourney() {
         <button type="button" data-p="${esc(p.ma)}"><span class="sn">${k + 1}</span>
           <span class="st"><span class="sc">${esc(p.ma)} <span class="chip ${legalClass(p.nhan_xac_minh)}">${esc(p.nhan_xac_minh)}</span>${p.luong && p.luong !== 'Chung' ? ` <span class="chip c-navy">Luồng ${esc(p.luong)}</span>` : ''}${p.pham_vi && p.pham_vi !== 'Chung' ? ` <span class="chip c-navy">${esc(p.pham_vi)}</span>` : ''}</span>
           <span class="sname">${esc(p.ten)}</span>
-          <span class="smeta">${iconSvg('nha_dau_tu', 15, '#6B7A90')} ${cv(esc(split(p.co_quan_chu_tri).join(', ') || p.co_quan_chu_tri))}</span>
-          <span class="smeta"><span class="ref">${esc(shortRef(p.can_cu_phap_ly))}</span></span></span>
-          <span class="sgo">Xem chi tiết ›</span></button></li>`; }).join('')}
+          <span class="smeta">${iconSvg('nha_dau_tu', 15, '#6B7A90')} ${chipCv(esc(split(p.co_quan_chu_tri).join(', ') || p.co_quan_chu_tri))}</span></span>
+          <span class="sgo">Xem chi tiết ›</span></button>
+          <div class="sref"><span class="sreflbl">Căn cứ:</span> ${cv(esc(String(p.can_cu_phap_ly || '').split(';')[0]))}</div></li>`; }).join('')}
         ${gate ? `<li class="pgate"><button type="button" data-g="${gate.ma}"><span class="gd">◆</span><span class="st"><span class="sc">Cổng quyết định ${gate.ma} · ${esc(gate.cap_quyet_dinh)}</span><span class="sname">${esc(gate.cau_hoi)}</span></span><span class="sgo">Xem chi tiết ›</span></button></li>` : ''}
       </ol>
     </div>
@@ -355,10 +357,94 @@ function renderTree() {
 }
 function toggleBranch(n) { ST.collapsed = ST.collapsed.includes(n) ? ST.collapsed.filter(x => x !== n) : ST.collapsed.concat(n); save(); renderTree(); }
 
+
+/* ---------------- 2b. SƠ ĐỒ PHÁP LÝ ---------------- */
+let sTab = ST.sTab || 'he-thong';
+const TIER = { 1: 'Luật, Nghị quyết của Quốc hội', 2: 'Nghị định của Chính phủ', 3: 'Quyết định của Thủ tướng, Thông tư, văn bản của bộ', 4: 'Văn bản cá biệt (tiền lệ)', 5: 'Quy định nội bộ, tiêu chuẩn tham khảo' };
+const TIER_NOTE = { 1: 'Hiệu lực cao nhất. NQ 253/2025 áp dụng ưu tiên trong giai đoạn 2026–2030 (khoản 5 Điều 16 NQ 253/2025)', 2: 'Quy định chi tiết luật, nghị quyết', 3: 'Quy hoạch, hướng dẫn chuyên ngành', 4: 'Áp dụng cho đối tượng cụ thể; chỉ dùng tham khảo', 5: 'Không phải văn bản quy phạm pháp luật' };
+function vbState(v) {
+  const t = v.tinh_trang_hieu_luc || '';
+  if (/Hết hiệu lực/i.test(t)) return ['risk', 'Hết hiệu lực'];
+  if (/Chưa có hiệu lực/i.test(t)) return ['idle', 'Chưa có hiệu lực'];
+  if (/sửa đổi/i.test(t)) return ['warn', 'Còn hiệu lực, đã sửa đổi'];
+  if (/^Còn hiệu lực/i.test(t)) return ['ok', 'Còn hiệu lực'];
+  return ['warn', t || 'Cần xác minh'];
+}
+const shortName = v => String(v.ten_van_ban || '').replace(/^(Nghị định|Luật|Nghị quyết|Quyết định|Thông tư|Công văn)\s+/, '').slice(0, 74) + (String(v.ten_van_ban || '').length > 80 ? '…' : '');
+function renderLegalMap() {
+  const B = $('#sBody'); if (!B) return;
+  document.querySelectorAll('#sTabs button').forEach(b => { b.setAttribute('aria-selected', b.dataset.t === sTab); b.onclick = () => { sTab = b.dataset.t; ST.sTab = sTab; save(); renderLegalMap(); }; });
+  const SD = window.SO_DO || { chuoi: [], tham_quyen: [] };
+  if (sTab === 'he-thong') {
+    const ORD = ['VB01', 'VB04', 'VB06', 'VB07', 'VB09', 'VB08', 'VB16', 'VB17', 'VB18', 'VB20', 'VB21', 'VB22', 'VB02', 'VB03', 'VB05', 'VB10', 'VB14', 'VB15', 'VB19'];
+    const oi = m => { const i = ORD.indexOf(m); return i < 0 ? 99 : i; };
+    const V = DB.van_ban.filter(v => v.cap_van_ban).sort((a, b) => oi(a.ma_vb) - oi(b.ma_vb) || a.ma_vb.localeCompare(b.ma_vb));
+    B.innerHTML = `<div class="lmlegend"><span><i class="ln ln-ct"></i>Quy định chi tiết, hướng dẫn</span><span><i class="ln ln-sd"></i>Sửa đổi, thay thế</span><span><i class="ln ln-ut"></i>Áp dụng ưu tiên (cơ chế đặc thù)</span>
+      ${['ok', 'warn', 'idle', 'risk'].map(k => `<span><i class="dot" style="background:${COL[k]}"></i>${({ ok: 'Còn hiệu lực', warn: 'Đã sửa đổi hoặc cần xác minh', idle: 'Chưa có hiệu lực', risk: 'Hết hiệu lực' })[k]}</span>`).join('')}</div>
+      <label class="lmall"><input type="checkbox" id="lmAll"${ST.lmAll ? ' checked' : ''}> Hiện tất cả mũi tên quan hệ (mặc định: đưa chuột hoặc chạm vào một văn bản để xem quan hệ của văn bản đó)</label>
+      <div class="lmap" id="lmap"><svg class="lmsvg" id="lmsvg" aria-hidden="true"></svg>
+      ${[1, 2, 3, 4, 5].map(t => { const L = V.filter(v => v.cap_van_ban === String(t)); return L.length ? `<div class="tier t${t}"><div class="tierhead"><b>Tầng ${t}. ${TIER[t]}</b><span>${cv(esc(TIER_NOTE[t]))}</span></div><div class="tiernodes">${L.map(v => {
+        const [st, sl] = vbState(v);
+        const rel = [];
+        if (v.quy_dinh_chi_tiet_cho) rel.push('Hướng dẫn: ' + v.quy_dinh_chi_tiet_cho.split(';').map(m => esc((vbById(m.trim()) || {}).so_ky_hieu || m)).join(', '));
+        if (v.sua_doi_cho) rel.push('Sửa đổi/thay thế: ' + v.sua_doi_cho.split(';').map(m => esc((vbById(m.trim()) || {}).so_ky_hieu || m)).join(', '));
+        if (v.ap_dung_uu_tien_cho) rel.push('Áp dụng ưu tiên so với: ' + v.ap_dung_uu_tien_cho.split(';').map(m => esc((vbById(m.trim()) || {}).so_ky_hieu || m)).join(', '));
+        return `<div class="lnode s-${st}" id="ln-${esc(v.ma_vb)}" data-ma="${esc(v.ma_vb)}"><button type="button" class="lnmain" data-lawdoc="${esc(v.ma_vb)}" title="Xem nguyên văn các điều"><span class="lnno">${esc(v.so_ky_hieu)}</span><span class="lnname">${esc(shortName(v))}</span></button>
+          <span class="lnmeta"><i class="dot" style="background:${COL[st]}"></i>${esc(sl)}${v.ngay_hieu_luc ? ' · hiệu lực ' + fmtD(v.ngay_hieu_luc) : ''}</span>${rel.length ? `<span class="lnrel">${rel.join('<br>')}</span>` : ''}
+          <button type="button" class="linkish lninfo" data-vb="${esc(v.ma_vb)}">Hồ sơ văn bản ›</button></div>`; }).join('')}</div></div>` : ''; }).join('')}</div>
+      <p class="ro" style="margin-top:10px">Quan hệ giữa các văn bản ghi tại các cột cap_van_ban, quy_dinh_chi_tiet_cho, sua_doi_cho, ap_dung_uu_tien_cho của bảng van_ban; cập nhật khi có văn bản mới.</p>`;
+    $('#lmAll').onchange = e => { ST.lmAll = e.target.checked; save(); drawLinks(); };
+    B.querySelectorAll('.lnode').forEach(n => {
+      n.addEventListener('mouseenter', () => drawLinks(n.dataset.ma)); n.addEventListener('focusin', () => drawLinks(n.dataset.ma));
+      n.addEventListener('mouseleave', () => drawLinks()); n.addEventListener('focusout', () => drawLinks());
+    });
+    requestAnimationFrame(() => drawLinks());
+  } else if (sTab === 'chuoi') {
+    B.innerHTML = `<div class="alert" style="margin-bottom:14px">Mỗi bước là một quyết định riêng của cơ quan có thẩm quyền. Hoàn thành bước trước không tự động tạo ra quyền ở bước sau.</div>
+      <ol class="rchain">${SD.chuoi.map((c, i) => `<li class="rstep"><div class="rnum">${i + 1}</div><div class="rcard"><header><h3>${esc(c.ten)}</h3><span class="rq">${esc(c.quyen)}</span></header>
+        <dl><dt>Quyết định xác lập</dt><dd>${cv(esc(c.quyet_dinh))}</dd><dt>Cơ quan quyết định</dt><dd>${cv(esc(c.co_quan))}</dd><dt>Căn cứ</dt><dd>${cv(esc(c.can_cu))}</dd><dt>Lưu ý</dt><dd>${cv(esc(c.luu_y))}</dd></dl></div></li>`).join('')}</ol>
+      <p class="ro">Cập nhật nội dung sơ đồ: ${fmtD(SD.ngay_cap_nhat)}.</p>`;
+  } else {
+    B.innerHTML = `<div class="authgrid">${SD.tham_quyen.map(t => `<div class="card auth"><h3>${esc(t.co_quan)}</h3><ul>${t.viec.map(([v, c]) => `<li><span>${cv(esc(v))}</span><span class="authref">${cv(esc(c))}</span></li>`).join('')}</ul></div>`).join('')}</div>`;
+  }
+}
+function drawLinks(focus) {
+  const map = $('#lmap'), svg = $('#lmsvg'); if (!map || !svg || !map.offsetParent) return;
+  const R = map.getBoundingClientRect();
+  svg.setAttribute('width', map.scrollWidth); svg.setAttribute('height', map.scrollHeight);
+  if (window.innerWidth < 900) { svg.innerHTML = ''; return; }
+  const box = id => { const e = document.getElementById('ln-' + id); if (!e) return null; const r = e.getBoundingClientRect(); return { x: r.left - R.left + r.width / 2, t: r.top - R.top, b: r.bottom - R.top, l: r.left - R.left, r: r.right - R.left, y: r.top - R.top + r.height / 2 }; };
+  const paths = [];
+  document.querySelectorAll('.lnode').forEach(n => n.classList.remove('lon', 'loff'));
+  const all = !!ST.lmAll;
+  if (!all && !focus) { svg.innerHTML = ''; return; }
+  const rel = new Set(focus ? [focus] : []);
+  const edge = (from, to, cls) => {
+    if (focus && from !== focus && to !== focus) return;
+    if (focus) { rel.add(from); rel.add(to); }
+    const a = box(from), b = box(to); if (!a || !b) return;
+    let d;
+    if (Math.abs(a.t - b.t) < 8) { const y = a.t - 6; d = `M${a.x} ${a.t} C ${a.x} ${y - 26}, ${b.x} ${y - 26}, ${b.x} ${b.t}`; }
+    else if (a.t > b.t) d = `M${a.x} ${a.t} C ${a.x} ${a.t - 40}, ${b.x} ${b.b + 40}, ${b.x} ${b.b}`;
+    else d = `M${a.x} ${a.b} C ${a.x} ${a.b + 40}, ${b.x} ${b.t - 40}, ${b.x} ${b.t}`;
+    paths.push(`<path d="${d}" class="${cls}" marker-end="url(#ar-${cls})"/>`);
+  };
+  DB.van_ban.forEach(v => {
+    (v.quy_dinh_chi_tiet_cho || '').split(';').filter(Boolean).forEach(m => edge(v.ma_vb, m.trim(), 'ct'));
+    (v.sua_doi_cho || '').split(';').filter(Boolean).forEach(m => edge(v.ma_vb, m.trim(), 'sd'));
+    (v.ap_dung_uu_tien_cho || '').split(';').filter(Boolean).forEach(m => edge(v.ma_vb, m.trim(), 'ut'));
+  });
+  const mk = (id, c) => `<marker id="ar-${id}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="${c}"/></marker>`;
+  if (focus) document.querySelectorAll('.lnode').forEach(n => n.classList.add(rel.has(n.dataset.ma) ? 'lon' : 'loff'));
+  svg.innerHTML = `<defs>${mk('ct', '#005088')}${mk('sd', '#B07A00')}${mk('ut', '#2CB04A')}</defs>${paths.join('')}`;
+}
+window.addEventListener('resize', () => { if (sTab === 'he-thong') drawLinks(); });
+window.addEventListener('hashchange', () => setTimeout(drawLinks, 30));
+
 /* ---------------- 3. DANH MỤC ---------------- */
 const CAT_COLS = [
   ['ma', 'Mã'], ['ten', 'Tên thủ tục/đầu việc'], ['nhanh', 'Giai đoạn'], ['muc_tieu', 'Mục tiêu'], ['dieu_kien_dau_vao', 'Điều kiện đầu vào'],
-  ['ho_so_du_lieu', 'Hồ sơ/dữ liệu cần chuẩn bị'], ['co_quan', 'Cơ quan chủ trì/phối hợp'], ['ket_qua_dau_ra', 'Kết quả đầu ra'],
+  ['ho_so_du_lieu', 'Hồ sơ/dữ liệu cần chuẩn bị'], ['can_cu_ho_so', 'Căn cứ quy định mẫu đơn, hồ sơ'], ['co_quan', 'Cơ quan chủ trì/phối hợp'], ['ket_qua_dau_ra', 'Kết quả đầu ra'],
   ['can_cu_phap_ly', 'Căn cứ pháp lý'], ['nhan_xac_minh', 'Tình trạng căn cứ'], ['don_vi_dau_moi_pvep', 'Đầu mối PVEP'],
   ['don_vi_phoi_hop_pvep', 'Phối hợp PVEP'], ['rui_ro_luu_y', 'Rủi ro/lưu ý'], ['buoc_ke_tiep', 'Bước kế tiếp'], ['quan_he', 'Điều kiện tiên quyết / làm song song'], ['cap_nhat', 'Ngày cập nhật, nguồn']
 ];
@@ -377,7 +463,8 @@ function renderCatalog() {
       if (k === 'nhanh') v = `${p.nhanh}. ${esc(BR[p.nhanh])}`;
       if (k === 'nhan_xac_minh') v = `<span class="chip ${legalClass(p[k])}">${v}</span>`;
       if (k === 'ma') v = `<b style="color:#005088">${v}</b><br><i class="dot" style="background:${COL[colorOf(p)]}"></i>`;
-      if (k === 'can_cu_phap_ly' || k === 'co_quan') v = cv(v);
+      if (['can_cu_phap_ly', 'ho_so_du_lieu', 'can_cu_ho_so', 'rui_ro_luu_y', 'dieu_kien_dau_vao'].includes(k)) v = cv(v);
+      if (k === 'co_quan') v = chipCv(v);
       if (k === 'buoc_ke_tiep' || k === 'quan_he') v = linkCodes(p[k]);
       return `<td${i === 0 ? ' class="sticky"' : ''}>${v}</td>`;
     }).join('')}</tr>`).join('') : `<tr><td colspan="${CAT_COLS.length}" class="empty">Không có thủ tục khớp từ khóa/bộ lọc. Xóa bớt điều kiện lọc để xem thêm.</td></tr>`) + '</tbody>';
@@ -421,12 +508,12 @@ document.querySelectorAll('#mTabs button').forEach(b => b.setAttribute('aria-sel
     $('#cntMat').textContent = `${M.length} dòng`;
     const groups = uniq(M.map(m => m.vb.nhom_chu_de));
     B.innerHTML = `<div class="tbl"><table class="wide"><thead><tr><th>Văn bản</th><th>Điều khoản</th><th>Nội dung quy định</th><th>Giai đoạn</th><th>Tác động đối với PVEP</th><th>Hành động cần triển khai</th><th>Loại</th><th>Trạng thái xác minh</th><th>Nguồn chính thức</th></tr></thead><tbody>` +
-      (M.length ? groups.map(g => `<tr class="grp-row"><td colspan="9">${esc(g)}</td></tr>` + M.filter(m => m.vb.nhom_chu_de === g).map(m => `<tr class="clk" data-vb="${esc(m.ma_vb)}"><td><b>${esc(m.vb.so_ky_hieu)}</b><br>${esc(m.vb.ten_van_ban)}${vbWarn(m.vb).length ? `<br><span class="chip c-warn">${vbWarn(m.vb).length} cảnh báo</span>` : ''}</td><td>${esc(m.dieu_khoan)}</td><td>${esc(m.noi_dung_quy_dinh)}</td><td>${esc(m.giai_doan)}</td><td>${esc(m.tac_dong_pvep)}</td><td>${esc(m.hanh_dong)}</td><td><span class="chip ${m.loai === 'Khoảng trống' ? 'c-warn' : 'c-ok'}">${esc(m.loai)}</span></td><td><span class="chip ${m.trang_thai_xac_minh === 'ĐÃ XÁC MINH' ? 'c-ok' : 'c-warn'}" style="white-space:normal">${esc(m.trang_thai_xac_minh)}</span></td><td>${srcLink(m.vb)}</td></tr>`).join('')).join('')
+      (M.length ? groups.map(g => `<tr class="grp-row"><td colspan="9">${esc(g)}</td></tr>` + M.filter(m => m.vb.nhom_chu_de === g).map(m => `<tr class="clk" data-vb="${esc(m.ma_vb)}"><td><b>${esc(m.vb.so_ky_hieu)}</b><br>${esc(m.vb.ten_van_ban)}${vbWarn(m.vb).length ? `<br><span class="chip c-warn">${vbWarn(m.vb).length} cảnh báo</span>` : ''}</td><td>${cv(esc(m.dieu_khoan), m.ma_vb)}</td><td>${esc(m.noi_dung_quy_dinh)}</td><td>${esc(m.giai_doan)}</td><td>${esc(m.tac_dong_pvep)}</td><td>${esc(m.hanh_dong)}</td><td><span class="chip ${m.loai === 'Khoảng trống' ? 'c-warn' : 'c-ok'}">${esc(m.loai)}</span></td><td><span class="chip ${m.trang_thai_xac_minh === 'ĐÃ XÁC MINH' ? 'c-ok' : 'c-warn'}" style="white-space:normal">${esc(m.trang_thai_xac_minh)}</span></td><td>${srcLink(m.vb)}</td></tr>`).join('')).join('')
         : '<tr><td colspan="9" class="empty">Không có dòng phù hợp.</td></tr>') + '</tbody></table></div>';
   } else if (mTab === 'cmp') {
     const a = M.filter(m => m.loai === 'Quy định đã rõ'), b = M.filter(m => m.loai === 'Khoảng trống');
     $('#cntMat').textContent = `${a.length} quy định đã rõ · ${b.length} khoảng trống`;
-    const item = m => `<div class="item clk" data-vb="${esc(m.ma_vb)}" style="cursor:pointer"><b>${esc(m.vb.so_ky_hieu)} · ${esc(m.dieu_khoan)}</b><p>${esc(m.noi_dung_quy_dinh)}</p><p><b>Hành động:</b> ${esc(m.hanh_dong)}</p></div>`;
+    const item = m => `<div class="item clk" data-vb="${esc(m.ma_vb)}" style="cursor:pointer"><b>${esc(m.vb.so_ky_hieu)} · ${cv(esc(m.dieu_khoan), m.ma_vb)}</b><p>${esc(m.noi_dung_quy_dinh)}</p><p><b>Hành động:</b> ${esc(m.hanh_dong)}</p></div>`;
     B.innerHTML = `<div class="cmp"><div class="col card"><h3>Quy định đã rõ <span class="chip c-ok">${a.length}</span></h3>${a.map(item).join('') || '<p class="empty">Không có</p>'}</div><div class="col gap card"><h3>Khoảng trống/cần hướng dẫn <span class="chip c-warn">${b.length}</span></h3>${b.map(item).join('') || '<p class="empty">Không có</p>'}</div></div>`;
   } else {
     const V = DB.van_ban.filter(v => (!topic || v.nhom_chu_de === topic) && (!q || Object.values(v).join(' ').toLowerCase().includes(q)));
@@ -542,10 +629,10 @@ function openProc(ma) {
       <div><button class="btn pri sm" id="eSave">Lưu và ghi nhật ký</button></div></div>` : `<p class="ro" style="margin-top:16px">Chế độ Người xem: chỉ tra cứu.</p>`;
   openDrawer(`${p.ma} · Nhánh ${p.nhanh} – ${BR[p.nhanh]}`, p.ten, `
     <div class="chips"><span class="chip ${legalClass(p.nhan_xac_minh)}">${esc(p.nhan_xac_minh)}</span><span class="chip" style="background:${COL[c]};color:${c === 'warn' ? '#3A2A00' : '#fff'}">${COLNAME[c]}</span><span class="chip c-navy">Ưu tiên: ${esc(p.uu_tien)}</span><span class="chip c-idle">${esc(p.thoi_diem)}</span><span class="chip c-navy">${esc(p.trang_thai_thuc_hien)}</span>${(DB.giai_doan || []).find(g => g.ma === p.giai_doan_10) ? `<span class="chip c-navy">Giai đoạn ${p.giai_doan_10}: ${esc(DB.giai_doan.find(g => g.ma === p.giai_doan_10).ten)}</span>` : ''}${p.luong ? `<span class="chip c-navy">Luồng ${esc(LNAME[p.luong])}</span>` : ''}${p.pham_vi ? `<span class="chip c-navy">Phạm vi: ${esc(p.pham_vi)}</span>` : ''}</div>
-    <dl><dt>Việc cần làm/mục tiêu</dt><dd>${esc(p.muc_tieu)}</dd><dt>Điều kiện đầu vào</dt><dd>${esc(p.dieu_kien_dau_vao)}</dd><dt>Hồ sơ/dữ liệu đầu vào</dt><dd>${esc(p.ho_so_du_lieu)}</dd>
+    <dl><dt>Việc cần làm/mục tiêu</dt><dd>${esc(p.muc_tieu)}</dd><dt>Điều kiện đầu vào</dt><dd>${cv(esc(p.dieu_kien_dau_vao))}</dd><dt>Hồ sơ/dữ liệu đầu vào</dt><dd>${cv(esc(p.ho_so_du_lieu))}<div class="hsref"><b>Căn cứ quy định mẫu đơn, hồ sơ:</b> ${cv(esc(p.can_cu_ho_so)) || '<span class="chip c-warn">CẦN XÁC MINH</span>'}</div></dd>
     <dt>Cơ quan có thẩm quyền</dt><dd>${cv(esc(p.co_quan_chu_tri))}</dd><dt>Cơ quan phối hợp</dt><dd>${esc(p.co_quan_phoi_hop) || '—'}</dd><dt>Kết quả đầu ra</dt><dd>${esc(p.ket_qua_dau_ra)}</dd>
-    <dt>Điều kiện tiên quyết</dt><dd>${p.dieu_kien_tien_quyet ? 'Thực hiện sau khi xong: ' + linkCodes(p.dieu_kien_tien_quyet.replace(/;/g, ', ')) : 'Không có'}</dd><dt>Làm song song với</dt><dd>${p.song_song_voi ? linkCodes(p.song_song_voi.replace(/;/g, ', ')) : '—'}</dd><dt>Bước kế tiếp</dt><dd>${linkCodes(p.buoc_ke_tiep)}</dd><dt>Trách nhiệm PVEP</dt><dd>Đầu mối: <b>${esc(p.don_vi_dau_moi_pvep)}</b><br>Phối hợp: ${esc(p.don_vi_phoi_hop_pvep)}</dd>
-    <dt>Rủi ro/lưu ý</dt><dd>${esc(p.rui_ro_luu_y) || '—'}</dd><dt>Cần xin ý kiến</dt><dd>${p.can_xin_y_kien === 'Có' ? `<span class="chip c-risk">Có – ${esc(p.cap_xin_y_kien)}</span>` : 'Không'}</dd></dl>
+    <dt>Điều kiện tiên quyết</dt><dd>${p.dieu_kien_tien_quyet ? 'Thực hiện sau khi xong: ' + linkCodes(p.dieu_kien_tien_quyet.replace(/;/g, ', ')) : 'Không có'}</dd><dt>Làm song song với</dt><dd>${p.song_song_voi ? linkCodes(p.song_song_voi.replace(/;/g, ', ')) : '—'}</dd><dt>Bước kế tiếp</dt><dd>${linkCodes(p.buoc_ke_tiep)}</dd><dt>Trách nhiệm PVEP</dt><dd>Đầu mối: <b>${esc(p.don_vi_dau_moi_pvep || 'Ban PT&KD Sản phẩm mới')}</b><br>Phối hợp: ${esc(p.don_vi_phoi_hop_pvep || 'Các ban chuyên môn của PVEP')}</dd>
+    <dt>Rủi ro/lưu ý</dt><dd>${cv(esc(p.rui_ro_luu_y)) || '—'}</dd><dt>Cần xin ý kiến</dt><dd>${p.can_xin_y_kien === 'Có' ? `<span class="chip c-risk">Có – ${esc(p.cap_xin_y_kien)}</span>` : 'Không'}</dd></dl>
     <h4>Căn cứ pháp lý</h4><p style="margin:0 0 10px">${cv(esc(p.can_cu_phap_ly))}</p>${vbs.map(vbCard).join('')}
     <h4>Cập nhật và kiểm chứng</h4><dl><dt>Ngày cập nhật</dt><dd>${fmtD(p.ngay_cap_nhat)}</dd><dt>Nguồn kiểm chứng</dt><dd>${esc(p.nguon_kiem_chung)}</dd></dl>${edit}`);
   if (canEdit()) $('#eSave').onclick = () => {
@@ -568,7 +655,8 @@ function openVB(id) {
     <dl><dt>Cơ quan ban hành</dt><dd>${esc(v.co_quan_ban_hanh)}</dd><dt>Ngày ban hành</dt><dd>${fmtD(v.ngay_ban_hanh) || 'CẦN XÁC MINH'}</dd><dt>Ngày hiệu lực</dt><dd>${fmtD(v.ngay_hieu_luc) || 'CẦN XÁC MINH'}</dd>
     <dt>Tình trạng hiệu lực</dt><dd>${esc(v.tinh_trang_hieu_luc)}</dd><dt>Sửa đổi/thay thế</dt><dd>${esc(v.sua_doi_thay_the) || '—'}</dd><dt>Nguồn chính thức</dt><dd>${srcLink(v)}</dd>
     <dt>Nguồn kiểm chứng</dt><dd>${esc(v.nguon_kiem_chung)}</dd><dt>Xác minh</dt><dd>${esc(v.trang_thai_xac_minh)} ${v.ngay_kiem_chung ? '(' + fmtD(v.ngay_kiem_chung) + ')' : ''}</dd><dt>Ghi chú</dt><dd>${esc(v.ghi_chu) || '—'}</dd></dl>
-    <h4>Điều khoản trong ma trận</h4>${rows.map(m => `<div class="vb"><b>${esc(m.dieu_khoan)}</b> <span class="chip ${m.loai === 'Khoảng trống' ? 'c-warn' : 'c-ok'}">${esc(m.loai)}</span><div class="meta">${esc(m.noi_dung_quy_dinh)}</div><div class="src">Hành động: ${esc(m.hanh_dong)}</div></div>`).join('') || '<p class="ro">Chưa có dòng ma trận.</p>'}
+    <p style="margin:14px 0 0"><button class="btn pri sm" type="button" data-lawdoc="${esc(v.ma_vb)}">Xem nguyên văn các điều của văn bản</button></p>
+    <h4>Điều khoản trong ma trận</h4>${rows.map(m => `<div class="vb"><b>${cv(esc(m.dieu_khoan), id)}</b> <span class="chip ${m.loai === 'Khoảng trống' ? 'c-warn' : 'c-ok'}">${esc(m.loai)}</span><div class="meta">${esc(m.noi_dung_quy_dinh)}</div><div class="src">Hành động: ${esc(m.hanh_dong)}</div></div>`).join('') || '<p class="ro">Chưa có dòng ma trận.</p>'}
     <h4>Thủ tục sử dụng văn bản</h4><ul class="list">${used.map(p => `<li><span class="code">${p.ma}</span><button class="linkish t" data-p="${p.ma}">${esc(p.ten)}</button><span></span></li>`).join('') || '<li class="ro">Chưa có</li>'}</ul>`);
 }
 function openRisk(ma) {
@@ -588,14 +676,14 @@ function openKH(ma) {
 }
 
 /* ---------------- điều hướng, sự kiện ---------------- */
-const VIEWS = ['tong-quan', 'ban-do', 'danh-muc', 'ma-tran', 'rui-ro', 'ke-hoach', 'quan-tri'];
+const VIEWS = ['tong-quan', 'ban-do', 'so-do', 'danh-muc', 'ma-tran', 'rui-ro', 'ke-hoach', 'quan-tri'];
 function route() {
   const v = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'tong-quan';
   VIEWS.forEach(x => document.getElementById('v-' + x).classList.toggle('on', x === v));
   document.querySelectorAll('.side nav a').forEach(a => { if (a.dataset.v === v) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
   window.scrollTo(0, 0);
 }
-function renderAll() { renderOverview(); renderJourney(); renderTree(); renderCatalog(); renderMatrix(); renderRisk(); renderPlan(); renderAdmin(); }
+function renderAll() { renderOverview(); renderJourney(); renderTree(); renderLegalMap(); renderCatalog(); renderMatrix(); renderRisk(); renderPlan(); renderAdmin(); }
 
 document.addEventListener('click', e => {
   const t = e.target.closest('[data-p],[data-g],[data-vb],[data-r],[data-kh-open]'); if (!t) return;
@@ -645,7 +733,7 @@ const roleSel = $('#role'), who = $('#who');
 roleSel.value = ST.role; who.value = ST.who;
 roleSel.onchange = () => { ST.role = roleSel.value; save(); renderAll(); };
 who.onchange = () => { ST.who = who.value.trim(); save(); };
-const setScale = v => { ST.scale = Math.min(1.5, Math.max(.85, Math.round(v * 20) / 20)); document.documentElement.style.setProperty('--scale', ST.scale); save(); };
+const setScale = v => { ST.scale = Math.min(1.5, Math.max(.85, Math.round(v * 20) / 20)); document.documentElement.style.setProperty('--scale', ST.scale); save(); setTimeout(drawLinks, 80); };
 setScale(ST.scale || 1);
 $('#zPlus').onclick = () => setScale(ST.scale + .1); $('#zMinus').onclick = () => setScale(ST.scale - .1); $('#zReset').onclick = () => setScale(1);
 
@@ -659,5 +747,6 @@ const side = $('.side');
 $('#menuBtn').onclick = () => { const o = side.classList.toggle('open'); $('#menuBtn').setAttribute('aria-expanded', o); };
 document.querySelectorAll('.side nav a').forEach(a => a.addEventListener('click', () => { side.classList.remove('open'); $('#menuBtn').setAttribute('aria-expanded', 'false'); }));
 renderAll(); route();
-window.PVEP_APP = { DB: () => DB, askItems, verifyItems, F };   // phục vụ kiểm thử tự động
+if (window.LEGAL) LEGAL.linkStatic(document);
+window.PVEP_APP = { DB: () => DB, askItems, verifyItems, F, renderLegalMap };   // phục vụ kiểm thử tự động
 })();

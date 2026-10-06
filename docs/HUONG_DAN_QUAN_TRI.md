@@ -6,15 +6,31 @@
 
 | Bảng (tệp CSV / trang tính Excel) | Nội dung | Khóa |
 | --- | --- | --- |
-| `thu_tuc` | Danh mục thủ tục/đầu việc, căn cứ, cơ quan, đầu mối PVEP, trạng thái, luồng, phạm vi, điều kiện tiên quyết, làm song song | `ma` (TT-x.y) |
+| `thu_tuc` | Danh mục thủ tục/đầu việc, căn cứ, hồ sơ và căn cứ mẫu hồ sơ (`can_cu_ho_so`), cơ quan, đầu mối PVEP, trạng thái, luồng, phạm vi, điều kiện tiên quyết, làm song song | `ma` (TT-x.y) |
 | `cong_quyet_dinh` | 06 cổng quyết định cuối mỗi nhánh | `ma` (G1–G6) |
-| `van_ban` | Danh mục văn bản: số, cơ quan, ngày ban hành, hiệu lực, liên kết, xác minh | `ma_vb` (VBxx) |
+| `van_ban` | Danh mục văn bản: số, cơ quan, ngày ban hành, hiệu lực, liên kết, xác minh; tầng văn bản và quan hệ (`cap_van_ban`, `quy_dinh_chi_tiet_cho`, `sua_doi_cho`, `ap_dung_uu_tien_cho`) dùng cho Sơ đồ pháp lý | `ma_vb` (VBxx) |
 | `ma_tran_phap_ly` | Điều khoản, nội dung, tác động, hành động, loại “Quy định đã rõ/Khoảng trống” | `ma` (MTxx) |
 | `rui_ro` | Sổ rủi ro, khoảng trống pháp lý, cấp xin ý kiến | `ma` (RRxx) |
 | `ke_hoach` | Lộ trình hành động Quý IV/2026 và năm 2027 | `ma` (KHxx) |
 | `giai_doan` | 10 giai đoạn phát triển dự án (tên, mô tả, đầu ra, biểu tượng, cổng quyết định) dùng cho trang “Hành trình 10 giai đoạn” | `ma` (1–10) |
 
 Quy tắc liên kết: cột `ma_van_ban` của `thu_tuc` và cột `ma_vb` của `ma_tran_phap_ly` phải trỏ tới mã có trong `van_ban`. Các mã TT-x.y, RRxx, KHxx, “Cổng Gx” ghi trong cột `buoc_ke_tiep`, `lien_quan` tự động thành liên kết trên giao diện.
+
+### Quy ước trách nhiệm PVEP
+- `thu_tuc.don_vi_dau_moi_pvep`, `ke_hoach.dau_moi`: **Ban PT&KD Sản phẩm mới**.
+- `thu_tuc.don_vi_phoi_hop_pvep`, `ke_hoach.phoi_hop`: **Các ban chuyên môn của PVEP**; không ghi tên ban cụ thể. Chủ thể ngoài PVEP (Petrovietnam, tư vấn) ghi kèm “(ngoài PVEP)”.
+
+### Cách ghi dẫn chiếu để website tự gắn nút xem nguyên văn
+Website tự nhận diện dẫn chiếu trong các cột căn cứ, hồ sơ, rủi ro, lưu ý và biến thành nút bấm. Ghi theo thứ tự “điểm – khoản – Điều – văn bản”, các dẫn chiếu cách nhau bằng dấu chấm phẩy:
+- `điểm a khoản 1 Điều 26 NĐ 58/2025 (sửa bởi khoản 18 Điều 2 NĐ 243/2026)`
+- `khoản 1 Điều 7, Điều 8, khoản 1, 3, 5, 7 Điều 9 NĐ 272/2026` (nhiều điều chung một văn bản)
+- `Khoản 2–4 Điều 52 Luật Dầu khí 10/2026` (dải khoản)
+
+Tên văn bản được nhận diện: Luật Điện lực; Luật Dầu khí (10/2026 hoặc 12/2022); Luật 57/2024, Luật 90/2025; NĐ 58/2025, 243/2026, 272/2026, 274/2026, 57/2025, 56/2025, 11/2021; NQ 253/2025; QĐ 138/QĐ-BNNMT, QĐ 768/QĐ-TTg; Công văn 435; Thông tư 79/2025. Cột `dieu_khoan` của ma trận không cần ghi tên văn bản (lấy theo `ma_vb`). Muốn thêm văn bản mới: bổ sung bí danh trong `assets/legal.js` (mảng `ALIAS`) và nguyên văn trong kho.
+
+Kho nguyên văn `data/dieu_khoan.js` hiện có: Luật Điện lực (81 điều), NĐ 58/2025 (40 điều, kèm nội dung sửa đổi của NĐ 243/2026), NĐ 243/2026, NQ 253/2025, NĐ 274/2026, QĐ 138/QĐ-BNNMT, Luật 90/2025 (Điều 1, 6, 9, 10); NĐ 272/2026 (Điều 5–10, 13, 14) và Luật Dầu khí 10/2026 (Điều 52, 56, 57, 59, 60, 61) lấy từ bản scan đã soát. Dẫn chiếu tới văn bản chưa có nguyên văn vẫn bấm được và hiện thông tin hiệu lực kèm nhãn CẦN XÁC MINH.
+
+Sau mỗi lần sửa dữ liệu, chạy `node tools/check_refs.js` (cần Node.js) để kiểm tra mọi điều, khoản, điểm được dẫn chiếu có tồn tại trong nguyên văn. Kho nguyên văn dựng lại bằng `python tools/build_dieu_khoan.py <thư mục văn bản nguồn dạng text>`.
 
 ### Giá trị được phép (công cụ sẽ từ chối giá trị khác)
 
@@ -31,6 +47,8 @@ Quy tắc liên kết: cột `ma_van_ban` của `thu_tuc` và cột `ma_vb` củ
 | `thu_tuc.trang_thai_thuc_hien`, `ke_hoach.tinh_trang` | Chưa bắt đầu · Đang thực hiện · Hoàn thành · Tạm dừng |
 | `thu_tuc.can_xin_y_kien` | Có · Không |
 | `ma_tran_phap_ly.loai` | Quy định đã rõ · Khoảng trống |
+| `van_ban.cap_van_ban` | 1 Luật, NQ Quốc hội · 2 Nghị định · 3 QĐ Thủ tướng, Thông tư · 4 Văn bản cá biệt · 5 Nội bộ, tham khảo |
+| `van_ban.quy_dinh_chi_tiet_cho`, `sua_doi_cho`, `ap_dung_uu_tien_cho` | Mã VBxx cách nhau bằng dấu chấm phẩy |
 
 ### Quy tắc tô màu trên sơ đồ cây
 
@@ -80,9 +98,9 @@ Sinh lại dữ liệu nội bộ: `python tools/build_data.py --data <thư mụ
 
 | Tần suất | Việc cần làm | Người thực hiện |
 | --- | --- | --- |
-| Hằng tháng | Rà soát văn bản mới về điện lực, đầu tư, đấu thầu, biển, môi trường trên Công báo và Cơ sở dữ liệu quốc gia về pháp luật | Ban Pháp chế, Ban PT&KD SPM |
-| Khi có văn bản mới/sửa đổi | Thêm dòng `van_ban`; ghi `sua_doi_thay_the` cho văn bản cũ; cập nhật `ma_tran_phap_ly` và cột căn cứ của `thu_tuc` | Ban Pháp chế |
-| Hằng quý | Kiểm chứng lại toàn bộ văn bản, cập nhật `ngay_kiem_chung`; trang Ma trận cảnh báo văn bản quá 90 ngày chưa kiểm chứng | Ban Pháp chế |
+| Hằng tháng | Rà soát văn bản mới về điện lực, đầu tư, đấu thầu, biển, môi trường trên Công báo và Cơ sở dữ liệu quốc gia về pháp luật | Ban PT&KD SPM chủ trì, các ban chuyên môn phối hợp |
+| Khi có văn bản mới/sửa đổi | Thêm dòng `van_ban`; ghi `sua_doi_thay_the` cho văn bản cũ; cập nhật `ma_tran_phap_ly` và cột căn cứ của `thu_tuc` | Ban PT&KD SPM chủ trì, các ban chuyên môn phối hợp |
+| Hằng quý | Kiểm chứng lại toàn bộ văn bản, cập nhật `ngay_kiem_chung`; trang Ma trận cảnh báo văn bản quá 90 ngày chưa kiểm chứng | Ban PT&KD SPM chủ trì, các ban chuyên môn phối hợp |
 | Trước mỗi kỳ báo cáo Lãnh đạo | Xuất “Nội dung cần xin ý kiến”, rà soát rủi ro, cập nhật kế hoạch | Ban PT&KD SPM |
 
 Quy tắc nội dung pháp lý:
@@ -94,7 +112,11 @@ Quy tắc nội dung pháp lý:
 - Tiêu chuẩn quốc tế chỉ ghi loại “Tài liệu tham khảo kỹ thuật”.
 - Đánh giá tác động/khả năng của rủi ro và hạn trong kế hoạch là đề xuất; cập nhật khi Lãnh đạo phê duyệt.
 
-## 4. Tình trạng dữ liệu tại 05/10/2026
+## 4. Tình trạng dữ liệu tại 06/10/2026
+
+- Phiên bản 2.2: kiểm tra tự động 332 đích dẫn chiếu, không còn điều/khoản/điểm sai. Đã sửa dẫn chiếu “khoản 4 Điều 7 NĐ 272” thành khoản 3 (Điều 7 chỉ có 3 khoản) và dẫn chiếu phương án cảng thành điểm b khoản 1, điểm b khoản 3 Điều 7 NĐ 272/2026.
+- Khoản 6 Điều 29 NĐ 58/2025 (Bộ Công Thương quyết định tổ chức đấu thầu) đã bị bãi bỏ bởi khoản 29 Điều 2 NĐ 243/2026: cần xác minh cơ quan quyết định tổ chức đấu thầu hiện hành.
+- Văn bản đã đối chiếu không ban hành mẫu đơn, mẫu đề án khảo sát điện gió ngoài khơi (Phụ lục NĐ 58/2025 chỉ có mẫu điện mặt trời mái nhà). Nội dung chính của đề án khảo sát quy định tại điểm a khoản 1 Điều 26 NĐ 58/2025 sửa bởi khoản 18 Điều 2 NĐ 243/2026.
 
 - Đã bổ sung liên kết chính thức cho 3/26 văn bản: Luật Điện lực 61/2024/QH15 (vietlaw.quochoi.vn), NĐ 243/2026/NĐ-CP (moit.gov.vn), NQ 253/2025/QH15 (vbpl.vn). 23 văn bản còn lại chưa tìm được trang chính thức đúng văn bản.
 - Đã bổ sung ngày hiệu lực Luật 57/2024/QH15 (15/01/2025) và Luật 90/2025/QH15 (01/07/2025) từ bản gốc trong bộ tài liệu.

@@ -161,9 +161,9 @@ button,input,select,textarea{font:inherit; color:inherit}
 .pwarn{background:var(--warn-l); border:1px solid #EBD38A; border-radius:8px; padding:10px 12px; font-size:.85rem}
 .psteps{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; position:relative}
 .psteps::before{content:""; position:absolute; left:19px; top:20px; bottom:20px; width:2px; background:var(--line)}
-.pstep button,.pgate button{all:unset; box-sizing:border-box; display:grid; grid-template-columns:40px 1fr auto; gap:14px; align-items:start; width:100%; cursor:pointer; background:#fff; border:1px solid var(--line); border-left:6px solid var(--s); border-radius:10px; padding:12px 14px 12px 8px; position:relative}
-.pstep button:hover,.pgate button:hover{background:#F6FAFD; border-color:var(--navy)}
-.pstep button:focus-visible,.pgate button:focus-visible{outline:3px solid var(--logo-green)}
+.pstep > button,.pgate > button{all:unset; box-sizing:border-box; display:grid; grid-template-columns:40px 1fr auto; gap:14px; align-items:start; width:100%; cursor:pointer; background:#fff; border:1px solid var(--line); border-left:6px solid var(--s); border-radius:10px; padding:12px 14px 12px 8px; position:relative}
+.pstep > button:hover,.pgate > button:hover{background:#F6FAFD; border-color:var(--navy)}
+.pstep > button:focus-visible,.pgate > button:focus-visible{outline:3px solid var(--logo-green)}
 .sn{width:30px; height:30px; border-radius:50%; background:var(--s); color:#fff; font-weight:700; display:grid; place-items:center; font-size:.85rem; margin-left:2px}
 .st{display:flex; flex-direction:column; gap:4px; min-width:0}
 .sc{font-weight:700; color:var(--navy); font-size:.8rem; display:flex; gap:6px; flex-wrap:wrap; align-items:center}
@@ -297,7 +297,7 @@ thead th.sticky{z-index:3; background:var(--navy-d)}
   .timeline{grid-template-columns:repeat(10,104px)}
   .pbody{grid-template-columns:1fr}
   .pcard>header{padding:12px 14px} .pico{display:none}
-  .pstep button,.pgate button{grid-template-columns:34px 1fr}
+  .pstep > button,.pgate > button{grid-template-columns:34px 1fr}
   .sgo{grid-column:2}
   .board{grid-template-columns:1fr 1fr}
 }
@@ -310,3 +310,95 @@ thead th.sticky{z-index:3; background:var(--navy-d)}
   .tbl{max-height:none; overflow:visible}
 }
 @media (prefers-reduced-motion:reduce){.drawer{transition:none}}
+
+/* ---------- v2.2: DẪN CHIẾU ĐIỀU KHOẢN BẤM ĐƯỢC ---------- */
+.lawref{display:inline; border:0; background:var(--navy-l); color:var(--navy); font-weight:600; padding:1px 6px; margin:0 1px; border-radius:5px; cursor:pointer; text-decoration:underline dotted; text-underline-offset:3px; font-size:inherit; line-height:inherit; text-align:left}
+.lawref:hover,.lawref:focus-visible{background:var(--navy); color:#fff; text-decoration:none}
+.lawref.doc{background:#EEF1F8; color:var(--logo-blue)}
+.lawref.row{display:block; width:100%; background:none; padding:6px 4px; text-decoration:none; color:var(--ink)}
+.lawref.row:hover{background:var(--navy-l); color:var(--navy)}
+.lawdoc{font-weight:600; color:var(--ink2)}
+.sref{margin:5px 0 0 54px; font-size:.84rem; color:var(--ink2); line-height:1.7}
+.sreflbl{color:var(--mute); font-weight:600}
+.hsref{margin-top:8px; padding:8px 10px; background:var(--bg); border-left:3px solid var(--logo-green); border-radius:4px; font-size:.86rem}
+.lawmodal{position:fixed; inset:0; background:rgba(10,25,45,.55); z-index:80; display:none; align-items:center; justify-content:center; padding:20px}
+.lawmodal.on{display:flex}
+.lawbox{background:#fff; width:min(980px,100%); max-height:92vh; border-radius:12px; display:flex; flex-direction:column; overflow:hidden; box-shadow:0 18px 50px rgba(0,0,0,.3)}
+.lawbox header{background:var(--navy); color:#fff; padding:14px 18px; display:flex; gap:14px; align-items:center; border-bottom:4px solid var(--logo-green)}
+.lawbox header .btn{background:rgba(255,255,255,.12); color:#fff; border-color:rgba(255,255,255,.4)}
+.lawhead{flex:1; min-width:0}
+.lawhead span{font-size:.8rem; color:#C7DAEA; font-weight:600}
+.lawhead h2{color:#fff; font-size:1.2rem}
+.lawbox .x{background:rgba(255,255,255,.15); border:0; color:#fff; border-radius:6px; min-width:40px; min-height:40px; font-size:1.25rem; cursor:pointer}
+.lawbody{overflow-y:auto; padding:18px 24px 30px; font-size:1.02rem; line-height:1.65}
+.lawdocinfo{background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:10px 14px; margin-bottom:14px; font-size:.9rem}
+.lawdocinfo .meta{color:var(--ink2); margin-top:4px; font-size:.84rem}
+.lawart{border-top:2px solid var(--navy-l); padding-top:12px; margin-top:12px}
+.lawart h3{color:var(--navy-d); font-size:1.15rem; margin-bottom:6px}
+.lawchap{color:var(--mute); font-size:.82rem; margin-bottom:6px}
+.lawwhere{display:inline-block; background:var(--warn-l); border:1px solid #EBD38A; color:#5C4300; border-radius:6px; padding:3px 10px; font-size:.86rem; margin:4px 0 8px}
+.lawart p{margin:6px 0; text-align:justify}
+.lawart p.pt{padding-left:1.4em}
+.lawart p.hl{background:#FFF1B8; box-shadow:-4px 0 0 #F2B705; border-radius:3px; padding:2px 6px}
+.lawart p.pt.hl{padding-left:1.4em}
+.lawart p.hlk{background:#FFFBEA}
+.lawamend{background:#FFF6E5; border:1px solid #F0C979; border-radius:8px; padding:10px 14px; margin:8px 0 12px; font-size:.92rem}
+.lawamend .amitem{margin-top:8px; padding-top:8px; border-top:1px dashed #F0C979}
+.lawamend .amhead{font-weight:600}
+.lawamend p{margin:4px 0}
+.lawlist{list-style:none; padding:0; margin:0; columns:2; column-gap:18px}
+.lawlist li{break-inside:avoid; border-bottom:1px solid var(--line); font-size:.9rem}
+.miss .alert{margin-top:6px}
+@media (max-width:700px){.lawbody{padding:14px; font-size:.98rem}.lawlist{columns:1}.lawbox{max-height:100vh; border-radius:0}.lawmodal{padding:0}}
+
+/* ---------- v2.2: SƠ ĐỒ PHÁP LÝ ---------- */
+.lmlegend{display:flex; flex-wrap:wrap; gap:8px 18px; font-size:.84rem; color:var(--ink2); margin-bottom:12px}
+.lmlegend span{display:inline-flex; align-items:center; gap:6px}
+.ln{display:inline-block; width:28px; height:0; border-top:3px solid var(--navy)}
+.ln-sd{border-top-color:#B07A00}
+.ln-ut{border-top:3px dashed var(--logo-green)}
+.lmap{position:relative; display:flex; flex-direction:column; gap:30px}
+.lmsvg{position:absolute; left:0; top:0; pointer-events:none; z-index:2; overflow:visible}
+.lmsvg path{fill:none; stroke-width:2.2; opacity:.8}
+.lmsvg path.ct{stroke:#005088}
+.lmsvg path.sd{stroke:#B07A00}
+.lmsvg path.ut{stroke:#2CB04A; stroke-dasharray:7 5}
+.tier{position:relative; background:#fff; border:1px solid var(--line); border-radius:10px; padding:12px 14px 14px; border-left:6px solid var(--navy)}
+.tier.t2{border-left-color:#0077A8}.tier.t3{border-left-color:#008F78}.tier.t4{border-left-color:var(--logo-green)}.tier.t5{border-left-color:var(--idle)}
+.tierhead{display:flex; flex-wrap:wrap; gap:4px 14px; align-items:baseline; margin-bottom:10px}
+.tierhead b{color:var(--navy-d); font-size:1rem}
+.tierhead span{font-size:.82rem; color:var(--mute)}
+.tiernodes{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:12px}
+.lnode{position:relative; z-index:3; background:#fff; border:1.5px solid var(--line); border-top:4px solid var(--ok); border-radius:8px; padding:8px 10px; display:flex; flex-direction:column; gap:4px; min-width:0}
+.lnode.s-warn{border-top-color:var(--warn-bg)}.lnode.s-idle{border-top-color:var(--idle)}.lnode.s-risk{border-top-color:var(--risk)}
+.lnmain{border:0; background:none; padding:0; text-align:left; cursor:pointer; display:flex; flex-direction:column; gap:2px}
+.lnmain:hover .lnno{text-decoration:underline}
+.lnno{font-weight:700; color:var(--navy); font-size:.95rem}
+.lnname{font-size:.82rem; color:var(--ink); line-height:1.35}
+.lnmeta{font-size:.74rem; color:var(--ink2); display:flex; align-items:center; gap:5px}
+.lnrel{font-size:.74rem; color:var(--logo-blue); background:#F1F3FA; border-radius:4px; padding:3px 6px}
+.lninfo{font-size:.76rem; align-self:flex-start}
+.rchain{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0}
+.rstep{display:grid; grid-template-columns:56px 1fr; gap:12px; position:relative; padding-bottom:16px}
+.rstep:not(:last-child)::before{content:""; position:absolute; left:27px; top:52px; bottom:0; border-left:3px solid var(--navy-l)}
+.rnum{width:52px; height:52px; border-radius:50%; background:var(--navy); color:#fff; font-weight:700; font-size:1.3rem; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 4px #fff, 0 0 0 6px var(--logo-green)}
+.rcard{background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden}
+.rcard header{background:var(--navy-l); padding:10px 16px; display:flex; flex-wrap:wrap; gap:4px 14px; align-items:baseline}
+.rcard h3{color:var(--navy-d); font-size:1.1rem}
+.rq{font-size:.86rem; color:var(--ok); font-weight:600}
+.rcard dl{margin:0; padding:12px 16px; display:grid; grid-template-columns:170px 1fr; gap:8px 16px; font-size:.92rem}
+.rcard dt{color:var(--mute); font-weight:600; font-size:.82rem}
+.rcard dd{margin:0}
+.authgrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:14px}
+.auth ul{list-style:none; margin:0; padding:0}
+.auth li{display:flex; flex-direction:column; gap:3px; padding:8px 0; border-top:1px solid var(--line); font-size:.92rem}
+.auth li:first-child{border-top:0}
+.authref{font-size:.84rem; color:var(--ink2)}
+@media (max-width:700px){.rcard dl{grid-template-columns:1fr}.rstep{grid-template-columns:40px 1fr}.rnum{width:38px; height:38px; font-size:1rem}.rstep:not(:last-child)::before{left:19px; top:40px}.authgrid{grid-template-columns:1fr}.tiernodes{grid-template-columns:1fr}.sref{margin-left:14px}}
+@media print{.lawmodal{display:none!important}}
+
+.lmall{display:flex; gap:8px; align-items:center; font-size:.86rem; color:var(--ink2); margin:-4px 0 12px; cursor:pointer}
+.lmall input{width:18px; height:18px}
+.lnode.lon{border-color:var(--navy); box-shadow:0 0 0 3px rgba(0,80,136,.18)}
+.lnode.loff{opacity:.35}
+.lmsvg path{stroke-width:2.6; opacity:.95}

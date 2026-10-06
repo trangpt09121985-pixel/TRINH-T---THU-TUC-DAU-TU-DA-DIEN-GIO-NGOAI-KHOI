@@ -1,6 +1,6 @@
 # Danh sách nội dung cần xác minh
 
-Dành cho Ban Pháp chế. Tổng hợp tự động từ bộ dữ liệu công khai ngày 05/10/2026. Trên website có nút “Xuất danh sách CẦN XÁC MINH” (trang Ma trận pháp lý) để lấy bản cập nhật mới nhất dưới dạng CSV.
+Dành cho Ban PT&KD Sản phẩm mới (đầu mối) và các ban chuyên môn của PVEP (phối hợp). Tổng hợp từ bộ dữ liệu công khai, cập nhật ngày 06/10/2026 (phiên bản 2.2). Trên website có nút “Xuất danh sách CẦN XÁC MINH” (trang Ma trận pháp lý) để lấy bản cập nhật mới nhất dưới dạng CSV.
 
 ## 1. Văn bản pháp lý
 
@@ -78,10 +78,53 @@ Dành cho Ban Pháp chế. Tổng hợp tự động từ bộ dữ liệu công
 | MT24 | 768/QĐ-TTg · Danh mục ĐGNK | CẦN XÁC MINH | Tải lại văn bản, đối chiếu |
 | MT26 | Cần xác minh · Toàn văn | CẦN XÁC MINH | Thu thập văn bản |
 | MT27 | 82/2015/QH13 · Quy định giao khu vực biển | CẦN XÁC MINH | Bổ sung văn bản |
-| MT28 | Nội bộ · Phân cấp đầu tư | CẦN XÁC MINH | Xin quy chế từ Ban Pháp chế |
+| MT28 | Nội bộ · Phân cấp đầu tư | CẦN XÁC MINH | Xin quy chế từ ban chuyên môn quản lý quy chế |
 
 ## 4. Ghi chú
 
 - Nhãn trên đây phản ánh mức độ đối chiếu của bộ dữ liệu, không phải kết luận pháp lý.
 - Luật Điện lực 61/2024/QH15 đã được sửa đổi bởi Luật 94/2025/QH15, Luật 116/2025/QH15 và Luật Xây dựng 135/2025/QH15 (thông tin từ văn bản hợp nhất 07/VBHN-VPQH qua nguồn thứ cấp). Cần kiểm tra các điều 20, 25–31, 37 có bị sửa đổi hay không.
 - Sau khi xác minh: cập nhật cột trang_thai_xac_minh, lien_ket_chinh_thuc, ngay_kiem_chung, ngay_doi_chieu_nguon trong tệp Excel, rồi chạy tools/build_data.py.
+
+## 5. Mẫu đơn, hồ sơ chưa xác định được nguồn quy định (bổ sung 06/10/2026)
+
+| Mã | Thủ tục | Nội dung cần xác minh |
+| --- | --- | --- |
+| TT-1.1 | Rà soát quy hoạch điện, danh mục và giai đoạn vận hành dự kiến | tài liệu đầu vào: QĐ 768/QĐ-TTg (CẦN XÁC MINH bản đối chiếu) |
+| TT-1.7 | Chủ trương nghiên cứu nội bộ PVEP và xin ý kiến Petrovietnam | Tờ trình nội bộ theo quy chế, quy định nội bộ của Petrovietnam/PVEP (CẦN XÁC MINH mẫu tờ trình) |
+| TT-2.1 | Xác định chủ thể khảo sát và văn bản phân công | Văn bản phân công/ủy quyền của Petrovietnam: văn bản pháp luật đã đối chiếu không quy định mẫu – theo quy chế nội bộ (CẦN XÁC MINH) |
+| TT-2.3 | Hồ sơ đề nghị giao khu vực biển để khảo sát | Đơn và hồ sơ đề nghị giao khu vực biển: mẫu theo NĐ 11/2021/NĐ-CP được sửa đổi bởi NĐ 65/2025/NĐ-CP (CẦN XÁC MINH số hiệu mẫu) |
+| TT-3.2 | Luồng A: Thủ tướng chấp thuận chủ trương đồng thời chấp thuận nhà đầu tư | Hồ sơ đề nghị chấp thuận chủ trương: theo pháp luật về đầu tư (Luật Đầu tư số 143/2025/QH15 và văn bản hướng dẫn – CẦN XÁC MINH mẫu) và các nội dung tại khoản 1 Điều 7 NĐ 272/2026 |
+| TT-3.3 | Luồng B: UBND tỉnh chấp thuận chủ trương, sau đó lựa chọn nhà đầu tư | Hồ sơ theo pháp luật về đầu tư (CẦN XÁC MINH mẫu) và các nội dung tại khoản 3 Điều 7 NĐ 272/2026 |
+| TT-3.4 | Đề xuất dự án của doanh nghiệp 100% vốn nhà nước cho Công ty TNHH MTV thực hiện | Hồ sơ đề xuất theo pháp luật về đầu tư (CẦN XÁC MINH mẫu) |
+| TT-3.5 | Đấu thầu lựa chọn nhà đầu tư (khi áp dụng) | mẫu hồ sơ do Bộ trưởng Bộ Tài chính ban hành theo điểm a khoản 1 Điều 77 NĐ 274/2026 (CẦN XÁC MINH văn bản mẫu) |
+| TT-3.8 | Quyết định nội bộ về liên danh, SPV hoặc góp vốn | Tài liệu nội bộ theo quy chế Petrovietnam/PVEP (CẦN XÁC MINH mẫu) |
+| TT-4.1 | Báo cáo nghiên cứu tiền khả thi/khả thi | Báo cáo nghiên cứu khả thi theo pháp luật về xây dựng (CẦN XÁC MINH mẫu, nội dung) |
+| TT-4.2 | Khảo sát chi tiết phục vụ thiết kế | nhiệm vụ, phương án khảo sát xây dựng theo pháp luật về xây dựng (CẦN XÁC MINH) |
+| TT-4.3 | Đánh giá tác động môi trường và thủ tục môi trường | Báo cáo đánh giá tác động môi trường: mẫu theo pháp luật về bảo vệ môi trường (CẦN XÁC MINH mẫu và cấp thẩm định) |
+| TT-4.4 | Giao khu vực biển để thực hiện dự án | Đơn và hồ sơ đề nghị giao khu vực biển thực hiện dự án: mẫu theo NĐ 11/2021/NĐ-CP được sửa đổi bởi NĐ 65/2025/NĐ-CP (CẦN XÁC MINH) |
+| TT-4.5 | Tuyến cáp biển, điểm tiếp bờ và phương án đấu nối | hồ sơ thỏa thuận đấu nối theo quy định về hệ thống điện (CẦN XÁC MINH mẫu) |
+| TT-4.6 | Thiết kế, thẩm định, giấy phép xây dựng hoặc thủ tục thay thế | Hồ sơ thẩm định thiết kế, cấp giấy phép xây dựng theo pháp luật về xây dựng (CẦN XÁC MINH mẫu) |
+| TT-4.7 | An toàn hàng hải, quốc phòng – an ninh, phối hợp quản lý dự án | hồ sơ an toàn hàng hải theo Bộ luật Hàng hải và văn bản hướng dẫn (CẦN XÁC MINH) |
+| TT-4.8 | Đất đai cho trạm biến áp, tuyến cáp trên bờ | Hồ sơ giao đất, cho thuê đất theo pháp luật đất đai (CẦN XÁC MINH mẫu) |
+| TT-4.9 | Cảng biển, căn cứ vận hành – bảo dưỡng (O&M) | thủ tục cảng biển theo pháp luật hàng hải (CẦN XÁC MINH mẫu) |
+| TT-5.1 | Cơ chế giá điện và hợp đồng mua bán điện (PPA) | mẫu hợp đồng mua bán điện áp dụng cho điện gió ngoài khơi (CẦN XÁC MINH) |
+| TT-5.2 | Áp dụng ưu đãi điện gió ngoài khơi | Hồ sơ miễn, giảm tiền sử dụng khu vực biển, tiền thuê đất theo pháp luật về biển, đất đai (CẦN XÁC MINH mẫu) |
+| TT-5.3 | Phương án huy động vốn, bảo lãnh, tín dụng | hồ sơ nội bộ theo quy chế (CẦN XÁC MINH) |
+| TT-5.4 | Hợp đồng EPC/EPCI, tua-bin, vận chuyển – lắp đặt, O&M, bảo hiểm | Hồ sơ mời thầu, hợp đồng theo quy chế mua sắm của doanh nghiệp (cơ sở: khoản 2 Điều 1 Luật 90/2025 – CẦN XÁC MINH phạm vi áp dụng) |
+| TT-5.5 | Quyết định đầu tư nội bộ (FID) | Tờ trình quyết định đầu tư theo quy chế phân cấp đầu tư Petrovietnam/PVEP (CẦN XÁC MINH mẫu) |
+| TT-5.6 | Thủ tục thi công ngoài khơi, cảng biển, logistics, quản lý chất lượng | hồ sơ theo pháp luật hàng hải, xây dựng (CẦN XÁC MINH) |
+| TT-6.1 | Nghiệm thu, thử nghiệm, đóng điện, vận hành thương mại | Hồ sơ nghiệm thu theo pháp luật về xây dựng và quy định vận hành hệ thống điện (CẦN XÁC MINH mẫu) |
+| TT-6.2 | Giấy phép hoạt động điện lực lĩnh vực phát điện | Chính phủ quy định hồ sơ, trình tự cấp giấy phép: khoản 5 Điều 32 Luật Điện lực (CẦN XÁC MINH nghị định và mẫu đơn) |
+| TT-6.5 | Chuyển nhượng dự án, cổ phần, phần vốn góp | Hồ sơ chuyển nhượng theo pháp luật về đầu tư, doanh nghiệp (CẦN XÁC MINH mẫu) |
+
+## 6. Phát hiện khi đối chiếu nguyên văn (phiên bản 2.2)
+
+| Nội dung | Căn cứ | Việc cần làm |
+| --- | --- | --- |
+| Khoản 6 Điều 29 NĐ 58/2025 (Bộ Công Thương là cơ quan quyết định tổ chức đấu thầu lựa chọn nhà đầu tư) đã bị bãi bỏ | khoản 29 Điều 2 NĐ 243/2026 | Xác minh cơ quan quyết định tổ chức đấu thầu hiện hành |
+| Hồ sơ đề nghị chấp thuận chủ trương “theo pháp luật về đầu tư”; các nghị định năm 2026 viện dẫn Luật Đầu tư số 143/2025/QH15 | Điều 7 NĐ 272/2026 | Bổ sung Luật Đầu tư 143/2025/QH15 và nghị định hướng dẫn vào bộ tài liệu; xác định mẫu hồ sơ |
+| Mẫu hồ sơ trong lựa chọn nhà đầu tư do Bộ trưởng Bộ Tài chính ban hành | điểm a khoản 1 Điều 77 NĐ 274/2026 | Xác định thông tư ban hành mẫu |
+| Chính phủ quy định hồ sơ, trình tự cấp giấy phép hoạt động điện lực | khoản 5 Điều 32 Luật Điện lực | Xác định nghị định hướng dẫn và mẫu đơn |
+| Định mức diện tích khu vực biển do Bộ Công Thương công bố; khi chưa công bố áp dụng định mức cũ | khoản 19 Điều 2, khoản 7 Điều 3 NĐ 243/2026 | Theo dõi văn bản công bố định mức |
+| Kho nguyên văn NĐ 272/2026 và Luật Dầu khí 10/2026 lấy từ bản scan (đã soát với ảnh trang) | – | Đối chiếu Công báo trước khi trích dẫn trong văn bản chính thức |

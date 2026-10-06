@@ -20,6 +20,7 @@
       <a href="#tong-quan" data-v="tong-quan"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Tổng quan lãnh đạo</a>
       <a href="#ban-do" data-v="ban-do"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="12" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M7.5 12h9M7 11l9.5-5.5M7 13l9.5 5.5"/></svg>Bản đồ quy trình</a>
       <span class="grp">Tra cứu</span>
+      <a href="#so-do" data-v="so-do"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="8" y="2.5" width="8" height="5" rx="1"/><rect x="2" y="16.5" width="7" height="5" rx="1"/><rect x="15" y="16.5" width="7" height="5" rx="1"/><path d="M12 7.5v4M5.5 16.5v-2.5h13v2.5M12 11.5v2.5"/></svg>Sơ đồ pháp lý</a>
       <a href="#danh-muc" data-v="danh-muc"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>Danh mục thủ tục</a>
       <a href="#ma-tran" data-v="ma-tran"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 3v18M5 7h14M7 7l-3 7h6zM17 7l-3 7h6z"/></svg>Ma trận pháp lý</a>
       <span class="grp">Quản trị</span>
@@ -51,7 +52,7 @@
         </div>
       </div>
     </header>
-    <div class="notice" id="notice">Website hướng dẫn tham khảo, ngày chốt thông tin 05/10/2026. Nội dung gắn “CẦN XÁC MINH”, “CHƯA CÓ HƯỚNG DẪN CHI TIẾT”, “CẦN Ý KIẾN CƠ QUAN CÓ THẨM QUYỀN” chưa được dùng làm căn cứ ra quyết định. Chế độ vai trò trên trình duyệt không phải phân quyền máy chủ.</div>
+    <div class="notice" id="notice">Website hướng dẫn tham khảo, ngày chốt thông tin 06/10/2026 (phiên bản 2.2). Bấm vào dẫn chiếu điều khoản để xem nguyên văn. Nội dung gắn “CẦN XÁC MINH”, “CHƯA CÓ HƯỚNG DẪN CHI TIẾT”, “CẦN Ý KIẾN CƠ QUAN CÓ THẨM QUYỀN” chưa được dùng làm căn cứ ra quyết định. Chế độ vai trò trên trình duyệt không phải phân quyền máy chủ.</div>
 
     <!-- 1. TỔNG QUAN -->
     <section class="view" id="v-tong-quan" aria-labelledby="h1v">
@@ -124,6 +125,17 @@
         <div class="treewrap"><div id="tree"></div></div>
       </div>
       <p class="ro" style="margin-top:12px">Cách chia 10 giai đoạn theo thông lệ phát triển dự án điện gió ngoài khơi quốc tế, dùng để dễ hình dung. Trình tự pháp lý theo pháp luật Việt Nam có thể chồng lấn giữa các giai đoạn (ví dụ: với dự án vận hành 2025–2030, hồ sơ chủ trương có thể nộp trước khi khảo sát hiện trường). Thời gian từng giai đoạn chưa được đưa vào vì chưa có nguồn xác minh.</p>
+    </section>
+
+    <!-- 2b. SƠ ĐỒ PHÁP LÝ -->
+    <section class="view" id="v-so-do" aria-labelledby="h2bv">
+      <div class="vhead"><div><h2 id="h2bv">Sơ đồ pháp lý điện gió ngoài khơi</h2><p>Ba cách nhìn hệ thống quy định: thứ bậc văn bản và quan hệ giữa chúng; chuỗi quyết định xác lập quyền của nhà đầu tư; cơ quan nào quyết định việc gì. Bấm vào số hiệu văn bản hoặc điều khoản để đọc nguyên văn.</p></div></div>
+      <div class="tabs" role="tablist" id="sTabs">
+        <button role="tab" data-t="he-thong" aria-selected="true">Hệ thống văn bản</button>
+        <button role="tab" data-t="chuoi" aria-selected="false">Chuỗi xác lập quyền</button>
+        <button role="tab" data-t="tham-quyen" aria-selected="false">Thẩm quyền cơ quan</button>
+      </div>
+      <div id="sBody"></div>
     </section>
 
     <!-- 3. DANH MỤC -->
@@ -225,6 +237,8 @@
 
 <!-- Dữ liệu tách riêng khỏi giao diện: sinh từ data/*.csv bằng tools/build_data.py -->
 <script src="data/data.js"></script>
+<script src="data/so_do_phap_ly.js"></script>
+<script src="assets/legal.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>

@@ -47,15 +47,31 @@ Dành cho người không chuyên CNTT. Thời gian thực hiện khoảng 15 ph
 - Logo PVEP ở góc trên bên trái; nhãn “Bộ dữ liệu công khai”.
 - Trang Tổng quan hiện hai thẻ Mô hình 1, Mô hình 2 và 5 chỉ số.
 - Bản đồ quy trình: Nhánh 3 có hai luồng A/B, Nhánh 4 có nhóm ngoài khơi/trên bờ; bấm một nút mở được khung chi tiết.
+- Bấm một dẫn chiếu điều khoản (chữ nền xanh nhạt, gạch chân chấm) mở được cửa sổ nguyên văn Điều luật.
+- Menu có mục “Sơ đồ pháp lý”.
 
 ## Bước 6. Cập nhật dữ liệu
 
 1. Sửa tệp `data/PVEP_DGNK_du_lieu_mau.xlsx` trên máy.
 2. Mở **Command Prompt** tại thư mục dự án, chạy:
    `python tools/build_data.py --from-xlsx data/PVEP_DGNK_du_lieu_mau.xlsx`
-   (cần Python và thư viện openpyxl; nhờ Ban CNTT cài nếu chưa có).
+   (cần Python và thư viện openpyxl; nhờ bộ phận CNTT cài nếu chưa có).
 3. Trên GitHub, vào thư mục **data** → **Add file → Upload files** → kéo thả `data.js`, các tệp CSV và tệp Excel (tệp cùng tên được ghi đè) → **Commit changes**.
 4. Chờ 1–3 phút, mở lại trang và bấm **Ctrl + F5**.
+
+## Cập nhật từ phiên bản 2.1 lên 2.2
+
+Tải lên (ghi đè) các tệp sau, giữ đúng thư mục:
+
+| Thư mục trên GitHub | Tệp |
+| --- | --- |
+| (gốc) | `index.html`, `README.md` |
+| `assets` | `app.js`, `styles.css`, `legal.js` (mới) |
+| `data` | `data.js`, `dieu_khoan.js` (mới), `so_do_phap_ly.js` (mới), 7 tệp CSV, `PVEP_DGNK_du_lieu_mau.xlsx` |
+| `tools` | `build_data.py`, `test_app.py`, `check_refs.js` (mới), `build_dieu_khoan.py` (mới), `nguon_ocr_da_soat.json` (mới) |
+| `docs` | 4 tệp hướng dẫn |
+
+Cách nhanh nhất: mở thư mục đã giải nén trên máy, vào từng thư mục con trên GitHub → **Add file → Upload files** → kéo thả toàn bộ tệp của thư mục con tương ứng → **Commit changes**. Sau 1–3 phút bấm **Ctrl + F5**. Thiếu tệp `assets/legal.js` hoặc `data/dieu_khoan.js` thì dẫn chiếu không bấm được hoặc cửa sổ báo “Không tải được data/dieu_khoan.js”.
 
 ## Chuyển về riêng tư khi cần
 
