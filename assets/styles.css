@@ -402,3 +402,76 @@ thead th.sticky{z-index:3; background:var(--navy-d)}
 .lnode.lon{border-color:var(--navy); box-shadow:0 0 0 3px rgba(0,80,136,.18)}
 .lnode.loff{opacity:.35}
 .lmsvg path{stroke-width:2.6; opacity:.95}
+
+/* ---------- QUY TRÌNH CHI TIẾT THEO GIAI ĐOẠN (v2.3) ---------- */
+.phsel{display:flex; flex-direction:column; gap:4px; font-size:.82rem; font-weight:600; color:var(--ink2); min-width:min(100%,360px)}
+.phsel select{border:1px solid var(--line); border-radius:8px; padding:9px 12px; background:#fff; font-size:.95rem; font-weight:600; color:var(--navy-d); max-width:100%}
+.dhead{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 16px; background:#fff; border:1px solid var(--line); border-left:5px solid var(--logo-green); border-radius:10px; padding:12px 16px; margin-bottom:14px}
+.dhead b{font-size:1.08rem; color:var(--navy-d)}
+.dhead span{font-size:.84rem; color:var(--ink2)}
+.dsec{font-size:1.08rem; color:var(--navy-d); margin:22px 0 8px; padding-bottom:6px; border-bottom:2px solid var(--navy-l)}
+.plist{margin:6px 0 0; padding-left:20px}
+.plist li{margin:4px 0}
+.cnt{font-weight:700; color:var(--navy)}
+.sq{display:inline-block; width:14px; height:14px; border-radius:3px; border:2px solid var(--navy); background:#fff}
+.sq-d{border-color:var(--warn); background:var(--warn-l); transform:rotate(45deg) scale(.85)}
+.sq-s{border-color:var(--risk); background:var(--risk-l)}
+.sq-x{border-color:var(--idle); border-style:dashed; background:var(--idle-l)}
+.flow{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:16px}
+.fgroup{background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px 16px; position:relative}
+.fgroup:not(:last-child)::after{content:''; position:absolute; left:34px; bottom:-17px; width:2px; height:16px; background:var(--navy)}
+.fgroup.dx{background:#FAFBFC; border-style:dashed; border-color:var(--idle)}
+.fgroup.gate{border:2px solid var(--navy); background:var(--navy-l)}
+.fhead{display:flex; align-items:center; gap:12px; flex-wrap:wrap}
+.fhead > div{flex:1 1 280px; min-width:0}
+.fhead b{color:var(--navy-d); font-size:1.02rem}
+.fhead > div > span{color:var(--ink2); font-size:.92rem}
+.fnum{flex:none; width:38px; height:38px; border-radius:50%; background:var(--navy); color:#fff; display:grid; place-items:center; font-weight:700}
+.fgroup.dx .fnum{background:var(--idle)}
+.fgroup.gate .fnum{background:var(--logo-blue)}
+.fsteps{list-style:none; margin:12px 0 0 18px; padding:0 0 0 18px; border-left:2px solid var(--navy-l); display:flex; flex-direction:column; gap:10px}
+.fstep{position:relative}
+.fstep::before{content:''; position:absolute; left:-25px; top:16px; width:12px; height:12px; border-radius:50%; background:#fff; border:2px solid var(--navy)}
+.fstep.dec::before{border-radius:2px; transform:rotate(45deg); border-color:var(--warn); background:var(--warn-l)}
+.fstep.stop::before{border-color:var(--risk); background:var(--risk-l)}
+.fcard{display:flex; flex-direction:column; gap:4px; width:100%; text-align:left; background:#fff; border:1px solid var(--line); border-radius:10px; padding:10px 14px; cursor:pointer}
+.fcard:hover{border-color:var(--navy); box-shadow:0 2px 8px rgba(0,80,136,.12)}
+.fstep.dec .fcard{border-left:4px solid var(--warn)}
+.fstep.stop .fcard{border-left:4px solid var(--risk)}
+.fgroup.dx .fcard{border-style:dashed}
+.fcode{font-size:.78rem; font-weight:700; color:var(--navy)}
+.ftitle{font-weight:600; color:var(--ink)}
+.fmeta{display:flex; flex-wrap:wrap; gap:6px; margin-top:2px}
+.fout{font-size:.86rem; color:var(--ink2)}
+.fref{font-size:.84rem; color:var(--ink2); margin:6px 0 0 4px}
+.branches{list-style:none; margin:8px 0 0 4px; padding:0; display:flex; flex-direction:column; gap:4px}
+.branches li{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px; font-size:.86rem; background:var(--warn-l); border-radius:8px; padding:5px 10px}
+.bcase{font-weight:600; color:#6B4E00}
+.barrow{color:var(--warn); font-weight:700}
+.gout{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:12px}
+.gout > div{border-radius:10px; padding:10px 12px; font-size:.88rem; background:#fff; border:2px solid}
+.gout b{display:block; font-size:1rem; margin-bottom:2px}
+.gout .go{border-color:var(--ok)} .gout .go b{color:var(--ok)}
+.gout .hold{border-color:var(--warn-bg)} .gout .hold b{color:var(--warn)}
+.gout .nogo{border-color:var(--risk)} .gout .nogo b{color:var(--risk)}
+.gtab th.th-go{background:var(--ok); color:#fff} .gtab th.th-hold{background:var(--warn-bg); color:var(--ink)} .gtab th.th-nogo{background:var(--risk); color:#fff}
+.gtab td.td-go{background:var(--ok-l)} .gtab td.td-hold{background:var(--warn-l)} .gtab td.td-nogo{background:var(--risk-l)}
+table.steps td{font-size:.86rem; vertical-align:top}
+details.mau{background:#fff; border:1px solid var(--line); border-radius:10px; margin:8px 0; padding:0 16px}
+details.mau summary{cursor:pointer; padding:12px 0; color:var(--navy-d)}
+details.mau[open] summary{border-bottom:1px solid var(--line)}
+details.mau ul{padding-left:20px; margin:10px 0 14px}
+details.mau li{margin:4px 0}
+details.mau ol{list-style:lower-alpha; margin:4px 0}
+.kl{display:flex; flex-direction:column; gap:10px}
+.klitem{background:#fff; border:1px solid var(--line); border-radius:10px; padding:12px 16px}
+.klitem p{margin:6px 0 0}
+@media (max-width:700px){
+  .gout{grid-template-columns:1fr}
+  .fsteps{margin-left:6px; padding-left:14px}
+  .fstep::before{left:-21px}
+  .fgroup{padding:12px}
+  .fgroup:not(:last-child)::after{left:30px}
+  .phsel{min-width:100%}
+}
+@media print{.fcard{break-inside:avoid}}

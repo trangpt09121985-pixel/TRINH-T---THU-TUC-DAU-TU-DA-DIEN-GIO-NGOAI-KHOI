@@ -128,3 +128,42 @@ Dành cho Ban PT&KD Sản phẩm mới (đầu mối) và các ban chuyên môn 
 | Chính phủ quy định hồ sơ, trình tự cấp giấy phép hoạt động điện lực | khoản 5 Điều 32 Luật Điện lực | Xác định nghị định hướng dẫn và mẫu đơn |
 | Định mức diện tích khu vực biển do Bộ Công Thương công bố; khi chưa công bố áp dụng định mức cũ | khoản 19 Điều 2, khoản 7 Điều 3 NĐ 243/2026 | Theo dõi văn bản công bố định mức |
 | Kho nguyên văn NĐ 272/2026 và Luật Dầu khí 10/2026 lấy từ bản scan (đã soát với ảnh trang) | – | Đối chiếu Công báo trước khi trích dẫn trong văn bản chính thức |
+
+## 7. Giai đoạn 01 – Khởi tạo dự án (bổ sung 12/10/2026, phiên bản 2.3)
+
+| Nội dung | Ghi nhận | Việc cần làm |
+| --- | --- | --- |
+| Số hiệu nghị định hướng dẫn Luật Đấu thầu năm 2026 | Tên tệp trong Project ghi “247-2026-NĐ-CP”, nội dung văn bản ghi số 274/2026/NĐ-CP. Website dùng 274 và gắn CẦN XÁC MINH | Đối chiếu Công báo |
+| NĐ 100/2025/NĐ-CP | Ngày ban hành 08/5/2025 theo bản scan trong Project | Đối chiếu Công báo |
+| Tài liệu GĐ01 nêu tên một số ban của PVEP ở phần phối hợp | Đã thống nhất theo quy ước: đầu mối Ban PT&KD Sản phẩm mới; phối hợp các ban chuyên môn của PVEP | Không cần xử lý |
+| Hồ sơ trình Bộ, ngành của các bước tiếp theo (giao khu vực biển để khảo sát, chấp thuận chủ trương) | Giai đoạn 01 không có thủ tục hành chính bắt buộc hay mẫu pháp định; hồ sơ bước sau dẫn chiếu NĐ 11/2021, NĐ 65/2025, TT 79/2025/TT-BNNMT, Luật Đầu tư 143/2025 – chưa có nguyên văn trong bộ tài liệu | Bổ sung nguyên văn, xác định mẫu |
+
+### Nội dung PVEP tự xác minh trước Cổng G1
+
+| STT | Nội dung | Trạng thái |
+| --- | --- | --- |
+| 1 | Đường dẫn Cơ sở dữ liệu quốc gia về pháp luật cho từng văn bản tại mục 2 | CẦN XÁC MINH |
+| 2 | Phụ lục QĐ 768/QĐ-TTg; bản gốc QĐ 1509/QĐ-BCT và các quyết định điều chỉnh cập nhật | CẦN XÁC MINH |
+| 3 | Số hiệu, ngày ban hành QĐ giao khu vực biển cho PVN (tên tệp ghi 138/QĐ-BNNMT ngày 14/01/2026) và CV 435/BNNMT-BHĐ | CẦN XÁC MINH |
+| 4 | Số hiệu Luật Tài nguyên, môi trường biển và hải đảo (82/2015/QH13 hay 83/2015/QH13) | CẦN XÁC MINH |
+| 5 | Nội dung TT 79/2025/TT-BNNMT, NĐ 11/2021, NĐ 65/2025: thành phần hồ sơ, mẫu, thời hạn | CẦN XÁC MINH |
+| 6 | Luật Dầu khí 2022: quy định vùng an toàn và khả năng áp dụng cho công trình năng lượng ngoài khơi đến 28/02/2027 | CẦN XÁC MINH |
+| 7 | Quy chế phân cấp PVEP, PVN về chủ trương nghiên cứu, chi phí, ký NDA/MOU, góp vốn | CẦN XÁC MINH |
+| 8 | Khung giá phát điện ĐGNK hiện hành do Bộ Công Thương ban hành | CẦN XÁC MINH |
+| 9 | Cơ sở để Bộ NN&MT giao khảo sát thay cho Thủ tướng (điểm a khoản 2 Điều 27 Luật Điện lực so với khoản 4 Điều 27 NĐ 58/2025 sửa đổi) | CẦN XÁC MINH |
+| 10 | Xác nhận PVEP về mã và phạm vi "Đề xuất bổ sung TT-1.4" | CẦN XÁC MINH |
+
+### Vấn đề cần xin ý kiến chính thức
+
+| STT | Cơ quan dự kiến hỏi | Câu hỏi |
+| --- | --- | --- |
+| 1 | Petrovietnam | PVEP được phân công tham gia khảo sát, phát triển dự án ĐGNK Nam Trung Bộ 1 trên khu vực biển đã giao cho PVN ở tư cách nào (đơn vị thực hiện nhiệm vụ, nhà đầu tư góp vốn, SPV), phạm vi và nguồn vốn ra sao? |
+| 2 | Petrovietnam; qua PVN hỏi Bộ Công Thương | PVEP (công ty do PVN sở hữu) có thuộc "doanh nghiệp do Nhà nước nắm giữ 100% vốn điều lệ" theo điểm a khoản 2 Điều 27, điểm a khoản 1 Điều 28 Luật Điện lực hay chỉ tham gia như "công ty TNHH MTV thuộc doanh nghiệp này" theo điểm b khoản 1 Điều 30 NĐ 58/2025? |
+| 3 | Bộ Nông nghiệp và Môi trường (Cục Biển và Hải đảo Việt Nam) | Khu vực (tọa độ kèm theo) đã có đơn vị được giao hoặc đang thụ lý hồ sơ giao khu vực biển để khảo sát dự án ĐGNK chưa? |
+| 4 | Bộ Công Thương | Tên dự án, công suất, giai đoạn vận hành dự kiến và điểm gom công suất của khu vực theo Kế hoạch thực hiện QHĐ VIII điều chỉnh bản mới nhất; có điều chỉnh cập nhật theo Điều 4 NQ 253/2025 không? |
+| 5 | Bộ Công Thương | Định mức diện tích sử dụng khu vực biển để khảo sát và thực hiện dự án theo khoản 5 Điều 27 NĐ 58/2025 (sđ NĐ 243) đã được công bố chưa? |
+| 6 | Bộ Công Thương (cơ quan quản lý nhà nước về dầu khí), thông qua PVN | Hướng dẫn xác định "diện tích phát triển mỏ", "phục vụ nhu cầu hoạt động dầu khí của mỏ hiện hữu và các mỏ lân cận" tại khoản 2 Điều 52 Luật Dầu khí 10/2026; trình tự phê duyệt và cơ chế thu hồi chi phí trước và sau 01/3/2027 |
+| 7 | Bộ Nông nghiệp và Môi trường; Bộ Công Thương | Nguyên tắc xử lý khu vực ĐGNK chồng lấn lô dầu khí mở hoặc đang có HĐDK |
+| 8 | Bộ Tài chính | Xác nhận đơn vị tiếp nhận, thẩm định hồ sơ CTĐT dự án dự kiến vận hành 2025–2030 và thành phần hồ sơ theo pháp luật đầu tư |
+| 9 | Bộ Công Thương; BQP, BCA, BNG (theo trình tự pháp luật, thường ở bước sau) | Cơ chế lấy ý kiến khi PVEP liên danh hoặc nhận chuyển nhượng có nhà đầu tư nước ngoài |
+| 10 | UBND tỉnh nơi có điểm gom (luồng 2031–2035) | Điểm gom chưa xác định thì tỉnh có kế hoạch đề xuất BCT thống nhất không? |

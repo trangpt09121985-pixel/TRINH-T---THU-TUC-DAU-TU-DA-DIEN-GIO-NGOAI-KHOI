@@ -56,8 +56,44 @@ Dành cho người không chuyên CNTT. Thời gian thực hiện khoảng 15 ph
 2. Mở **Command Prompt** tại thư mục dự án, chạy:
    `python tools/build_data.py --from-xlsx data/PVEP_DGNK_du_lieu_mau.xlsx`
    (cần Python và thư viện openpyxl; nhờ bộ phận CNTT cài nếu chưa có).
-3. Trên GitHub, vào thư mục **data** → **Add file → Upload files** → kéo thả `data.js`, các tệp CSV và tệp Excel (tệp cùng tên được ghi đè) → **Commit changes**.
+3. Trên GitHub, vào thư mục **data** → **Add file → Upload files** → kéo thả `data.js`, các tệp CSV (11 bảng) và tệp Excel (tệp cùng tên được ghi đè) → **Commit changes**.
 4. Chờ 1–3 phút, mở lại trang và bấm **Ctrl + F5**.
+
+## Cập nhật từ phiên bản 2.2 lên 2.3 (Quy trình chi tiết Giai đoạn 01)
+
+Bộ mã 2.3 giữ nguyên cấu trúc thư mục. Cách làm an toàn nhất là tải lên toàn bộ, tệp cùng tên sẽ được ghi đè.
+
+1. Giải nén `PVEP_DGNK_website_v2.3.zip` trên máy. Mở thư mục vừa giải nén, thấy các mục `index.html`, `README.md`, `assets`, `data`, `docs`, `tools`.
+2. Mở kho trên GitHub (trang chính của kho, không vào thư mục con) → **Add file → Upload files**.
+3. Chọn cả 6 mục trên trong cửa sổ thư mục máy tính và kéo thả vào vùng tải lên. GitHub giữ nguyên thư mục con. Không kéo thả thư mục cha `PVEP_DGNK_website_v2.3` (nếu kéo, các tệp sẽ nằm sai cấp và trang báo 404).
+4. Chờ danh sách tệp hiện đầy đủ (khoảng 50 tệp), ô **Commit changes** ghi: `Cập nhật phiên bản 2.3 – Quy trình chi tiết GĐ01` → bấm **Commit changes**.
+5. Vào thẻ **Actions**, chờ dòng “pages build and deployment” chuyển dấu tích xanh (1–3 phút).
+6. Mở trang website, bấm **Ctrl + F5**. Kiểm tra:
+   - Thanh thông báo ghi “phiên bản 2.3”.
+   - Menu trái có mục **Quy trình chi tiết**; mở ra thấy 7 thẻ, thẻ **Trình tự các bước** hiện 36 bước và Cổng G1.
+   - Bấm một bước → ngăn chi tiết mở; bấm một dẫn chiếu điều khoản → cửa sổ nguyên văn mở.
+   - Bản đồ quy trình → Hành trình 10 giai đoạn → Giai đoạn 01 có nút “Quy trình chi tiết giai đoạn (36 bước)”.
+
+Tệp mới hoặc thay đổi trong phiên bản 2.3 (để đối chiếu nếu chỉ muốn tải từng tệp):
+
+| Thư mục | Tệp mới | Tệp thay đổi |
+| --- | --- | --- |
+| (gốc) | – | `index.html`, `README.md` |
+| `assets` | – | `app.js`, `styles.css`, `legal.js` |
+| `data` | `buoc_chi_tiet.csv`, `bieu_mau.csv`, `tieu_chi_cong.csv`, `can_cu_giai_doan.csv`, `quy_trinh_giai_doan.js` | `data.js`, `dieu_khoan.js`, `van_ban.csv`, `PVEP_DGNK_du_lieu_mau.xlsx` |
+| `tools` | `build_gd01.py`, `gd01_conv.py` | `build_data.py`, `build_dieu_khoan.py`, `check_refs.js`, `test_app.py`, `nguon_ocr_da_soat.json` |
+| `docs` | `so_do_GD01.mmd`, `anh_quy_trinh_chi_tiet.png`, `anh_cong_G1.png`, `anh_ho_so_GD01.png` | 4 tệp hướng dẫn |
+
+Lưu ý bảo mật: chỉ tải gói `PVEP_DGNK_website_v2.3.zip`. Gói `PVEP_DGNK_du_lieu_noi_bo_v2.3.zip` lưu trên máy nội bộ hoặc SharePoint của PVEP, không đưa lên GitHub.
+
+Sự cố riêng của bản 2.3:
+
+| Hiện tượng | Cách xử lý |
+| --- | --- |
+| Không thấy mục “Quy trình chi tiết” | Chưa tải `index.html` mới hoặc trình duyệt còn bộ nhớ đệm: tải lại `index.html`, bấm Ctrl + F5 |
+| Mục có nhưng báo “Giai đoạn này chưa được chi tiết hóa” | Thiếu `data/data.js` mới hoặc `data/buoc_chi_tiet.csv` chưa được dựng vào `data.js`: tải lại `data/data.js` |
+| Thẻ Tổng quan, Khung mẫu nội bộ trống | Thiếu `data/quy_trinh_giai_doan.js` |
+| Giao diện thẻ bước không có màu, khung | Thiếu `assets/styles.css` mới |
 
 ## Cập nhật từ phiên bản 2.1 lên 2.2
 

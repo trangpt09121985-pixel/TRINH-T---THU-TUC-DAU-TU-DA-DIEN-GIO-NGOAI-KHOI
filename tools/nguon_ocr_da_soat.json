@@ -108,6 +108,63 @@
   }
  },
  "VB06": {
+  "3": {
+   "dieu": "3",
+   "tieu_de": "Giải thích từ ngữ (trích khoản được dẫn chiếu)",
+   "doan": [
+    "Trong Luật này, các từ ngữ dưới đây được hiểu như sau:",
+    "[...]",
+    "13. Dịch vụ dầu khí là các hoạt động dịch vụ thương mại, kỹ thuật, công nghệ phục vụ cho điều tra cơ bản về dầu khí, hoạt động dầu khí, hoạt động CCS gắn với hoạt động dầu khí và công trình năng lượng ngoài khơi gắn với hoạt động dầu khí.",
+    "[...]",
+    "31. Năng lượng ngoài khơi là các năng lượng gió, mặt trời, đại dương và các dạng năng lượng khác có được từ ngoài khơi.",
+    "[...] (Các khoản khác của Điều 3 chưa đưa vào kho nguyên văn – xem bản gốc.)"
+   ]
+  },
+  "4": {
+   "dieu": "4",
+   "tieu_de": "Áp dụng Luật Dầu khí, các luật có liên quan, pháp luật nước ngoài, thông lệ công nghiệp dầu khí quốc tế",
+   "doan": [
+    "1. Trường hợp có quy định khác nhau giữa Luật Dầu khí và luật khác về cùng một vấn đề cụ thể liên quan đến điều tra cơ bản về dầu khí và hoạt động dầu khí thì áp dụng Luật Dầu khí, bao gồm:",
+    "a) Thẩm quyền, trình tự, thủ tục đầu tư dự án dầu khí;",
+    "b) Thẩm quyền phê duyệt của Hội đồng thành viên Tập đoàn Công nghiệp - Năng lượng Quốc gia Việt Nam về việc sử dụng vốn của Tập đoàn Công nghiệp - Năng lượng Quốc gia Việt Nam, doanh nghiệp do Tập đoàn Công nghiệp - Năng lượng Quốc gia Việt Nam nắm giữ 100% vốn điều lệ khi thực hiện quyền tham gia vào hợp đồng dầu khí, quyền ưu tiên mua trước quyền lợi tham gia trong hợp đồng dầu khí và khi thực hiện hoạt động dầu khí theo các giai đoạn của hợp đồng dầu khí, dự án dầu khí;",
+    "c) Nguyên tắc xử lý chi phí; quản lý, sử dụng thông tin, dữ liệu, tài liệu, mẫu vật, vật tư tồn kho, công trình dầu khí và tài sản khác đã được lắp đặt, đầu tư của hợp đồng dầu khí đã kết thúc để tiếp tục triển khai hoạt động dầu khí, thu dọn công trình dầu khí đã tiếp nhận và xử lý thu dọn;",
+    "d) Việc lựa chọn nhà thầu ký hợp đồng dầu khí;",
+    "đ) Cơ chế điều hành, cơ chế tài chính trong hoạt động khai thác tận thu dầu khí.",
+    "2. Luật khác ban hành sau ngày Luật này có hiệu lực thi hành nếu quy định về thẩm quyền, trình tự, thủ tục, điều kiện để thực hiện điều tra cơ bản về dầu khí và hoạt động dầu khí khác với quy định của Luật Dầu khí thì phải xác định cụ thể nội dung thực hiện hoặc không thực hiện theo quy định của Luật Dầu khí, nội dung thực hiện theo quy định của luật khác đó.",
+    "3. Trong trường hợp pháp luật Việt Nam không có quy định, các bên có thể thỏa thuận việc áp dụng pháp luật nước ngoài hoặc thông lệ công nghiệp dầu khí quốc tế đối với từng nội dung cụ thể trong hợp đồng dầu khí nếu hậu quả của việc áp dụng đó không trái với các nguyên tắc cơ bản của pháp luật Việt Nam."
+   ]
+  },
+  "5": {
+   "dieu": "5",
+   "tieu_de": "Chính sách của Nhà nước về dầu khí",
+   "doan": [
+    "1. Nhà nước khuyến khích tổ chức, cá nhân Việt Nam và nước ngoài đầu tư để tiến hành điều tra cơ bản về dầu khí và hoạt động dầu khí tại Việt Nam nhằm gia tăng tài nguyên, trữ lượng và sản lượng khai thác dầu khí tại các khu vực tiềm năng, các vùng nước sâu, xa bờ; góp phần bảo đảm an ninh năng lượng quốc gia, phát triển kinh tế đất nước và bảo vệ quyền và lợi ích chính đáng của Việt Nam phù hợp với điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên.",
+    "2. Nhà nước bảo đảm quyền sở hữu đối với vốn đầu tư, tài sản và các quyền và lợi ích hợp pháp khác của tổ chức, cá nhân Việt Nam và nước ngoài tiến hành điều tra cơ bản về dầu khí và hoạt động dầu khí tại Việt Nam.",
+    "3. Nhà nước không thu tiền sử dụng khu vực biển để điều tra cơ bản về dầu khí và hoạt động dầu khí, xử lý, vận chuyển tài nguyên dầu khí bằng đường ống về bờ; các công trình và hệ thống đường ống để thu giữ, vận chuyển và lưu trữ CO2.",
+    "4. Nhà nước có chính sách ưu đãi đầu tư đối với dự án dầu khí theo lô, mỏ dầu khí nhằm khuyến khích tìm kiếm thăm dò, phát triển, khai thác dầu khí phi truyền thống; các lô, mỏ dầu khí nằm ở vùng nước sâu, xa bờ, khu vực có điều kiện địa lý khó khăn, đặc biệt khó khăn, địa chất phức tạp; các mỏ dầu khí cận biên; áp dụng giải pháp hoặc công nghệ nâng cao hệ số thu hồi dầu khí.",
+    "5. Nhà nước khuyến khích tổ chức, cá nhân Việt Nam và nước ngoài chia sẻ và tiếp cận, sử dụng cơ sở hạ tầng, công trình dầu khí để thực hiện điều tra cơ bản về dầu khí và hoạt động dầu khí.",
+    "6. Nhà nước khuyến khích tổ chức, cá nhân Việt Nam và nước ngoài sử dụng hàng hóa, dịch vụ của nhà cung cấp trong nước để tiến hành điều tra cơ bản về dầu khí và hoạt động dầu khí.",
+    "7. Nhà nước có chính sách khuyến khích việc chia sẻ, tận dụng cơ sở hạ tầng hiện hữu, thông tin dữ liệu hiện có của ngành dầu khí để phục vụ phát triển kinh tế biển."
+   ]
+  },
+  "8": {
+   "dieu": "8",
+   "tieu_de": "Yêu cầu về an toàn dầu khí",
+   "doan": [
+    "1. Tổ chức, cá nhân tiến hành điều tra cơ bản về dầu khí và hoạt động dầu khí phải thiết lập vùng an toàn xung quanh công trình dầu khí.",
+    "2. Vùng an toàn xung quanh công trình dầu khí trên biển bao gồm:",
+    "a) Vùng cấm xâm nhập đối với các công trình dầu khí trên biển, trừ các công trình ngầm, là vùng được xác định bằng bán kính 500 mét tính từ rìa ngoài cùng của các công trình về mọi phía bao gồm cả vị trí thả neo đối với các phương tiện nổi, công trình di động, trừ trường hợp đặc biệt do Thủ tướng Chính phủ quyết định;",
+    "b) Vùng cấm thả neo hoặc tiến hành các hoạt động ngầm dưới đáy biển là vùng được xác định trong phạm vi 02 hải lý tính từ rìa ngoài cùng của công trình dầu khí bao gồm cả các công trình ngầm dưới đáy biển; các phương tiện, tàu thuyền không được thả neo hoặc tiến hành các hoạt động ngầm dưới đáy biển, trừ trường hợp đặc biệt do nhà thầu chấp thuận hoặc Thủ tướng Chính phủ quyết định.",
+    "3. Vùng an toàn xung quanh công trình dầu khí trên đất liền là vùng an toàn được xác định xung quanh các công trình, thiết bị phục vụ hoạt động dầu khí trên đất liền, tùy thuộc vào điều kiện địa lý, xã hội của nơi tiến hành hoạt động dầu khí, vì mục đích bảo đảm an toàn cho con người và phương tiện trong quá trình triển khai hoạt động dầu khí.",
+    "4. Tổ chức, cá nhân tiến hành điều tra cơ bản về dầu khí và hoạt động dầu khí phải thực hiện các công việc bảo đảm an toàn sau đây:",
+    "a) Xây dựng các tài liệu về quản lý an toàn;",
+    "b) Thiết lập, duy trì và phát triển hệ thống quản lý an toàn bảo đảm kiểm soát các rủi ro;",
+    "c) Thiết lập và duy trì hệ thống ứng cứu khẩn cấp hiệu quả, giảm thiểu thiệt hại khi xảy ra sự cố, tai nạn gây nguy hại cho người, môi trường hoặc tài sản;",
+    "d) Trang bị hệ thống cảnh báo có khả năng phát hiện tình huống xấu có thể xảy ra gây nguy hiểm cho công trình, môi trường;",
+    "đ) Có tàu trực để bảo đảm ứng cứu kịp thời trong trường hợp khẩn cấp đối với các công trình dầu khí trên biển có người làm việc thường xuyên.",
+    "5. Chính phủ quy định chi tiết Điều này."
+   ]
+  },
   "52": {
    "dieu": "52",
    "tieu_de": "Phát triển công trình năng lượng ngoài khơi gắn với hoạt động dầu khí",
@@ -182,6 +239,18 @@
     "1. Luật này có hiệu lực thi hành từ ngày 01 tháng 3 năm 2027.",
     "2. Luật Dầu khí số 12/2022/QH15 hết hiệu lực kể từ ngày Luật này có hiệu lực thi hành, trừ trường hợp quy định tại khoản 3 Điều này và các khoản 3, 4 và 5 Điều 62 của Luật này.",
     "3. Khoản 2 Điều 67 của Luật Dầu khí số 12/2022/QH15 sửa đổi, bổ sung khoản 1 Điều 3 của Luật Thuế tài nguyên số 45/2009/QH12 đã được sửa đổi, bổ sung một số điều theo Luật số 71/2014/QH13 tiếp tục có hiệu lực cho đến khi nội dung này được sửa đổi, bổ sung, thay thế, bãi bỏ."
+   ]
+  },
+  "62": {
+   "dieu": "62",
+   "tieu_de": "Quy định chuyển tiếp",
+   "doan": [
+    "1. Nhà thầu ký hợp đồng dầu khí đã được cấp giấy chứng nhận đăng ký đầu tư trước ngày Luật này có hiệu lực thi hành thì tiếp tục thực hiện theo hợp đồng dầu khí đã ký và giấy chứng nhận đăng ký đầu tư đã cấp.",
+    "2. Đề án, báo cáo, kế hoạch, chương trình dầu khí đã phê duyệt trước ngày Luật này có hiệu lực thi hành thì tiếp tục thực hiện theo các nội dung đã được phê duyệt và không phải bổ sung các nội dung quy định của Luật này.",
+    "3. Đề án, báo cáo, kế hoạch, chương trình, hợp đồng dầu khí đã trình cơ quan có thẩm quyền trước ngày Luật này có hiệu lực thi hành thì không phải trình lại và được thẩm định, phê duyệt theo quy định của pháp luật trước ngày Luật này có hiệu lực thi hành.",
+    "4. Hoạt động vận hành khai thác tận thu theo cơ chế điều hành đã được phê duyệt trước ngày Luật này có hiệu lực thi hành thì tiếp tục thực hiện theo quyết định đã được ban hành và quy định của pháp luật trước ngày Luật này có hiệu lực thi hành.",
+    "5. Việc xử lý chi phí của Tập đoàn Công nghiệp - Năng lượng Quốc gia Việt Nam đang thực hiện thì tiếp tục thực hiện theo quy định của pháp luật trước ngày Luật này có hiệu lực thi hành.",
+    "6. Các nghĩa vụ tài chính của phần dầu, khí của nước chủ nhà từ hợp đồng dầu khí do Tập đoàn Công nghiệp - Năng lượng Quốc gia Việt Nam đã thực hiện thay trước thời điểm có hiệu lực thi hành của Luật số 12/2022/QH15 nhưng chưa được xử lý chi phí trước thời điểm Luật này có hiệu lực thi hành thì được thực hiện theo quy định của khoản 4 Điều 60 của Luật này sau khi có ý kiến chấp thuận của cấp có thẩm quyền."
    ]
   }
  }

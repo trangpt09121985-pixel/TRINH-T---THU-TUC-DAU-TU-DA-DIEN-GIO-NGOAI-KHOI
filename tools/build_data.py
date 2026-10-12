@@ -24,6 +24,10 @@ TABLES = {
     'rui_ro':           ('rui_ro.csv', 'ma'),
     'ke_hoach':         ('ke_hoach.csv', 'ma'),
     'giai_doan':        ('giai_doan.csv', 'ma'),
+    'buoc_chi_tiet':    ('buoc_chi_tiet.csv', 'ma'),
+    'bieu_mau':         ('bieu_mau.csv', 'ma'),
+    'tieu_chi_cong':    ('tieu_chi_cong.csv', 'ma'),
+    'can_cu_giai_doan': ('can_cu_giai_doan.csv', 'ma'),
 }
 LABELS = {'ĐÃ XÁC MINH', 'CẦN XÁC MINH', 'CHƯA CÓ HƯỚNG DẪN CHI TIẾT', 'CẦN Ý KIẾN CƠ QUAN CÓ THẨM QUYỀN'}
 ALLOWED = {
@@ -38,6 +42,9 @@ ALLOWED = {
     ('thu_tuc', 'uu_tien'): {'Cao', 'Trung bình', 'Thấp'},
     ('thu_tuc', 'can_xin_y_kien'): {'Có', 'Không'},
     ('ma_tran_phap_ly', 'loai'): {'Quy định đã rõ', 'Khoảng trống'},
+    ('buoc_chi_tiet', 'loai_buoc'): {'Công việc', 'Quyết định'},
+    ('buoc_chi_tiet', 'de_xuat'): {'Có'},
+    ('tieu_chi_cong', 'quyet_dinh_no_go'): {'Có'},
     ('ke_hoach', 'tinh_trang'): {'Chưa bắt đầu', 'Đang thực hiện', 'Hoàn thành', 'Tạm dừng'},
 }
 
@@ -98,6 +105,18 @@ def validate(db):
             for m in filter(None, (x.strip() for x in r.get(col, '').split(';'))):
                 if m not in vb_ids:
                     errs.append(f'van_ban {r["ma_vb"]}: mã {m} ở cột {col} không có trong van_ban')
+    for r in db.get('buoc_chi_tiet', []):
+        if r.get('thuoc') not in tt_ids:
+            errs.append(f'buoc_chi_tiet {r["ma"]}: đầu việc {r.get("thuoc")} không có trong thu_tuc')
+        if r.get('giai_doan_10') not in ph_ids:
+            errs.append(f'buoc_chi_tiet {r["ma"]}: giai_doan_10 không hợp lệ')
+    for r in db.get('tieu_chi_cong', []):
+        if r.get('cong') not in gate_ids:
+            errs.append(f'tieu_chi_cong {r["ma"]}: cổng {r.get("cong")} không có trong cong_quyet_dinh')
+    for r in db.get('can_cu_giai_doan', []):
+        for m in filter(None, (x.strip() for x in r.get('ma_vb', '').split(';'))):
+            if m not in vb_ids:
+                errs.append(f'can_cu_giai_doan {r["ma"]}: mã văn bản {m} không có trong van_ban')
     for r in db['ma_tran_phap_ly']:
         if r['ma_vb'] not in vb_ids:
             errs.append(f'ma_tran_phap_ly {r["ma"]}: mã văn bản {r["ma_vb"]} không có trong van_ban')

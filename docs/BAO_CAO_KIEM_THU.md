@@ -1,12 +1,13 @@
-# Báo cáo kiểm thử chức năng – phiên bản 2.2
+# Báo cáo kiểm thử chức năng – phiên bản 2.3
 
-Kết quả: **63/63 trường hợp đạt, 0 trường hợp không đạt.** Kiểm thử tự động ngày 06/10/2026 bằng Chromium (Playwright) trên bộ dữ liệu công khai (44 đầu việc, 10 giai đoạn, 6 cổng quyết định, 26 văn bản, 28 dòng ma trận, 14 rủi ro, 14 việc lộ trình); máy tính 1440×900 và điện thoại 390×844. Bộ dữ liệu nội bộ chạy cùng bộ kiểm thử: 63/63 đạt.
+Kết quả: **74/74 trường hợp đạt, 0 trường hợp không đạt.** Kiểm thử tự động ngày 12/10/2026 bằng Chromium (Playwright) trên bộ dữ liệu công khai (44 đầu việc, 10 giai đoạn, 6 cổng quyết định, 32 văn bản, 28 dòng ma trận, 14 rủi ro, 14 việc lộ trình; 36 bước chi tiết, 16 hồ sơ, 11 tiêu chí cổng, 22 căn cứ giai đoạn); máy tính 1440×900 và điện thoại 390×844. Bộ dữ liệu nội bộ chạy cùng bộ kiểm thử: 74/74 đạt.
 
-Kiểm tra dẫn chiếu (`node tools/check_refs.js`): 332 đích dẫn chiếu (điều, khoản, điểm) trong 7 bảng dữ liệu, trang tổng quan và sơ đồ pháp lý đều tồn tại trong nguyên văn; 0 lỗi.
+Kiểm tra dẫn chiếu (`node tools/check_refs.js`): 650 đích dẫn chiếu (điều, khoản, điểm) trong 11 bảng dữ liệu, trang tổng quan, sơ đồ pháp lý và nội dung quy trình chi tiết đều tồn tại trong nguyên văn; 0 lỗi; 6 đích thuộc văn bản chưa có nguyên văn trong bộ tài liệu.
 
-Lỗi phát hiện và đã sửa trong phiên bản 2.2:
-- Dữ liệu: “khoản 4 Điều 7 NĐ 272/2026” (Điều 7 chỉ có 3 khoản) sửa thành khoản 3; dẫn chiếu phương án cảng sửa thành điểm b khoản 1, điểm b khoản 3 Điều 7.
-- Giao diện: kiểu nút của thẻ thủ tục ghi đè lên nút dẫn chiếu; đã giới hạn phạm vi kiểu. Dẫn chiếu căn cứ được đưa ra ngoài nút thẻ để bấm riêng.
+Điểm đã xử lý trong phiên bản 2.3:
+- Chuyển dẫn chiếu rút gọn trong tài liệu GĐ01 (ví dụ “NQ 253 Đ11 k2–k3”) sang dạng đầy đủ “khoản 2–3 Điều 11 NQ 253/2025” để website gắn nút xem nguyên văn; mọi dẫn chiếu đã đối chiếu tự động.
+- Hai dòng căn cứ CC1-02, CC1-03 có điều khoản ghi lẫn văn bản; đã tách đúng văn bản.
+- Tên ban ở phần phối hợp được thống nhất theo quy ước trách nhiệm PVEP.
 
 ## Kết quả chi tiết
 
@@ -45,7 +46,7 @@ Lỗi phát hiện và đã sửa trong phiên bản 2.2:
 | KT24 | Có liên kết nguồn chính thức cho văn bản đã tra cứu | ĐẠT |  |
 | KT25 | So sánh “Quy định đã rõ” và “Khoảng trống” | ĐẠT | 18 quy định đã rõ · 10 khoảng trống |
 | KT26 | Tìm văn bản trong danh mục văn bản | ĐẠT |  |
-| KT27 | Xuất danh sách CẦN XÁC MINH | ĐẠT | 63 nội dung |
+| KT27 | Xuất danh sách CẦN XÁC MINH | ĐẠT | 69 nội dung |
 | KT28 | Bảng rủi ro đủ 13 trường; bản đồ nhiệt đủ mã | ĐẠT |  |
 | KT29 | Lọc rủi ro theo nhóm | ĐẠT |  |
 | KT30 | Xuất “Nội dung cần xin ý kiến Lãnh đạo PVEP/Petrovietnam” | ĐẠT | 24 nội dung |
@@ -60,7 +61,7 @@ Lỗi phát hiện và đã sửa trong phiên bản 2.2:
 | KT39 | Từ chối CSV sai cấu trúc | ĐẠT |  |
 | KT40 | Xóa thay đổi cục bộ, trở về dữ liệu gốc | ĐẠT |  |
 | KT41 | Phóng chữ tối đa 150% (cỡ gốc 17px) | ĐẠT | 25.5px |
-| KT52 | Danh mục: dẫn chiếu điều khoản được gắn nút bấm | ĐẠT | 179 nút |
+| KT52 | Danh mục: dẫn chiếu điều khoản được gắn nút bấm | ĐẠT | 182 nút |
 | KT53 | Chi tiết thủ tục: trách nhiệm PVEP đúng quy ước (đầu mối Ban PT&KD SPM, phối hợp các ban chuyên môn) | ĐẠT |  |
 | KT54 | Mọi thủ tục có trách nhiệm theo quy ước và có căn cứ mẫu đơn, hồ sơ | ĐẠT |  |
 | KT55 | Hồ sơ đầu vào hiển thị căn cứ quy định mẫu đơn, đề án khảo sát | ĐẠT |  |
@@ -69,11 +70,22 @@ Lỗi phát hiện và đã sửa trong phiên bản 2.2:
 | KT58 | Liên kết lồng trong cửa sổ nguyên văn và nút Quay lại | ĐẠT |  |
 | KT59 | Quay lại đúng điều trước; Esc đóng cửa sổ nhưng giữ khung chi tiết | ĐẠT |  |
 | KT60 | Các nhãn căn cứ tĩnh ở trang tổng quan được gắn nút | ĐẠT | 27 |
-| KT61 | Sơ đồ pháp lý: đủ văn bản theo 5 tầng, rê chuột hiện quan hệ | ĐẠT | 26 văn bản |
+| KT61 | Sơ đồ pháp lý: đủ văn bản theo 5 tầng, rê chuột hiện quan hệ | ĐẠT | 32 văn bản |
 | KT62 | Sơ đồ pháp lý: chuỗi 7 bước xác lập quyền và thẻ thẩm quyền cơ quan có dẫn chiếu | ĐẠT |  |
+| KT64 | Quy trình chi tiết GĐ01: đủ các bước nhỏ, nhóm theo đầu việc và Cổng G1 | ĐẠT | 36 bước |
+| KT65 | Bước quyết định, điểm dừng và rẽ nhánh được thể hiện | ĐẠT |  |
+| KT66 | Bấm một bước mở ngăn chi tiết có căn cứ bấm được và nút chuyển bước | ĐẠT |  |
+| KT67 | Căn cứ trong ngăn bước mở nguyên văn điều luật | ĐẠT |  |
+| KT68 | Hồ sơ, biểu mẫu: 16 hồ sơ và 6 khung mẫu nội bộ | ĐẠT |  |
+| KT69 | Căn cứ pháp lý giai đoạn: 22 văn bản, tên văn bản mở được nguyên văn | ĐẠT |  |
+| KT70 | Cổng quyết định: 11 tiêu chí có cột GO/HOLD/NO-GO | ĐẠT |  |
+| KT71 | Cần xác minh: kết luận theo ba mức | ĐẠT |  |
+| KT72 | Bảng chi tiết có đủ cột và tải được CSV | ĐẠT |  |
+| KT73 | Ngăn thủ tục TT-1.1 liệt kê bước chi tiết và dẫn sang quy trình chi tiết | ĐẠT | 6 |
 | KT42 | Điện thoại: không tràn ngang, có nút menu và logo | ĐẠT | scrollWidth=390 |
 | KT43 | Điện thoại: mở menu, chuyển phân hệ, menu tự đóng | ĐẠT |  |
 | KT63 | Điện thoại: sơ đồ pháp lý và cửa sổ nguyên văn không tràn ngang | ĐẠT | 390/390 |
+| KT74 | Điện thoại: quy trình chi tiết không tràn ngang | ĐẠT | 390 |
 | KT44 | Không lỗi JavaScript trong toàn bộ phiên kiểm thử | ĐẠT |  |
 
 ## Giới hạn
@@ -82,4 +94,5 @@ Lỗi phát hiện và đã sửa trong phiên bản 2.2:
 - Mũi tên quan hệ trong Sơ đồ pháp lý ẩn trên màn hình hẹp hơn 900 px; quan hệ vẫn ghi bằng chữ trên từng thẻ văn bản.
 - Kho nguyên văn chưa có các luật chuyên ngành ngoài bộ tài liệu (Luật Đầu tư 143/2025, Luật Bảo vệ môi trường, Luật Biển, Bộ luật Hàng hải…); dẫn chiếu tới các văn bản này hiện thông báo CẦN XÁC MINH.
 - Phân quyền chỉ kiểm thử ở mức giao diện.
+- Phân hệ Quy trình chi tiết hiện mới có Giai đoạn 01; các giai đoạn khác hiển thị “đang xây dựng” trong ô chọn.
 - Chạy lại: `python tools/test_app.py` và `node tools/check_refs.js`.

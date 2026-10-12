@@ -1,0 +1,91 @@
+%% Sơ đồ trình tự Giai đoạn 01 – Khởi tạo dự án (Sàng lọc và xác lập cơ hội). Nguồn: tài liệu GĐ01, rà soát 12/10/2026.
+%% Xem trực tiếp trên GitHub (tệp .mmd) hoặc tại https://mermaid.live
+flowchart TD
+    START(["GIAI ĐOẠN 01 – Khởi tạo dự án<br/>Nhánh 1: Sàng lọc và xác lập cơ hội"])
+
+    subgraph S11["TT-1.1 Rà soát quy hoạch điện, danh mục và giai đoạn vận hành dự kiến"]
+        A1["1.1.1 Tiếp nhận, cấp mã cơ hội"] --> A2["1.1.2 Kiểm tra nguồn tin, tọa độ, độ tin cậy dữ liệu, NDA"]
+        A2 --> A3["1.1.3 Đối chiếu QĐ 768/QĐ-TTg và Kế hoạch thực hiện"]
+        A3 --> A4{"1.1.4 Giai đoạn vận hành dự kiến?"}
+        A4 -->|"2025–2030"| A4a["Luồng TTg chấp thuận CTĐT đồng thời NĐT<br/>NQ 253 Đ11 · NĐ 272 Đ9"]
+        A4 -->|"2031–2035"| A4b["Luồng UBND tỉnh nơi có điểm gom<br/>NQ 253 Đ12 · NĐ 272 Đ10"]
+        A4 -->|"Ngoài danh mục"| A4c["Pháp luật giao khu vực biển chung<br/>NĐ 272 Đ13 k2"]
+        A4a --> A5
+        A4b --> A5
+        A4c --> A5
+        A5{"1.1.5 Khu vực đã giao khảo sát<br/>hoặc đã có CTĐT cho chủ thể khác?"}
+        A5 -->|"Có, không phải PVN/PVEP"| X1["Dừng luồng đầu tư mới<br/>chuyển xét hợp tác hoặc M&A"]
+        A5 -->|"Không / Chưa rõ"| A6["1.1.6 Đối chiếu điều kiện ưu đãi NĐ 58 Đ25"]
+    end
+
+    subgraph S12["TT-1.2 Xác định điểm gom công suất"]
+        B1["1.2.1 Điểm gom theo QH/KH thực hiện"] --> B2{"Đã xác định?"}
+        B2 -->|"Chưa"| B2h["HOLD: cần UBND tỉnh đề xuất, BCT thống nhất<br/>NQ 253 Đ12 k3b"]
+        B2 -->|"Có"| B3["1.2.3 Sơ bộ lưới, tuyến cáp vào bờ"]
+        B3 --> B4["1.2.4 Xác định tỉnh thẩm quyền, phụ tải và hạ tầng dùng chung"]
+    end
+
+    subgraph S13["TT-1.3 Rà soát chồng lấn không gian biển"]
+        C1["1.3.1 Ranh giới GIS, diện tích so định mức"] --> C2["1.3.2 Dầu khí: lô, mỏ, đường ống, vùng an toàn"]
+        C2 --> C3["1.3.3 Quốc phòng – an ninh: chỉ đánh dấu"]
+        C3 --> C4["1.3.4 Hàng hải, cảng, luồng, tuyến cáp"]
+        C4 --> C5["1.3.5 Bảo tồn, đa dạng sinh học, thủy sản"]
+        C5 --> C6["1.3.6 QH không gian biển, QH tỉnh, khu vực đã giao"]
+        C6 --> C7{"1.3.7 Mức chồng lấn"}
+        C7 -->|"Đỏ: loại trừ"| X2["NO-GO hoặc điều chỉnh ranh giới"]
+        C7 -->|"Vàng: cần ý kiến"| C8["Đưa vào danh sách xin ý kiến"]
+        C7 -->|"Xanh"| C9["Tiếp tục"]
+    end
+
+    subgraph S14["Đề xuất bổ sung TT-1.4 – cần PVEP xác nhận mã và phạm vi"]
+        D1["ĐX-1.4.1 Gió, độ sâu, nền móng, hải văn"] --> D2["ĐX-1.4.2 Khoảng cách bờ, cảng, chuỗi cung ứng, khả năng khảo sát"]
+        D2 --> D3["ĐX-1.4.3 Thị trường điện, phương án tiêu thụ, khung giá"]
+    end
+
+    subgraph S15["TT-1.5 Phân loại mô hình dự án"]
+        E1{"1.5.1 Đạt đủ điều kiện Luật Dầu khí 2026 Đ52 k2<br/>và đã có hiệu lực?"}
+        E1 -->|"Đủ điều kiện, từ 01/3/2027"| E1a["Nhánh 4: công trình năng lượng<br/>gắn với hoạt động dầu khí"]
+        E1 -->|"Không đủ / chưa hiệu lực"| E1b["Dự án ĐGNK độc lập<br/>Luật Điện lực · Đ52 k4"]
+        E1a --> E1c["Chờ NĐ hướng dẫn<br/>CHƯA_CÓ_HƯỚNG_DẪN_CHI_TIẾT"]
+        E1b --> E2["1.5.3 Mục đích tiêu thụ: HTĐQG / xuất khẩu / DPPA / năng lượng mới"]
+        E2 --> E3{"1.5.4 Luồng cơ hội"}
+        E3 --> L1["Luồng 1: Đầu tư mới"]
+        E3 --> L2["Luồng 2: Hợp tác, liên danh, liên doanh<br/>gồm khu vực PVN đang khảo sát"]
+        E3 --> L3["Luồng 3: M&A"]
+    end
+
+    subgraph S16["TT-1.6 Xác định mô hình tham gia của PVEP"]
+        F1["1.6.1 Tư cách pháp lý PVEP so với Luật Điện lực Đ27 k2a, NĐ 58 Đ30"] --> F2["1.6.2 Lựa chọn vai trò"]
+        F2 --> F3["1.6.3 Điều kiện vốn: NĐ 272 Đ5, Đ8 · NĐ 58 Đ28, Đ30 k2"]
+        F3 --> F4["1.6.4 Đối tác: KYC, sở hữu, yếu tố nước ngoài"]
+        F4 --> F5["1.6.5 M&A: thẩm định sơ bộ quyền phát triển thực có"]
+        F5 --> F6["1.6.6 Thẩm quyền nội bộ PVEP/PVN"]
+    end
+
+    subgraph S17["TT-1.7 Chủ trương nghiên cứu nội bộ PVEP và xin ý kiến Petrovietnam"]
+        G1a["1.7.1 Ma trận pháp lý, rủi ro, dữ liệu thiếu"] --> G2["1.7.2 Kế hoạch, ngân sách nghiên cứu GĐ02"]
+        G2 --> G3["1.7.3 Danh sách xin ý kiến PVN và cơ quan nhà nước"]
+        G3 --> G4["1.7.4 Lấy ý kiến các Ban"]
+        G4 --> G5["1.7.5 Báo cáo sàng lọc và tờ trình G1"]
+    end
+
+    START --> A1
+    A6 --> B1
+    B4 --> C1
+    B2h -.-> G3
+    C8 -.-> G3
+    C9 --> D1
+    D3 --> E1
+    E1c --> F1
+    L1 --> F1
+    L2 --> F1
+    L3 --> F1
+    F6 --> G1a
+    X1 -.-> L2
+    X1 -.-> L3
+
+    G5 --> GATE{"CỔNG G1<br/>Lãnh đạo PVEP quyết định"}
+    GATE -->|"GO"| OUT1["Giai đoạn 02 Nghiên cứu tiền khả thi<br/>và chuẩn bị hồ sơ giao khu vực biển khảo sát – GĐ03"]
+    GATE -->|"HOLD"| OUT2["Thu thập thêm dữ liệu, chờ ý kiến PVN hoặc cơ quan nhà nước"]
+    GATE -->|"NO-GO"| OUT3["Dừng nghiên cứu, lưu hồ sơ"]
+    OUT2 -.-> G1a

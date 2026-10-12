@@ -13,8 +13,20 @@
 | `rui_ro` | Sổ rủi ro, khoảng trống pháp lý, cấp xin ý kiến | `ma` (RRxx) |
 | `ke_hoach` | Lộ trình hành động Quý IV/2026 và năm 2027 | `ma` (KHxx) |
 | `giai_doan` | 10 giai đoạn phát triển dự án (tên, mô tả, đầu ra, biểu tượng, cổng quyết định) dùng cho trang “Hành trình 10 giai đoạn” | `ma` (1–10) |
+| `buoc_chi_tiet` | Các bước nhỏ của từng giai đoạn (phân hệ “Quy trình chi tiết”) | `ma` (TT-x.y.z; ĐX-x.y.z cho bước đề xuất) |
+| `bieu_mau` | Hồ sơ, báo cáo, biểu mẫu của giai đoạn và văn bản quy định mẫu | `ma` (HSxx) |
+| `tieu_chi_cong` | Tiêu chí GO/HOLD/NO-GO của cổng quyết định | `ma` (G1-01…) |
+| `can_cu_giai_doan` | Danh mục căn cứ pháp lý riêng của giai đoạn, điều khoản áp dụng, mức độ, nhận định | `ma` (CC1-01…) |
 
 Quy tắc liên kết: cột `ma_van_ban` của `thu_tuc` và cột `ma_vb` của `ma_tran_phap_ly` phải trỏ tới mã có trong `van_ban`. Các mã TT-x.y, RRxx, KHxx, “Cổng Gx” ghi trong cột `buoc_ke_tiep`, `lien_quan` tự động thành liên kết trên giao diện.
+
+### Thêm quy trình chi tiết cho giai đoạn khác
+1. Thêm dòng vào `buoc_chi_tiet` với `giai_doan_10` là số giai đoạn (1–10), `thuoc` là mã đầu việc có trong `thu_tuc`, `thu_tu` là số thứ tự hiển thị.
+2. Cột chính của `buoc_chi_tiet`: `cong_viec`, `muc_tieu`, `luong`, `dau_vao`, `phoi_hop`, `can_cu`, `ho_so`, `dau_ra`, `dieu_kien_chuyen_buoc`, `rui_ro`, `trang_thai_phap_ly` (bắt đầu bằng “Có căn cứ”, “Nội bộ” hoặc ghi nhãn cần xác minh), `loai_buoc` (Công việc/Quyết định), `diem_dung` (để trống nếu không phải điểm dừng), `de_xuat` (Có nếu là bước đề xuất bổ sung, chưa được PVEP xác nhận).
+3. Cột `re_nhanh` ghi theo cú pháp `trường hợp → kết quả | trường hợp → kết quả`. Website hiển thị mỗi trường hợp thành một dòng rẽ nhánh.
+4. Thêm hồ sơ vào `bieu_mau`, tiêu chí vào `tieu_chi_cong` (cột `cong` là mã cổng trong `cong_quyet_dinh`; `quyet_dinh_no_go` = Có nếu là tiêu chí loại trừ), căn cứ vào `can_cu_giai_doan` (`ma_vb` trỏ tới `van_ban`, nhiều mã cách nhau bằng dấu chấm phẩy).
+5. Phần tổng quan, khung mẫu nội bộ, quy tắc cổng, nội dung xin ý kiến và kết luận ghi trong `data/quy_trinh_giai_doan.js` theo khóa số giai đoạn (xem khóa `'1'` làm mẫu). Không có khóa này, các thẻ bảng vẫn hiển thị.
+6. Chạy `python tools/build_data.py` rồi `node tools/check_refs.js`. Công cụ từ chối dòng có mã đầu việc, cổng, văn bản không tồn tại.
 
 ### Quy ước trách nhiệm PVEP
 - `thu_tuc.don_vi_dau_moi_pvep`, `ke_hoach.dau_moi`: **Ban PT&KD Sản phẩm mới**.
@@ -112,7 +124,7 @@ Quy tắc nội dung pháp lý:
 - Tiêu chuẩn quốc tế chỉ ghi loại “Tài liệu tham khảo kỹ thuật”.
 - Đánh giá tác động/khả năng của rủi ro và hạn trong kế hoạch là đề xuất; cập nhật khi Lãnh đạo phê duyệt.
 
-## 4. Tình trạng dữ liệu tại 06/10/2026
+## 4. Tình trạng dữ liệu tại 06/10/2026 (bổ sung 12/10/2026: 36 bước GĐ01, 16 hồ sơ, 11 tiêu chí G1, 22 căn cứ GĐ01, 32 văn bản)
 
 - Phiên bản 2.2: kiểm tra tự động 332 đích dẫn chiếu, không còn điều/khoản/điểm sai. Đã sửa dẫn chiếu “khoản 4 Điều 7 NĐ 272” thành khoản 3 (Điều 7 chỉ có 3 khoản) và dẫn chiếu phương án cảng thành điểm b khoản 1, điểm b khoản 3 Điều 7 NĐ 272/2026.
 - Khoản 6 Điều 29 NĐ 58/2025 (Bộ Công Thương quyết định tổ chức đấu thầu) đã bị bãi bỏ bởi khoản 29 Điều 2 NĐ 243/2026: cần xác minh cơ quan quyết định tổ chức đấu thầu hiện hành.
