@@ -189,3 +189,12 @@ Nội dung mới cần xác minh:
 | Luật 68/2025/QH15 (Điều 18, 20, 23) | Đối chiếu qua nguồn thứ cấp | Bổ sung nguyên văn; xác định nghị định hướng dẫn |
 | PVEP có thuộc diện “doanh nghiệp nhà nước” | Ảnh hưởng áp dụng điểm d khoản 7 Điều 3 Luật Đấu thầu số 22/2023/QH15 khi thuê tư vấn | Xin ý kiến bộ phận pháp chế |
 | Quy chế tài chính, mua sắm của Petrovietnam, PVEP | Chưa có trong bộ tài liệu | Bổ sung để hoàn thiện thẻ Tài chính, chi phí |
+
+## 9. Kết quả xử lý theo tài liệu bổ sung ngày 13/10/2026 (phiên bản 2.5)
+
+| Nội dung | Kết quả |
+| --- | --- |
+| Luật Đo đạc và bản đồ 27/2018/QH14 | ĐÃ XÁC MINH theo tệp .doc (nguyên văn khi ban hành). Bổ sung: khoản 4 Điều 11 (cơ quan nhà nước công bố tham số tính chuyển giữa hệ tọa độ quốc gia và quốc tế); Điều 27 (hải đồ vùng biển do Bộ Quốc phòng thành lập; vùng nước cảng biển, luồng do Bộ GTVT); Điều 41 (bảo mật; cung cấp dữ liệu cho tổ chức, cá nhân nước ngoài). Còn phải xác minh các luật sửa đổi sau năm 2018 (nếu có) |
+| QĐ 83/2000/QĐ-TTg | ĐÃ XÁC MINH theo tệp docx: ký 12/7/2000, hiệu lực sau 30 ngày kể từ ngày ký; VN-2000 dùng ellipsoid WGS-84, điểm gốc N00, lưới chiếu UTM. Còn phải xác minh văn bản thay thế (nếu có) |
+| QĐ 1509/QĐ-BCT | Tệp gửi lần này trùng với bản đã đối chiếu ngày 12/10/2026 |
+| Chức năng thành lập hải đồ vùng nước cảng biển, luồng (khoản 5 Điều 27 Luật Đo đạc và bản đồ ghi Bộ GTVT) | CẦN XÁC MINH bộ đang đảm nhiệm sau sắp xếp bộ máy năm 2025 |

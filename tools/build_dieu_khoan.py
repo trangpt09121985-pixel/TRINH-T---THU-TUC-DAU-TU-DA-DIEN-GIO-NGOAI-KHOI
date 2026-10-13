@@ -168,6 +168,18 @@ add('VB28', paras_from_layout(f'{SRC}/qd1509.txt')[:60], 'Tệp docx QĐ 1509/Q�
 for n, a in DOCS['VB28']['dieu'].items():
     a['p'] = [a['t'].split('/.')[0].strip()]
     a['t'] = {'1': 'Ban hành Kế hoạch thực hiện', '2': 'Hiệu lực thi hành', '3': 'Trách nhiệm thi hành'}.get(n, '')
+# VB33 Luật Đo đạc và bản đồ 27/2018/QH14 – tệp .doc (mỗi dòng một đoạn)
+add('VB33', paras_from_md(f'{SRC}/luat27.txt'), 'Tệp .doc Luật 27/2018/QH14 trong bộ tài liệu dự án', 'van_ban_so',
+    'Nguyên văn khi ban hành (hiệu lực 01/01/2019). Các luật sửa đổi sau đó (nếu có) chưa được đối chiếu – CẦN XÁC MINH.')
+# VB34 QĐ 83/2000/QĐ-TTg – docx (pandoc plain, đoạn cách nhau bởi dòng trống)
+_q83 = [re.sub(r'\s+', ' ', b).strip() for b in re.split(r'\n\s*\n', open(f'{SRC}/qd83.txt', encoding='utf-8').read())]
+_q83 = [b for b in _q83 if b and not b.startswith('+--') and not b.startswith('---')]
+add('VB34', _q83, 'Tệp docx QĐ 83/2000/QĐ-TTg trong bộ tài liệu dự án', 'van_ban_so',
+    'Quyết định gồm 5 điều; hiệu lực sau 30 ngày kể từ ngày ký (Điều 4).')
+_t83 = {'1': 'Hệ quy chiếu và Hệ tọa độ quốc gia VN-2000', '2': 'Phạm vi áp dụng', '3': 'Hướng dẫn áp dụng', '4': 'Hiệu lực thi hành', '5': 'Trách nhiệm thi hành'}
+for n, a in DOCS['VB34']['dieu'].items():
+    a['p'] = [a['t']] + a['p']; a['t'] = _t83.get(n, '')
+DOCS['VB34']['dieu']['5']['p'] = [x for x in DOCS['VB34']['dieu']['5']['p'] if not x.startswith('|')]
 # Trích đoạn (mục, bảng, phụ lục) của văn bản không chia theo điều
 trich = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'trich_doan.json'), encoding='utf-8'))
 for ma, t in trich.items():
@@ -184,7 +196,7 @@ DOCS['VB02']['sua_doi'] = {t: [dict(x, boi='VB03', dieu_boi='2') for x in v]
 for ma, d in DOCS.items():
     print(ma, len(d['dieu']), 'điều', d['thu_tu'][:3], '...', d['thu_tu'][-2:], 'sửa đổi:', sorted(d['sua_doi'].keys())[:40])
 
-payload = {'phien_ban': '2.4', 'ngay_dung': '2026-10-12', 'vb': DOCS}
+payload = {'phien_ban': '2.5', 'ngay_dung': '2026-10-13', 'vb': DOCS}
 js = '/* Kho nguyên văn điều khoản – sinh tự động bởi tools/build_dieu_khoan.py. Không sửa tay. */\n'
 js += 'window.DIEU_KHOAN = ' + json.dumps(payload, ensure_ascii=False, separators=(',', ':')) + ';\n'
 open(OUT, 'w', encoding='utf-8').write(js)

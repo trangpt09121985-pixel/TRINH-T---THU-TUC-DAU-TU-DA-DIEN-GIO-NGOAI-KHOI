@@ -1,12 +1,12 @@
-/* Nội dung chi tiết hóa giai đoạn (cập nhật v2.4 ngày 12/10/2026). Bảng bước, hồ sơ, tiêu chí cổng, tài chính nằm trong các tệp CSV. */
+/* Nội dung chi tiết hóa giai đoạn (cập nhật v2.5 ngày 13/10/2026). Bảng bước, hồ sơ, tiêu chí cổng, tài chính nằm trong các tệp CSV. */
 window.QT_GIAI_DOAN = {
  "1": {
   "ten": "Giai đoạn 01 – Khởi tạo dự án · Nhánh 1 – Sàng lọc và xác lập cơ hội",
-  "ngay_ra_soat": "2026-10-12",
+  "ngay_ra_soat": "2026-10-13",
   "tom_tat": "Nội dung chi tiết hóa các đầu việc TT-1.1 đến TT-1.7 và Cổng G1 trong Bản đồ trình tự và thủ tục pháp lý đầu tư dự án điện gió ngoài khơi của PVEP. Giai đoạn 01 là công việc sàng lọc nội bộ; chưa phát sinh thủ tục hành chính bắt buộc. Kết quả G1 không tạo ra quyền khảo sát, quyền sử dụng khu vực biển hay tư cách nhà đầu tư cho PVEP.",
   "pham_vi": [
    "Tài liệu chỉ chi tiết hóa Giai đoạn 01 (Project setup) – Nhánh 1 trong bản đồ 10 giai đoạn của PVEP, từ khi tiếp nhận cơ hội đến khi Lãnh đạo PVEP ra quyết định tại Cổng G1.",
-   "Điểm chuyển tiếp: kết quả Go tại G1 mở Giai đoạn 02 (Nghiên cứu tiền khả thi) và/hoặc Giai đoạn 03 (Khảo sát hiện trường). Các thủ tục giao khu vực biển để khảo sát, chấp thuận chủ trương đầu tư, lựa chọn nhà đầu tư, ĐTM, đấu nối, PPA chỉ được nêu như bước tiếp theo và điều kiện chuyển bước.",
+   "Điểm chuyển tiếp: kết quả Tiếp tục tại G1 mở Giai đoạn 02 (Nghiên cứu tiền khả thi) và/hoặc Giai đoạn 03 (Khảo sát hiện trường). Các thủ tục giao khu vực biển để khảo sát, chấp thuận chủ trương đầu tư, lựa chọn nhà đầu tư, ĐTM, đấu nối, PPA chỉ được nêu như bước tiếp theo và điều kiện chuyển bước.",
    "Mốc pháp lý: văn bản rà soát đến ngày 12/10/2026.",
    "Giữ nguyên mã TT-1.1, TT-1.2, TT-1.3, TT-1.5, TT-1.6, TT-1.7, G1. Nội dung đánh giá kỹ thuật – thương mại sơ bộ được đặt riêng dưới nhãn \"Đề xuất bổ sung TT-1.4 – cần PVEP xác nhận mã và phạm vi\" (mã ĐX-1.4.x), không thay thế mã chính thức."
   ],
@@ -89,7 +89,7 @@ window.QT_GIAI_DOAN = {
      "L1. Đầu tư mới tại khu vực chưa có chủ đầu tư",
      "Rà soát quy hoạch, điểm gom, chồng lấn, kỹ thuật sơ bộ, ma trận pháp lý",
      "Phải xác định chủ thể đứng tên đơn vị khảo sát hoặc lập hồ sơ CTĐT (PVN hay PVEP); kiểm tra năng lực vốn chủ sở hữu 01 tỷ đồng/MW (điểm a khoản 2 Điều 5 NĐ 272/2026)",
-     "Khu vực chưa giao khảo sát cho chủ thể khác (khoản 2 Điều 13 NĐ 272/2026); xác định được luồng 2025–2030 hay 2031–2035; có văn bản PVN phân công hoặc chấp thuận PVEP đứng tên CẦN XÁC MINH; G1 = Go"
+     "Khu vực chưa giao khảo sát cho chủ thể khác (khoản 2 Điều 13 NĐ 272/2026); xác định được luồng 2025–2030 hay 2031–2035; có văn bản PVN phân công hoặc chấp thuận PVEP đứng tên CẦN XÁC MINH; G1 = Tiếp tục"
     ],
     [
      "L2. Hợp tác, liên danh, liên doanh (gồm khu vực PVN hoặc đối tác đang nghiên cứu)",
@@ -207,7 +207,7 @@ window.QT_GIAI_DOAN = {
       ]
      },
      {
-      "t": "Kết luận/kiến nghị: tiếp tục sàng lọc đầy đủ / đề xuất No-Go sớm.",
+      "t": "Kết luận/kiến nghị: tiếp tục sàng lọc đầy đủ / đề xuất Dừng sớm.",
       "con": []
      },
      {
@@ -327,7 +327,7 @@ window.QT_GIAI_DOAN = {
     "ten": "Tờ trình hoặc báo cáo trình Cổng quyết định G1",
     "muc": [
      {
-      "t": "Mục đích: đề nghị Lãnh đạo PVEP quyết định Go / Hold / No-Go.",
+      "t": "Mục đích: đề nghị Lãnh đạo PVEP quyết định Tiếp tục / Tạm dừng / Dừng.",
       "con": []
      },
      {
@@ -355,7 +355,7 @@ window.QT_GIAI_DOAN = {
       ]
      },
      {
-      "t": "Kết luận/kiến nghị: chọn một trong ba: Go / Hold / No-Go, kèm điều kiện.",
+      "t": "Kết luận/kiến nghị: chọn một trong ba: Tiếp tục / Tạm dừng / Dừng, kèm điều kiện.",
       "con": []
      },
      {
@@ -366,10 +366,10 @@ window.QT_GIAI_DOAN = {
    }
   ],
   "quy_tac_cong": [
-   "No-Go: có ít nhất một tiêu chí ở mức No-Go thuộc G1-01, G1-02, G1-03, G1-05 hoặc G1-09.",
-   "Hold: không có No-Go; có ít nhất một tiêu chí ở mức Hold. Biên bản G1 ghi rõ việc cần làm, người phụ trách, thời hạn xem xét lại.",
-   "Go: tất cả tiêu chí ở mức Go; hoặc chỉ G1-06, G1-08 ở mức Hold và Lãnh đạo chấp thuận xử lý trong GĐ02.",
-   "Biên bản G1 phải ghi: \"Quyết định Go không xác lập quyền khảo sát, quyền sử dụng khu vực biển, tư cách nhà đầu tư hoặc chủ trương đầu tư cho PVEP.\""
+   "DỪNG: có ít nhất một tiêu chí loại trừ (G1-01, G1-02, G1-03, G1-05, G1-09) ở mức “Dừng”.",
+   "TẠM DỪNG: không vướng tiêu chí loại trừ nhưng còn tiêu chí ở mức “Tạm dừng”. Biên bản ghi rõ việc cần bổ sung, người phụ trách, ngày xem xét lại.",
+   "TIẾP TỤC: tất cả tiêu chí đạt; hoặc chỉ G1-06, G1-08 chưa đạt và Lãnh đạo cho phép xử lý trong GĐ02.",
+   "Biên bản Cổng G1 phải ghi: “Quyết định Tiếp tục không xác lập quyền khảo sát, quyền sử dụng khu vực biển, tư cách nhà đầu tư hoặc chủ trương đầu tư cho PVEP.”"
   ],
   "dau_ra_go": {
    "cot": [
@@ -562,7 +562,7 @@ window.QT_GIAI_DOAN = {
     ],
     [
      "11",
-     "Phần mềm, tham số tính chuyển WGS-84 sang VN-2000 hiện hành; hiệu lực QĐ 83/2000/QĐ-TTg, TT 973/2001/TT-TCĐC",
+     "Văn bản công bố tham số tính chuyển giữa VN-2000 và hệ tọa độ quốc tế (khoản 4 Điều 11 Luật Đo đạc và bản đồ 27/2018/QH14); hiệu lực TT 973/2001/TT-TCĐC",
      "Ban PT&KD Sản phẩm mới chủ trì; các ban chuyên môn phối hợp",
      "CẦN XÁC MINH"
     ],
@@ -614,7 +614,7 @@ window.QT_GIAI_DOAN = {
     ],
     [
      "Kết thúc",
-     "Lãnh đạo PVEP quyết định GO / HOLD / NO-GO tại Cổng G1"
+     "Lãnh đạo PVEP chọn Tiếp tục / Tạm dừng / Dừng tại Cổng G1"
     ]
    ],
    "buoc": [
@@ -658,7 +658,7 @@ window.QT_GIAI_DOAN = {
     "cot": [
      "Luồng",
      "Khi nào",
-     "Bước tiếp theo nếu GO"
+     "Bước tiếp theo nếu TIẾP TỤC"
     ],
     "dong": [
      [
@@ -689,6 +689,55 @@ window.QT_GIAI_DOAN = {
     "Tập hợp chi phí riêng theo mã cơ hội ngay từ đầu (khoản 1 Điều 10 NQ 253/2025; khoản 1 Điều 6 NĐ 272/2026).",
     "Không tự giả định giá điện, không đưa số liệu tài chính, dữ liệu dầu khí lên website công khai."
    ]
+  },
+  "cong_tom_tat": {
+   "de_nho": "Đủ thì đi – Thiếu thì chờ – Vướng thì dừng",
+   "muc": [
+    {
+     "k": "go",
+     "ten": "TIẾP TỤC",
+     "khi": "Đủ điều kiện: tất cả 11 tiêu chí đạt (hoặc chỉ còn G1-06, G1-08 được phép xử lý ở GĐ02)",
+     "lam": "Chuyển sang GĐ02 hoặc GĐ03 theo luồng L1–L4"
+    },
+    {
+     "k": "hold",
+     "ten": "TẠM DỪNG",
+     "khi": "Còn thiếu nhưng bổ sung được: thiếu dữ liệu, chờ ý kiến Petrovietnam hoặc cơ quan nhà nước",
+     "lam": "Bổ sung, xin ý kiến; ghi ngày xem xét lại"
+    },
+    {
+     "k": "nogo",
+     "ten": "DỪNG",
+     "khi": "Vướng điều kiện loại trừ: 1 trong 5 tiêu chí G1-01, G1-02, G1-03, G1-05, G1-09",
+     "lam": "Dừng nghiên cứu, lưu hồ sơ và lý do"
+    }
+   ]
+  },
+  "thac_nuoc": {
+   "ghi_chu": "Độ dài mỗi thanh bằng số bước nhỏ của đầu việc, không phải thời gian. Các thanh cùng cột có thể làm song song. Trình tự khuyến nghị: TT-1.3 và nhóm ĐX-1.4 bắt đầu khi tọa độ đã kiểm chứng ở TT-1.1.2; TT-1.5 cần kết quả TT-1.3 và ĐX-1.4.3.",
+   "phu_thuoc": {
+    "TT-1.1": [],
+    "TT-1.2": [
+     "TT-1.1"
+    ],
+    "TT-1.3": [
+     "TT-1.1"
+    ],
+    "ĐX-1.4": [
+     "TT-1.1"
+    ],
+    "TT-1.5": [
+     "TT-1.3",
+     "ĐX-1.4"
+    ],
+    "TT-1.6": [
+     "TT-1.5"
+    ],
+    "TT-1.7": [
+     "TT-1.2",
+     "TT-1.6"
+    ]
+   }
   }
  }
 };

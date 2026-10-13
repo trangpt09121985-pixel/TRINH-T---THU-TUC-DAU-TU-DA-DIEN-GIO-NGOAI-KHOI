@@ -1,10 +1,10 @@
-# Báo cáo kiểm thử chức năng – phiên bản 2.4
+# Báo cáo kiểm thử chức năng – phiên bản 2.5
 
-Kết quả: **81/81 trường hợp đạt, 0 trường hợp không đạt.** Kiểm thử tự động ngày 12/10/2026 bằng Chromium (Playwright) trên bộ dữ liệu công khai (44 đầu việc, 37 văn bản, 36 bước chi tiết, 16 hồ sơ, 11 tiêu chí cổng, 27 căn cứ giai đoạn, 8 nội dung tài chính); máy tính 1440×900 và điện thoại 390×844. Bộ dữ liệu nội bộ chạy cùng bộ kiểm thử: 81/81 đạt.
+Kết quả: **86/86 trường hợp đạt, 0 trường hợp không đạt.** Kiểm thử tự động ngày 13/10/2026 bằng Chromium (Playwright) trên bộ dữ liệu công khai (44 đầu việc, 37 văn bản, 36 bước chi tiết, 11 tiêu chí cổng, 27 căn cứ giai đoạn, 8 nội dung tài chính); máy tính 1440×900 và điện thoại 390×844. Bộ dữ liệu nội bộ: 86/86 đạt.
 
-Kiểm tra dẫn chiếu (`node tools/check_refs.js`): 728 đích dẫn chiếu (điều, khoản, điểm, trích đoạn mục/bảng/phụ lục) đều tồn tại trong kho nguyên văn; 0 lỗi; 34 đích thuộc văn bản chưa có nguyên văn trong bộ tài liệu (Luật Đo đạc và bản đồ, Luật Biển Việt Nam, Luật 68/2025/QH15, NĐ 11/2021…) – bấm vào sẽ hiện thông tin văn bản và nhãn CẦN XÁC MINH.
+Kiểm tra dẫn chiếu (`node tools/check_refs.js`): 737 đích dẫn chiếu đều tồn tại trong kho nguyên văn; 0 lỗi; 27 đích thuộc văn bản chưa có nguyên văn trong bộ tài liệu.
 
-Điểm mới được kiểm thử trong phiên bản 2.4: tổng quan rút gọn (KT75); Mẫu 1 đính kèm và tải về (KT76, KT77, KT81); cơ sở tra cứu tọa độ, hệ quy chiếu (KT78); trích đoạn Bảng 18 Phụ lục (KT79); thẻ Tài chính, chi phí (KT80).
+Điểm mới được kiểm thử trong phiên bản 2.5: sơ đồ thác nước (KT82, KT83); cổng quyết định tiếng Việt (KT84); câu hỏi lãnh đạo (KT83, KT85); nguyên văn Luật Đo đạc và bản đồ 27/2018/QH14 (KT86).
 
 ## Kết quả chi tiết
 
@@ -83,9 +83,14 @@ Kiểm tra dẫn chiếu (`node tools/check_refs.js`): 728 đích dẫn chiếu 
 | KT76 | Bước TT-1.1.1 có Mẫu 1 đính kèm (.docx) và xem nhanh nội dung | ĐẠT | mau/M1_Phieu_tiep_nhan_co_hoi_DGNK.docx |
 | KT77 | Tải được tệp Mẫu 1 | ĐẠT | M1_Phieu_tiep_nhan_co_hoi_DGNK.docx |
 | KT78 | Bước TT-1.1.2 ghi rõ cơ sở tra cứu tọa độ, hệ quy chiếu VN-2000 | ĐẠT |  |
-| KT79 | Trích đoạn Bảng 18 Phụ lục (QĐ 1509) mở được, có bảng danh mục | ĐẠT |  |
+| KT79 | Trích đoạn Bảng 18 Phụ lục III.1 (QĐ 768) mở được, có bảng danh mục | ĐẠT |  |
 | KT80 | Thẻ Tài chính, chi phí: 8 nội dung có căn cứ bấm được | ĐẠT |  |
 | KT81 | Hồ sơ, biểu mẫu: Mẫu 1 có nút tải .docx | ĐẠT |  |
+| KT82 | Sơ đồ thác nước: đủ 36 ô bước, 7 đầu việc và Cổng G1 | ĐẠT |  |
+| KT83 | Bấm ô trên sơ đồ mở bước; ngăn chi tiết có câu hỏi lãnh đạo | ĐẠT |  |
+| KT84 | Cổng G1 Việt hóa: Tiếp tục / Tạm dừng / Dừng, có câu dễ nhớ, không còn GO/HOLD | ĐẠT |  |
+| KT85 | Thẻ Câu hỏi lãnh đạo: mọi bước nhỏ đều có câu hỏi | ĐẠT | 82 |
+| KT86 | Luật Đo đạc và bản đồ 27/2018 có nguyên văn, tô sáng đúng khoản | ĐẠT |  |
 | KT42 | Điện thoại: không tràn ngang, có nút menu và logo | ĐẠT | scrollWidth=390 |
 | KT43 | Điện thoại: mở menu, chuyển phân hệ, menu tự đóng | ĐẠT |  |
 | KT63 | Điện thoại: sơ đồ pháp lý và cửa sổ nguyên văn không tràn ngang | ĐẠT | 390/390 |

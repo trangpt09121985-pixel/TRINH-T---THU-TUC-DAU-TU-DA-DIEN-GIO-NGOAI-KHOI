@@ -504,3 +504,39 @@ details.more h4{color:var(--navy-d); margin:16px 0 6px}
 .fatt{margin:6px 0 0 4px}
 @media (max-width:1100px){.ovcards{grid-template-columns:repeat(2,minmax(0,1fr))} .ovsteps{grid-template-columns:1fr}}
 @media (max-width:700px){.ovcards{grid-template-columns:1fr}}
+
+/* ---------- v2.5: cổng tiếng Việt, sơ đồ thác nước, câu hỏi lãnh đạo ---------- */
+.gbox{background:var(--navy-l); border:2px solid var(--navy); border-radius:12px; padding:14px 16px}
+.gbox.full{margin-bottom:4px}
+.ghead{display:flex; align-items:center; gap:12px; flex-wrap:wrap}
+.ghead > div{flex:1 1 260px; display:flex; flex-direction:column}
+.ghead b{color:var(--navy-d); font-size:1.05rem}
+.ghead span{color:var(--ink2); font-size:.92rem}
+.gdia{flex:none; width:30px; height:30px; background:var(--logo-blue); transform:rotate(45deg); border-radius:5px; margin:4px}
+.gmemo{margin:10px 0 0; background:#fff; border-radius:8px; padding:8px 12px; font-size:.92rem; color:var(--ink2); border-left:4px solid var(--logo-green)}
+.gmemo b{color:var(--navy-d); font-size:1rem}
+.gout > div{display:flex; flex-direction:column; gap:4px}
+.gout b{font-size:1.05rem; letter-spacing:.02em}
+.gwhen{font-size:.88rem; color:var(--ink)}
+.gdo{font-size:.86rem; font-weight:600; color:var(--ink2)}
+.wf{background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin-bottom:6px}
+.wfhead{display:flex; flex-direction:column; gap:2px; margin-bottom:8px}
+.wfhead b{color:var(--navy-d); font-size:1.05rem}
+.wfhead span{font-size:.84rem; color:var(--ink2)}
+.wfscroll{overflow-x:auto}
+.wfsvg{display:block; width:100%; min-width:820px; height:auto}
+.wfseg,.wfrow,.wfgate{cursor:pointer}
+.wfseg:hover rect,.wfseg:focus rect{filter:brightness(1.15); stroke:#14213D; stroke-width:2}
+.wfrow:hover text{text-decoration:underline}
+details.lq{margin:6px 0 0 4px; background:#F3F8F4; border:1px solid #CFE7D6; border-radius:8px; padding:4px 10px}
+details.lq summary{cursor:pointer; font-size:.86rem; font-weight:700; color:var(--ok); padding:3px 0}
+.lqlist{margin:4px 0 6px; padding-left:22px}
+.lqlist li{margin:3px 0; font-size:.9rem}
+.lqbox{background:#F3F8F4; border:1px solid #CFE7D6; border-left:5px solid var(--logo-green); border-radius:10px; padding:10px 14px; margin:12px 0}
+.lqbox b{color:var(--ok)}
+.qcards{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px}
+.qcard{background:#fff; border:1px solid var(--line); border-radius:10px; padding:10px 14px; display:flex; flex-direction:column; gap:2px; break-inside:avoid}
+.qcard > b{color:var(--ink); font-size:.95rem}
+@media (max-width:1100px){.qcards{grid-template-columns:1fr}}
+@media print{.wfscroll{overflow:visible} .qcard{border-color:#999}}
+.fgroup.gate{border:0; background:transparent; padding:0}

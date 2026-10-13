@@ -59,7 +59,18 @@ Dành cho người không chuyên CNTT. Thời gian thực hiện khoảng 15 ph
 3. Trên GitHub, vào thư mục **data** → **Add file → Upload files** → kéo thả `data.js`, các tệp CSV (12 bảng) và tệp Excel (tệp cùng tên được ghi đè) → **Commit changes**.
 4. Chờ 1–3 phút, mở lại trang và bấm **Ctrl + F5**.
 
-## Cập nhật từ phiên bản 2.3 lên 2.4 (Tổng quan rút gọn, Mẫu 1, nguồn tra cứu, tài chính)
+## Cập nhật từ phiên bản 2.4 lên 2.5 (sơ đồ thác nước, cổng tiếng Việt, câu hỏi lãnh đạo)
+
+1. Giải nén `PVEP_DGNK_website_v2.5.zip` (7 mục: `index.html`, `README.md`, `assets`, `data`, `docs`, `mau`, `tools`).
+2. Trang chính của kho → **Add file → Upload files** → kéo thả cả 7 mục → commit “Cập nhật phiên bản 2.5” → **Commit changes**.
+3. Chờ **Actions** báo dấu tích xanh, mở website, bấm **Ctrl + F5**.
+4. Kiểm tra: thanh thông báo ghi “phiên bản 2.5”; thẻ “Trình tự các bước” có sơ đồ thác nước; Cổng G1 ghi TIẾP TỤC / TẠM DỪNG / DỪNG; có thẻ “Câu hỏi lãnh đạo”; bấm “khoản 4 Điều 41” ở TT-1.1.2 hiện nguyên văn Luật Đo đạc và bản đồ.
+
+Tệp thay đổi: `index.html`, `README.md`; `assets/app.js`, `assets/styles.css`; `data/data.js`, `data/dieu_khoan.js`, `data/quy_trinh_giai_doan.js`, các tệp CSV (`buoc_chi_tiet`, `van_ban`, `can_cu_giai_doan`, `bieu_mau`, `tieu_chi_cong`), `data/PVEP_DGNK_du_lieu_mau.xlsx`; `tools/build_dieu_khoan.py`, `tools/test_app.py`; `docs/*`. Không có tệp mới bắt buộc ngoài 3 ảnh minh họa trong `docs`.
+
+Gói `PVEP_DGNK_du_lieu_noi_bo_v2.5.zip` chỉ lưu nội bộ, không tải lên GitHub.
+
+## Cập nhật từ phiên bản 2.3 lên 2.4
 
 Phiên bản 2.4 có thêm thư mục mới `mau` (chứa Mẫu 1). Cách làm giống bản 2.3, tải lên toàn bộ để ghi đè:
 

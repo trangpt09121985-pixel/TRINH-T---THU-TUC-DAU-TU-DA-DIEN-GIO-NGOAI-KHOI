@@ -1,8 +1,14 @@
-# PVEP · Bản đồ trình tự và thủ tục pháp lý đầu tư dự án điện gió ngoài khơi (phiên bản 2.4)
+# PVEP · Bản đồ trình tự và thủ tục pháp lý đầu tư dự án điện gió ngoài khơi (phiên bản 2.5)
 
 Website tĩnh hướng dẫn trình tự, thủ tục pháp lý đầu tư dự án điện gió ngoài khơi, có dẫn chiếu điều, khoản văn bản pháp luật Việt Nam. Gồm các phân hệ: Tổng quan lãnh đạo · Bản đồ quy trình (hành trình 10 giai đoạn, toàn cảnh, sơ đồ cây 6 nhánh) · Quy trình chi tiết theo giai đoạn · Sơ đồ pháp lý · Danh mục thủ tục · Ma trận pháp lý · Rủi ro và nội dung xin ý kiến · Lộ trình hành động; kèm trang Dữ liệu và nhật ký.
 
 Thư mục `data/` trong bộ mã là **bộ dữ liệu công khai**, dùng được cho GitHub Pages. Bộ dữ liệu nội bộ được bàn giao riêng và không đưa lên GitHub.
+
+## Điểm mới phiên bản 2.5
+- Thẻ “Trình tự các bước” có sơ đồ thác nước: mỗi đầu việc là một thanh, độ dài bằng số bước nhỏ, mũi tên thể hiện trình tự và phần làm song song; bấm từng ô để mở bước.
+- Cổng quyết định Việt hóa: TIẾP TỤC / TẠM DỪNG / DỪNG, câu dễ nhớ “Đủ thì đi – Thiếu thì chờ – Vướng thì dừng”.
+- 82 câu hỏi lãnh đạo cho 36 bước nhỏ (cột `cau_hoi_lanh_dao`), hiện tại từng bước, ngăn chi tiết, bảng chi tiết và thẻ mới “Câu hỏi lãnh đạo” (tải CSV có cột trả lời, bằng chứng).
+- Kho nguyên văn bổ sung Luật Đo đạc và bản đồ 27/2018/QH14 (61 điều) và QĐ 83/2000/QĐ-TTg.
 
 ## Điểm mới phiên bản 2.4
 - Đối chiếu bản gốc QĐ 768/QĐ-TTg (kèm Phụ lục I, III) và QĐ 1509/QĐ-BCT: danh mục dự án ĐGNK, điểm gom, giai đoạn vận hành (Bảng 17, Bảng 18) bấm xem trực tiếp; QĐ 768 Điều 2, Điều 3 có nguyên văn.
