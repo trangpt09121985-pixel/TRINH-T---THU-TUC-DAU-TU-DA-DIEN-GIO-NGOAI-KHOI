@@ -155,10 +155,23 @@ ocr = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'n
 for ma, nguon, gc in [('VB05', 'Bản scan PDF (OCR, đã soát với ảnh trang)',
                        'Chỉ đưa vào các điều được dẫn chiếu trong bộ dữ liệu (Điều 5–10, 13, 14). Văn bản OCR – khi trích dẫn chính thức cần đối chiếu bản gốc.'),
                       ('VB06', 'Bản scan PDF có chữ ký số ngày 04/09/2026 (OCR, đã soát)',
-                       'Chỉ đưa vào các điều được dẫn chiếu: Điều 3 (khoản 13, 31), Điều 4, 5, 8, 52, 56, 57, 59, 60, 61, 62. Luật có hiệu lực từ 01/03/2027 (khoản 1 Điều 61).')]:
+                       'Chỉ đưa vào các điều được dẫn chiếu: Điều 3 (khoản 13, 31), Điều 4, 5, 8, 52, 56, 57, 59, 60, 61, 62. Luật có hiệu lực từ 01/03/2027 (khoản 1 Điều 61).'),
+                      ('VB11', 'Bản scan PDF QĐ 768/QĐ-TTg trong bộ tài liệu (OCR, đã soát với ảnh trang)',
+                       'Lưu nguyên văn Điều 2, Điều 3 và trích các mục của Điều 1 liên quan điện gió ngoài khơi. Ký ngày 15/4/2025 (KT. Thủ tướng, Phó Thủ tướng Bùi Thanh Sơn).')]:
     arts = {n: {'t': a['tieu_de'], 'p': a['doan'], 'c': ''} for n, a in ocr[ma].items()}
     DOCS[ma] = {'nguon': nguon, 'chat_luong': 'ocr_da_soat', 'ghi_chu': gc,
                 'thu_tu': list(arts.keys()), 'dieu': arts, 'sua_doi': {}}
+
+# VB28 QĐ 1509/QĐ-BCT – docx: Điều 1–3 của Quyết định; nội dung Kế hoạch lưu dạng trích đoạn
+add('VB28', paras_from_layout(f'{SRC}/qd1509.txt')[:60], 'Tệp docx QĐ 1509/QĐ-BCT trong bộ tài liệu dự án', 'van_ban_so',
+    'Quyết định gồm 3 điều; nội dung Kế hoạch thực hiện (mục I–III, Phụ lục II.1, II.2) lưu dưới dạng trích đoạn liên quan điện gió ngoài khơi.')
+for n, a in DOCS['VB28']['dieu'].items():
+    a['p'] = [a['t'].split('/.')[0].strip()]
+    a['t'] = {'1': 'Ban hành Kế hoạch thực hiện', '2': 'Hiệu lực thi hành', '3': 'Trách nhiệm thi hành'}.get(n, '')
+# Trích đoạn (mục, bảng, phụ lục) của văn bản không chia theo điều
+trich = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'trich_doan.json'), encoding='utf-8'))
+for ma, t in trich.items():
+    DOCS[ma]['trich'] = t
 
 # Luật 90: chỉ giữ các điều liên quan (Đấu thầu, Đầu tư, hiệu lực, chuyển tiếp)
 d=DOCS['VB09']; d['thu_tu']=[n for n in d['thu_tu'] if n in ('1','6','9','10')]; d['dieu']={n:d['dieu'][n] for n in d['thu_tu']}
@@ -171,7 +184,7 @@ DOCS['VB02']['sua_doi'] = {t: [dict(x, boi='VB03', dieu_boi='2') for x in v]
 for ma, d in DOCS.items():
     print(ma, len(d['dieu']), 'điều', d['thu_tu'][:3], '...', d['thu_tu'][-2:], 'sửa đổi:', sorted(d['sua_doi'].keys())[:40])
 
-payload = {'phien_ban': '2.3', 'ngay_dung': '2026-10-12', 'vb': DOCS}
+payload = {'phien_ban': '2.4', 'ngay_dung': '2026-10-12', 'vb': DOCS}
 js = '/* Kho nguyên văn điều khoản – sinh tự động bởi tools/build_dieu_khoan.py. Không sửa tay. */\n'
 js += 'window.DIEU_KHOAN = ' + json.dumps(payload, ensure_ascii=False, separators=(',', ':')) + ';\n'
 open(OUT, 'w', encoding='utf-8').write(js)

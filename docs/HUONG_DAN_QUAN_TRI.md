@@ -17,6 +17,7 @@
 | `bieu_mau` | Hồ sơ, báo cáo, biểu mẫu của giai đoạn và văn bản quy định mẫu | `ma` (HSxx) |
 | `tieu_chi_cong` | Tiêu chí GO/HOLD/NO-GO của cổng quyết định | `ma` (G1-01…) |
 | `can_cu_giai_doan` | Danh mục căn cứ pháp lý riêng của giai đoạn, điều khoản áp dụng, mức độ, nhận định | `ma` (CC1-01…) |
+| `tai_chinh` | Chuẩn bị và thủ tục tài chính của giai đoạn: nội dung, bước liên quan, căn cứ, việc cần làm, hồ sơ, thời điểm, trạng thái | `ma` (TC1-01…) |
 
 Quy tắc liên kết: cột `ma_van_ban` của `thu_tuc` và cột `ma_vb` của `ma_tran_phap_ly` phải trỏ tới mã có trong `van_ban`. Các mã TT-x.y, RRxx, KHxx, “Cổng Gx” ghi trong cột `buoc_ke_tiep`, `lien_quan` tự động thành liên kết trên giao diện.
 
@@ -25,8 +26,11 @@ Quy tắc liên kết: cột `ma_van_ban` của `thu_tuc` và cột `ma_vb` củ
 2. Cột chính của `buoc_chi_tiet`: `cong_viec`, `muc_tieu`, `luong`, `dau_vao`, `phoi_hop`, `can_cu`, `ho_so`, `dau_ra`, `dieu_kien_chuyen_buoc`, `rui_ro`, `trang_thai_phap_ly` (bắt đầu bằng “Có căn cứ”, “Nội bộ” hoặc ghi nhãn cần xác minh), `loai_buoc` (Công việc/Quyết định), `diem_dung` (để trống nếu không phải điểm dừng), `de_xuat` (Có nếu là bước đề xuất bổ sung, chưa được PVEP xác nhận).
 3. Cột `re_nhanh` ghi theo cú pháp `trường hợp → kết quả | trường hợp → kết quả`. Website hiển thị mỗi trường hợp thành một dòng rẽ nhánh.
 4. Thêm hồ sơ vào `bieu_mau`, tiêu chí vào `tieu_chi_cong` (cột `cong` là mã cổng trong `cong_quyet_dinh`; `quyet_dinh_no_go` = Có nếu là tiêu chí loại trừ), căn cứ vào `can_cu_giai_doan` (`ma_vb` trỏ tới `van_ban`, nhiều mã cách nhau bằng dấu chấm phẩy).
-5. Phần tổng quan, khung mẫu nội bộ, quy tắc cổng, nội dung xin ý kiến và kết luận ghi trong `data/quy_trinh_giai_doan.js` theo khóa số giai đoạn (xem khóa `'1'` làm mẫu). Không có khóa này, các thẻ bảng vẫn hiển thị.
-6. Chạy `python tools/build_data.py` rồi `node tools/check_refs.js`. Công cụ từ chối dòng có mã đầu việc, cổng, văn bản không tồn tại.
+5. Cột `nguon_tra_cuu` (Cơ sở tra cứu, nguồn dữ liệu) ghi theo dạng `1) … 2) … 3) …`; website hiển thị thành danh sách đánh số. Cột `tep_dinh_kem` ghi đường dẫn tệp mẫu trong thư mục `mau/` (ví dụ `mau/M1_Phieu_tiep_nhan_co_hoi_DGNK.docx`); bước có cột này hiện nút tải.
+5a. Dẫn chiếu mục, bảng, phụ lục của văn bản không chia theo điều (ví dụ “Bảng 18 Phụ lục II.1 QĐ 1509/QĐ-BCT”, “mục III.8 QĐ 1509/QĐ-BCT”, “mục III.1.b Điều 1 QĐ 768/QĐ-TTg”) tự gắn nút khi trích đoạn có trong `tools/trich_doan.json`. Thêm trích đoạn mới: bổ sung khóa (chữ thường) vào tệp này, chạy `python tools/build_dieu_khoan.py` rồi `node tools/check_refs.js`.
+5b. Sửa Mẫu 1: chỉnh `tools/build_mau1.js`, chạy `node tools/build_mau1.js` (cần thư viện npm `docx`), hoặc sửa trực tiếp tệp .docx bằng Word rồi tải lên thay thế.
+6. Phần tổng quan, khung mẫu nội bộ, quy tắc cổng, nội dung xin ý kiến và kết luận ghi trong `data/quy_trinh_giai_doan.js` theo khóa số giai đoạn (xem khóa `'1'` làm mẫu). Không có khóa này, các thẻ bảng vẫn hiển thị.
+7. Chạy `python tools/build_data.py` rồi `node tools/check_refs.js`. Công cụ từ chối dòng có mã đầu việc, cổng, văn bản không tồn tại.
 
 ### Quy ước trách nhiệm PVEP
 - `thu_tuc.don_vi_dau_moi_pvep`, `ke_hoach.dau_moi`: **Ban PT&KD Sản phẩm mới**.

@@ -1,4 +1,4 @@
-/* PVEP – Bản đồ thủ tục ĐGNK · Mô-đun tra cứu nguyên văn điều khoản (v2.2)
+/* PVEP – Bản đồ thủ tục ĐGNK · Mô-đun tra cứu nguyên văn điều khoản (v2.4)
    - linkify(htmlDaEscape, maVbMacDinh): biến "khoản 2 Điều 27 Luật Điện lực" thành nút bấm.
    - Bấm nút: mở cửa sổ hiển thị toàn bộ Điều luật, tô sáng khoản/điểm được dẫn chiếu,
      kèm nội dung sửa đổi (nếu có) và thông tin hiệu lực văn bản.
@@ -31,8 +31,18 @@ const ALIAS = [
   ['VB11', /(?:QĐ|Quyết định)(?: số)? ?768(?:\/QĐ-TTg)?/],
   ['VB28', /(?:QĐ|Quyết định)(?: số)? ?1509(?:\/QĐ-BCT)?/],
   ['VB13', /(?:Công văn|CV)(?: số)? ?435(?:\/BNNMT-BHĐ)?/],
-  ['VB23', /(?:TT|Thông tư)(?: số)? ?79(?:\/2025)?(?:\/TT-BNNMT)?/]
+  ['VB23', /(?:TT|Thông tư)(?: số)? ?79(?:\/2025)?(?:\/TT-BNNMT)?/],
+  ['VB17', /Luật Tài nguyên, môi trường biển và hải đảo(?: (?:số )?82\/2015\/QH13)?|Luật (?:số )?82\/2015(?:\/QH13)?/],
+  ['VB18', /Luật Biển Việt Nam(?: (?:số )?18\/2012\/QH13)?/],
+  ['VB33', /Luật Đo đạc và bản đồ(?: (?:số )?27\/2018\/QH14)?/],
+  ['VB37', /Luật Quản lý và đầu tư vốn nhà nước tại doanh nghiệp(?: (?:số )?68\/2025\/QH15)?|Luật (?:số )?68\/2025(?:\/QH15)?/],
+  ['VB34', /(?:QĐ|Quyết định)(?: số)? ?83\/2000(?:\/QĐ-TTg)?/],
+  ['VB35', /(?:TT|Thông tư)(?: số)? ?973\/2001(?:\/TT-TCĐC)?/],
+  ['VB36', /(?:TT|Thông tư)(?: số)? ?63\/2017(?:\/TT-BTNMT)?/]
 ];
+// Trích đoạn của văn bản không chia theo điều: "Bảng 18 Phụ lục II.1", "mục III.8", "mục III.1.b Điều 1"
+const TRICH = /(?:[Bb]ảng\s+\d+\s+Phụ lục\s+[IVX]+(?:\.\d+)?|[mM]ục\s+[IVX]+(?:\.\d+)*(?:\.[a-zđ])?(?:\s+Điều\s+\d+)?)/g;
+const tkey = s => String(s).toLowerCase().replace(/\s+/g, ' ').trim();
 const SELF = /(Nghị định này|Luật này|Nghị quyết này|Quyết định này)/;
 const NUM = '\\d+[a-z]?';
 const LIST = `${NUM}(?:\\s*(?:,|và|–|-)\\s*${NUM})*`;
@@ -99,8 +109,11 @@ function linkify(html, ctxVb, ctxHolder) {
 }
 function linkSeg(seg, holder) {
   const al = findAliases(seg);
-  const refs = []; let m; REF.lastIndex = 0;
-  while ((m = REF.exec(seg))) refs.push({ start: m.index, end: m.index + m[0].length, text: m[0] });
+  const refs = []; let m; TRICH.lastIndex = 0;
+  while ((m = TRICH.exec(seg))) refs.push({ start: m.index, end: m.index + m[0].length, text: m[0], trich: true });
+  REF.lastIndex = 0;
+  while ((m = REF.exec(seg))) { const st = m.index, en = m.index + m[0].length; if (!refs.some(r => st < r.end && en > r.start)) refs.push({ start: st, end: en, text: m[0] }); }
+  refs.sort((a, b) => a.start - b.start);
   if (!al.length && !refs.length) return seg;
   // gán văn bản cho từng dẫn chiếu: bí danh đứng ngay sau (trong vòng 40 ký tự, không có dẫn chiếu khác xen giữa), nếu không thì bí danh đứng trước, nếu không thì ngữ cảnh
   const pieces = [];
@@ -118,6 +131,7 @@ function linkSeg(seg, holder) {
     if (!vb && nextAlias) vb = nextAlias.ma;
     if (!vb && holder.ahead) vb = holder.ahead;
     if (!vb) return;
+    if (r.trich) { pieces.push({ start: r.start, end: r.end, html: btn(r.text, [{ vb, trich: tkey(r.text), nhan: r.text }]) }); return; }
     const p = parseRef(r.text);
     pieces.push({ start: r.start, end: r.end, html: btn(r.text, p.dieu.map((d, k) => ({ vb, dieu: d, khoan: k === 0 ? p.khoan : [], diem: k === 0 ? p.diem : [] }))) });
   });
@@ -181,7 +195,14 @@ function markParas(paras, khoan, diem, vbCtx) {
     return `<p class="${cls.trim()}"${hit ? ' data-hit="1"' : ''}>${linkify(esc(p), vbCtx)}</p>`;
   }).join('');
 }
+function trichHtml(D, t) {
+  const doc = D.vb[t.vb], x = doc && doc.trich && doc.trich[t.trich];
+  if (!x) return `<section class="lawart miss"><h3>${esc(t.trich)} – ${esc(vbName(t.vb))}</h3><div class="alert">Chưa có trích đoạn này trong bộ tài liệu đã đối chiếu. <span class="chip c-warn">CẦN XÁC MINH</span></div></section>`;
+  const tb = x.bang ? `<div class="tbl" style="max-height:none;margin:8px 0"><table class="wide"><thead><tr>${x.bang.cot.map(c => `<th>${esc(c)}</th>`).join('')}</tr></thead><tbody>${x.bang.dong.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : '';
+  return `<section class="lawart"><h3>${esc(x.t)}</h3>${x.nguon ? `<div class="lawchap">Nguồn: ${esc(x.nguon)}</div>` : ''}${tb}${(x.p || []).map(p => `<p>${linkify(esc(p), t.vb)}</p>`).join('')}</section>`;
+}
 function articleHtml(D, t) {
+  if (t.trich) return trichHtml(D, t);
   const doc = D.vb[t.vb], a = doc && doc.dieu[t.dieu];
   const where = [t.diem && t.diem.length ? 'điểm ' + t.diem.map(x => x.split(':')[1] + (x.split(':')[0] ? ' (khoản ' + x.split(':')[0] + ')' : '')).join(', ') : '', t.khoan && t.khoan.length ? 'khoản ' + [...new Set(t.khoan)].join(', ') : ''].filter(Boolean).join('; ');
   if (!a) {
@@ -208,11 +229,11 @@ function open(targets) {
   body.innerHTML = '<p class="ro">Đang tải nguyên văn điều khoản…</p>';
   const first = targets[0];
   m.querySelector('#lawSub').textContent = vbName(first.vb);
-  m.querySelector('#lawTitle').textContent = first.dieu ? targets.map(t => 'Điều ' + t.dieu).join(', ') + ' – ' + vbName(first.vb) : vbName(first.vb);
+  m.querySelector('#lawTitle').textContent = first.trich ? (first.nhan || first.trich).replace(/^./, c => c.toUpperCase()) + ' – ' + vbName(first.vb) : first.dieu ? targets.map(t => 'Điều ' + t.dieu).join(', ') + ' – ' + vbName(first.vb) : vbName(first.vb);
   loadData().then(D => {
     const groups = {};
     targets.forEach(t => (groups[t.vb] = groups[t.vb] || []).push(t));
-    body.innerHTML = Object.keys(groups).map(id => docInfo(D, id) + groups[id].map(t => t.dieu ? articleHtml(D, t) : docArticles(D, id)).join('')).join('');
+    body.innerHTML = Object.keys(groups).map(id => docInfo(D, id) + groups[id].map(t => t.dieu || t.trich ? articleHtml(D, t) : docArticles(D, id)).join('')).join('');
     const hit = body.querySelector('[data-hit]');
     body.scrollTop = 0;
     if (hit) setTimeout(() => { body.scrollTop = Math.max(0, hit.offsetTop - body.offsetTop - 90); }, 30);
@@ -224,7 +245,9 @@ function open(targets) {
 function docArticles(D, id) {
   const d = D.vb[id];
   if (!d) return '<div class="alert">Bộ tài liệu chưa có nguyên văn văn bản này. <span class="chip c-warn">CẦN XÁC MINH</span></div>';
-  return `<h4 style="margin-top:14px">Danh mục điều có nguyên văn (${d.thu_tu.length})</h4><ul class="lawlist">${d.thu_tu.map(n => `<li>${btn('Điều ' + esc(n) + '. ' + esc(d.dieu[n].t), [{ vb: id, dieu: n, khoan: [], diem: [] }], 'row')}${(d.sua_doi || {})[n] ? ' <span class="chip c-warn">đã sửa đổi</span>' : ''}</li>`).join('')}</ul>`;
+  const tr = d.trich ? Object.keys(d.trich) : [];
+  return `<h4 style="margin-top:14px">Danh mục điều có nguyên văn (${d.thu_tu.length})</h4><ul class="lawlist">${d.thu_tu.map(n => `<li>${btn('Điều ' + esc(n) + '. ' + esc(d.dieu[n].t), [{ vb: id, dieu: n, khoan: [], diem: [] }], 'row')}${(d.sua_doi || {})[n] ? ' <span class="chip c-warn">đã sửa đổi</span>' : ''}</li>`).join('')}</ul>`
+    + (tr.length ? `<h4 style="margin-top:14px">Trích đoạn liên quan điện gió ngoài khơi (${tr.length})</h4><ul class="lawlist">${tr.map(k => `<li>${btn(esc(d.trich[k].t), [{ vb: id, trich: k, nhan: d.trich[k].t.split(' – ')[0] }], 'row')}</li>`).join('')}</ul>` : '');
 }
 
 /* bắt sự kiện ở pha capture để không mở nhầm khung chi tiết của dòng chứa nút */

@@ -56,10 +56,41 @@ Dành cho người không chuyên CNTT. Thời gian thực hiện khoảng 15 ph
 2. Mở **Command Prompt** tại thư mục dự án, chạy:
    `python tools/build_data.py --from-xlsx data/PVEP_DGNK_du_lieu_mau.xlsx`
    (cần Python và thư viện openpyxl; nhờ bộ phận CNTT cài nếu chưa có).
-3. Trên GitHub, vào thư mục **data** → **Add file → Upload files** → kéo thả `data.js`, các tệp CSV (11 bảng) và tệp Excel (tệp cùng tên được ghi đè) → **Commit changes**.
+3. Trên GitHub, vào thư mục **data** → **Add file → Upload files** → kéo thả `data.js`, các tệp CSV (12 bảng) và tệp Excel (tệp cùng tên được ghi đè) → **Commit changes**.
 4. Chờ 1–3 phút, mở lại trang và bấm **Ctrl + F5**.
 
-## Cập nhật từ phiên bản 2.2 lên 2.3 (Quy trình chi tiết Giai đoạn 01)
+## Cập nhật từ phiên bản 2.3 lên 2.4 (Tổng quan rút gọn, Mẫu 1, nguồn tra cứu, tài chính)
+
+Phiên bản 2.4 có thêm thư mục mới `mau` (chứa Mẫu 1). Cách làm giống bản 2.3, tải lên toàn bộ để ghi đè:
+
+1. Giải nén `PVEP_DGNK_website_v2.4.zip`. Thư mục giải nén có 7 mục: `index.html`, `README.md`, `assets`, `data`, `docs`, `mau`, `tools`.
+2. Mở trang chính của kho trên GitHub → **Add file → Upload files**.
+3. Chọn cả 7 mục, kéo thả vào vùng tải lên. Bắt buộc có thư mục `mau`; thiếu thư mục này thì nút “Tải mẫu” báo lỗi 404.
+4. Ghi nội dung commit: `Cập nhật phiên bản 2.4` → **Commit changes**.
+5. Chờ thẻ **Actions** báo dấu tích xanh, mở website và bấm **Ctrl + F5**.
+6. Kiểm tra nhanh:
+   - Thanh thông báo ghi “phiên bản 2.4”.
+   - Quy trình chi tiết → Tổng quan: thấy 4 thẻ và 7 đầu việc.
+   - Trình tự các bước → TT-1.1.1: có nút “Tải Mẫu 1 (.docx)”; bấm tải được tệp Word.
+   - TT-1.1.2: có mục “Cơ sở tra cứu, nguồn dữ liệu”; bấm “Bảng 18 Phụ lục II.1” mở bảng danh mục dự án.
+   - Có thẻ “Tài chính, chi phí” với 8 dòng.
+
+Tệp mới hoặc thay đổi trong phiên bản 2.4:
+
+| Thư mục | Tệp mới | Tệp thay đổi |
+| --- | --- | --- |
+| (gốc) | – | `index.html`, `README.md` |
+| `mau` (mới) | `M1_Phieu_tiep_nhan_co_hoi_DGNK.docx` | – |
+| `assets` | – | `app.js`, `styles.css`, `legal.js` |
+| `data` | `tai_chinh.csv` | `data.js`, `dieu_khoan.js`, `quy_trinh_giai_doan.js`, `van_ban.csv`, `buoc_chi_tiet.csv`, `bieu_mau.csv`, `tieu_chi_cong.csv`, `can_cu_giai_doan.csv`, `PVEP_DGNK_du_lieu_mau.xlsx` |
+| `tools` | `trich_doan.json`, `build_mau1.js` | `build_data.py`, `build_dieu_khoan.py`, `check_refs.js`, `test_app.py`, `nguon_ocr_da_soat.json` |
+| `docs` | – | 4 tệp hướng dẫn |
+
+Nếu GitHub báo không tải được thư mục rỗng hoặc bỏ sót thư mục `mau`: vào kho → **Add file → Create new file** → gõ tên `mau/tam.txt` để tạo thư mục → **Commit**; sau đó vào thư mục `mau` → **Add file → Upload files** → kéo tệp `M1_Phieu_tiep_nhan_co_hoi_DGNK.docx` → **Commit**; xóa tệp `tam.txt`.
+
+Gói `PVEP_DGNK_du_lieu_noi_bo_v2.4.zip` chỉ lưu nội bộ, không tải lên GitHub.
+
+## Cập nhật từ phiên bản 2.2 lên 2.3
 
 Bộ mã 2.3 giữ nguyên cấu trúc thư mục. Cách làm an toàn nhất là tải lên toàn bộ, tệp cùng tên sẽ được ghi đè.
 

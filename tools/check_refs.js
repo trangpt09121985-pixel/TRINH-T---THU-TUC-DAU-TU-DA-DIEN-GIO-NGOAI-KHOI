@@ -17,6 +17,7 @@ function check(where, text, ctxVb) {
   const ids = [...html.matchAll(/data-law="(L\d+)"[^>]*>([^<]*)</g)];
   ids.forEach(([, id, label]) => {
     L._reg[id].forEach(t => {
+      if (t.trich) { n++; const d = DK.vb[t.vb]; if (!d) { nocorpus++; return; } if (!d.trich || !d.trich[t.trich]) { bad++; console.log('THIẾU TRÍCH ĐOẠN', where, '|', label, '->', t.vb, t.trich); } return; }
       if (!t.dieu) return; n++;
       const d = DK.vb[t.vb];
       if (!d) { nocorpus++; return; }

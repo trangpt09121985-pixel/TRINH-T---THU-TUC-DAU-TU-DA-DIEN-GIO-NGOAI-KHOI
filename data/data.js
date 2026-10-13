@@ -1,7 +1,7 @@
 /* Tệp sinh tự động bởi tools/build_data.py – không sửa trực tiếp. */
 window.APP_DATA = {
  "meta": {
-  "ngay_tao": "2026-10-12 10:20",
+  "ngay_tao": "2026-10-12 12:09",
   "phien_ban": "2026-10-12",
   "bo_du_lieu": "cong_khai"
  },
@@ -1805,16 +1805,16 @@ window.APP_DATA = {
    "loai": "Quyết định",
    "co_quan_ban_hanh": "Thủ tướng Chính phủ",
    "ngay_ban_hanh": "2025-04-15",
-   "ngay_hieu_luc": "",
-   "tinh_trang_hieu_luc": "Cần xác minh",
-   "sua_doi_thay_the": "",
+   "ngay_hieu_luc": "2025-04-15",
+   "tinh_trang_hieu_luc": "Còn hiệu lực; có thể được điều chỉnh cập nhật",
+   "sua_doi_thay_the": "Thay thế QĐ 500/QĐ-TTg ngày 15/5/2023 (Điều 3)",
    "nhom_chu_de": "Quy hoạch",
    "lien_ket_chinh_thuc": "",
-   "nguon_kiem_chung": "Tệp trong Dự án bị lỗi, chưa đọc được",
-   "trang_thai_xac_minh": "CẦN XÁC MINH",
-   "ngay_kiem_chung": "",
-   "ghi_chu": "Cần đối chiếu danh mục, quy mô, giai đoạn vận hành ĐGNK",
-   "ngay_doi_chieu_nguon": "",
+   "nguon_kiem_chung": "Bản scan PDF QĐ 768/QĐ-TTg và Phụ lục I, III trong bộ tài liệu (OCR, đã soát với ảnh trang)",
+   "trang_thai_xac_minh": "ĐÃ XÁC MINH",
+   "ngay_kiem_chung": "2026-10-12",
+   "ghi_chu": "Ký ngày 15/4/2025 (KT. Thủ tướng, Phó Thủ tướng Bùi Thanh Sơn). ĐGNK: mục III.1.b Điều 1 (6.000–17.032 MW, vận hành 2030–2035). Danh mục chi tiết theo dự án, điểm gom tra tại Kế hoạch thực hiện (QĐ 1509/QĐ-BCT). Cần kiểm tra quyết định điều chỉnh cập nhật sau ngày ban hành.",
+   "ngay_doi_chieu_nguon": "2026-10-12",
    "cap_van_ban": "3",
    "quy_dinh_chi_tiet_cho": "",
    "sua_doi_cho": "",
@@ -1941,11 +1941,11 @@ window.APP_DATA = {
    "tinh_trang_hieu_luc": "Còn hiệu lực – đã được sửa đổi",
    "sua_doi_thay_the": "Sửa đổi bởi Luật 35/2018/QH14, 61/2024/QH15, 146/2025/QH15 (theo căn cứ NĐ 272/2026)",
    "nhom_chu_de": "Biển, khảo sát",
-   "lien_ket_chinh_thuc": "",
-   "nguon_kiem_chung": "Chưa có bản trong Dự án",
+   "lien_ket_chinh_thuc": "https://vbpl.vn/FileData/TW/Lists/vbpq/Attachments/70804/VanBanGoc_82.2015.QH13.pdf",
+   "nguon_kiem_chung": "Số hiệu 82/2015/QH13 đối chiếu tại vbpl.vn (VanBanGoc_82.2015.QH13) và tệp của Vụ Pháp chế Bộ NN&MT; chưa có nguyên văn trong bộ tài liệu",
    "trang_thai_xac_minh": "CẦN XÁC MINH",
-   "ngay_kiem_chung": "",
-   "ghi_chu": "Giao khu vực biển",
+   "ngay_kiem_chung": "2026-10-12",
+   "ghi_chu": "Giao khu vực biển; Chương VII (Điều 64–70): hệ thống thông tin, cơ sở dữ liệu tài nguyên, môi trường biển và hải đảo",
    "ngay_doi_chieu_nguon": "",
    "cap_van_ban": "1",
    "quy_dinh_chi_tiet_cho": "",
@@ -1964,10 +1964,10 @@ window.APP_DATA = {
    "sua_doi_thay_the": "",
    "nhom_chu_de": "Biển, khảo sát",
    "lien_ket_chinh_thuc": "",
-   "nguon_kiem_chung": "Chưa có bản trong Dự án",
+   "nguon_kiem_chung": "Tiêu đề Điều 7–18 đối chiếu qua nguồn thứ cấp (caselaw.vn); chưa có nguyên văn trong bộ tài liệu",
    "trang_thai_xac_minh": "CẦN XÁC MINH",
    "ngay_kiem_chung": "",
-   "ghi_chu": "",
+   "ghi_chu": "Điều 8 (đường cơ sở), Điều 15 (vùng đặc quyền kinh tế), Điều 17 (thềm lục địa)",
    "ngay_doi_chieu_nguon": "",
    "cap_van_ban": "1",
    "quy_dinh_chi_tiet_cho": "",
@@ -1986,10 +1986,10 @@ window.APP_DATA = {
    "sua_doi_thay_the": "Sửa đổi bởi NĐ 65/2025/NĐ-CP ngày 12/03/2025",
    "nhom_chu_de": "Biển, khảo sát",
    "lien_ket_chinh_thuc": "",
-   "nguon_kiem_chung": "Được dẫn chiếu tại QĐ 138/QĐ-BNNMT; chưa có bản trong Dự án",
+   "nguon_kiem_chung": "Tiêu đề Điều 1–20 và danh mục mẫu đối chiếu qua nguồn thứ cấp (caselaw.vn); chưa có nguyên văn trong bộ tài liệu",
    "trang_thai_xac_minh": "CẦN XÁC MINH",
    "ngay_kiem_chung": "",
-   "ghi_chu": "Trình tự giao khu vực biển",
+   "ghi_chu": "Điều 15: hồ sơ đề nghị giao khu vực biển (đơn Mẫu số 01; sơ đồ khu vực biển thể hiện tọa độ các điểm góc – Mẫu số 05). Cần đối chiếu nội dung sửa đổi tại NĐ 65/2025/NĐ-CP",
    "ngay_doi_chieu_nguon": "",
    "cap_van_ban": "2",
    "quy_dinh_chi_tiet_cho": "VB17",
@@ -2179,16 +2179,16 @@ window.APP_DATA = {
    "loai": "Quyết định",
    "co_quan_ban_hanh": "Bộ Công Thương",
    "ngay_ban_hanh": "2025-05-30",
-   "ngay_hieu_luc": "",
-   "tinh_trang_hieu_luc": "Cần xác minh",
-   "sua_doi_thay_the": "Cần xác minh các lần cập nhật",
+   "ngay_hieu_luc": "2025-05-30",
+   "tinh_trang_hieu_luc": "Còn hiệu lực; có thể được điều chỉnh cập nhật",
+   "sua_doi_thay_the": "Cần xác minh các lần điều chỉnh cập nhật sau 30/5/2025",
    "nhom_chu_de": "Quy hoạch điện",
    "lien_ket_chinh_thuc": "",
-   "nguon_kiem_chung": "Nguồn thứ cấp; chưa có bản gốc",
-   "trang_thai_xac_minh": "CẦN XÁC MINH",
-   "ngay_kiem_chung": "",
-   "ghi_chu": "Xác định giai đoạn vận hành dự kiến và điểm gom; lấy bản gốc mới nhất trước Cổng G1",
-   "ngay_doi_chieu_nguon": "",
+   "nguon_kiem_chung": "Tệp docx QĐ 1509/QĐ-BCT trong bộ tài liệu dự án",
+   "trang_thai_xac_minh": "ĐÃ XÁC MINH",
+   "ngay_kiem_chung": "2026-10-12",
+   "ghi_chu": "Ký KT. Bộ trưởng, Thứ trưởng Nguyễn Hoàng Long. Bảng 17, 18 Phụ lục II.1: danh mục ĐGNK, điểm gom, năm vận hành; Phụ lục II.2: lưới truyền tải; mục III.8: nhiệm vụ của Petrovietnam.",
+   "ngay_doi_chieu_nguon": "2026-10-12",
    "cap_van_ban": "3",
    "quy_dinh_chi_tiet_cho": "VB11",
    "sua_doi_cho": "",
@@ -2279,6 +2279,116 @@ window.APP_DATA = {
    "ngay_doi_chieu_nguon": "",
    "cap_van_ban": "3",
    "quy_dinh_chi_tiet_cho": "VB06",
+   "sua_doi_cho": "",
+   "ap_dung_uu_tien_cho": ""
+  },
+  {
+   "ma_vb": "VB33",
+   "so_ky_hieu": "27/2018/QH14",
+   "ten_van_ban": "Luật Đo đạc và bản đồ",
+   "loai": "Luật",
+   "co_quan_ban_hanh": "Quốc hội",
+   "ngay_ban_hanh": "2018-06-14",
+   "ngay_hieu_luc": "2019-01-01",
+   "tinh_trang_hieu_luc": "Còn hiệu lực",
+   "sua_doi_thay_the": "",
+   "nhom_chu_de": "Đo đạc, tọa độ, dữ liệu",
+   "lien_ket_chinh_thuc": "",
+   "nguon_kiem_chung": "Nguồn thứ cấp (caselaw.vn); bản PDF tại Sở NN&MT Bắc Giang; chưa có nguyên văn trong bộ tài liệu",
+   "trang_thai_xac_minh": "CẦN XÁC MINH",
+   "ngay_kiem_chung": "2026-10-12",
+   "ghi_chu": "khoản 6 Điều 3 (hệ tọa độ quốc gia); khoản 2 Điều 11; khoản 7 Điều 6 (cấm làm lộ dữ liệu thuộc bí mật nhà nước); khoản 1 Điều 27 (hải đồ)",
+   "ngay_doi_chieu_nguon": "",
+   "cap_van_ban": "1",
+   "quy_dinh_chi_tiet_cho": "",
+   "sua_doi_cho": "",
+   "ap_dung_uu_tien_cho": ""
+  },
+  {
+   "ma_vb": "VB34",
+   "so_ky_hieu": "83/2000/QĐ-TTg",
+   "ten_van_ban": "Quyết định về sử dụng Hệ quy chiếu và Hệ tọa độ quốc gia Việt Nam (VN-2000)",
+   "loai": "Quyết định",
+   "co_quan_ban_hanh": "Thủ tướng Chính phủ",
+   "ngay_ban_hanh": "2000-07-12",
+   "ngay_hieu_luc": "",
+   "tinh_trang_hieu_luc": "Cần xác minh",
+   "sua_doi_thay_the": "",
+   "nhom_chu_de": "Đo đạc, tọa độ, dữ liệu",
+   "lien_ket_chinh_thuc": "",
+   "nguon_kiem_chung": "Nguồn thứ cấp (caselaw.vn)",
+   "trang_thai_xac_minh": "CẦN XÁC MINH",
+   "ngay_kiem_chung": "2026-10-12",
+   "ghi_chu": "Xác lập hệ VN-2000 dùng thống nhất trong cả nước",
+   "ngay_doi_chieu_nguon": "",
+   "cap_van_ban": "3",
+   "quy_dinh_chi_tiet_cho": "",
+   "sua_doi_cho": "",
+   "ap_dung_uu_tien_cho": ""
+  },
+  {
+   "ma_vb": "VB35",
+   "so_ky_hieu": "973/2001/TT-TCĐC",
+   "ten_van_ban": "Thông tư hướng dẫn áp dụng hệ quy chiếu và hệ tọa độ quốc gia VN-2000",
+   "loai": "Thông tư",
+   "co_quan_ban_hanh": "Tổng cục Địa chính",
+   "ngay_ban_hanh": "2001-06-20",
+   "ngay_hieu_luc": "2001-07-05",
+   "tinh_trang_hieu_luc": "Còn hiệu lực (theo nguồn thứ cấp)",
+   "sua_doi_thay_the": "",
+   "nhom_chu_de": "Đo đạc, tọa độ, dữ liệu",
+   "lien_ket_chinh_thuc": "https://vbpl.moj.gov.vn/TW/Lists/vbpq/Attachments/138922/973_2001_TT-TCDC.doc",
+   "nguon_kiem_chung": "Nguồn thứ cấp (caselaw.vn); tệp tại vbpl.moj.gov.vn",
+   "trang_thai_xac_minh": "CẦN XÁC MINH",
+   "ngay_kiem_chung": "2026-10-12",
+   "ghi_chu": "Ellipsoid WGS-84; lưới chiếu UTM; múi chiếu 6° (bản đồ 1:25.000–1:500.000) và 3° (1:2.000–1:10.000); kinh tuyến trục theo tỉnh; tính chuyển WGS-84 sang VN-2000 bằng 7 tham số",
+   "ngay_doi_chieu_nguon": "",
+   "cap_van_ban": "3",
+   "quy_dinh_chi_tiet_cho": "VB34",
+   "sua_doi_cho": "",
+   "ap_dung_uu_tien_cho": ""
+  },
+  {
+   "ma_vb": "VB36",
+   "so_ky_hieu": "63/2017/TT-BTNMT",
+   "ten_van_ban": "Thông tư quy định kỹ thuật đo vẽ bản đồ địa hình đáy biển tỷ lệ 1:5000",
+   "loai": "Thông tư",
+   "co_quan_ban_hanh": "Bộ Tài nguyên và Môi trường",
+   "ngay_ban_hanh": "2017-12-22",
+   "ngay_hieu_luc": "2018-02-15",
+   "tinh_trang_hieu_luc": "Còn hiệu lực – đã được sửa đổi",
+   "sua_doi_thay_the": "Sửa đổi, bổ sung bởi Thông tư 15/2025/TT-BNNMT ngày 19/6/2025 (hiệu lực 01/7/2025)",
+   "nhom_chu_de": "Đo đạc, tọa độ, dữ liệu",
+   "lien_ket_chinh_thuc": "",
+   "nguon_kiem_chung": "Văn bản hợp nhất đăng tại datafiles.chinhphu.vn (75-vbhn-bnnmt.pdf)",
+   "trang_thai_xac_minh": "CẦN XÁC MINH",
+   "ngay_kiem_chung": "2026-10-12",
+   "ghi_chu": "khoản 1 Điều 5: hệ tọa độ VN-2000, hệ độ cao quốc gia, múi chiếu 3°, kinh tuyến trục 102°–117°. Áp dụng khi đặt hàng khảo sát địa hình đáy biển (GĐ03)",
+   "ngay_doi_chieu_nguon": "",
+   "cap_van_ban": "3",
+   "quy_dinh_chi_tiet_cho": "VB33",
+   "sua_doi_cho": "",
+   "ap_dung_uu_tien_cho": ""
+  },
+  {
+   "ma_vb": "VB37",
+   "so_ky_hieu": "68/2025/QH15",
+   "ten_van_ban": "Luật Quản lý và đầu tư vốn nhà nước tại doanh nghiệp",
+   "loai": "Luật",
+   "co_quan_ban_hanh": "Quốc hội",
+   "ngay_ban_hanh": "2025-06-14",
+   "ngay_hieu_luc": "2025-08-01",
+   "tinh_trang_hieu_luc": "Còn hiệu lực",
+   "sua_doi_thay_the": "Thay thế Luật 69/2014/QH13 (sđ bởi Luật 35/2018/QH14)",
+   "nhom_chu_de": "Tài chính, vốn nhà nước",
+   "lien_ket_chinh_thuc": "",
+   "nguon_kiem_chung": "Nguồn thứ cấp (hethongphapluat.com, lsvn.vn); chưa có nguyên văn trong bộ tài liệu",
+   "trang_thai_xac_minh": "CẦN XÁC MINH",
+   "ngay_kiem_chung": "2026-10-12",
+   "ghi_chu": "Điều 18 (chiến lược, kế hoạch kinh doanh hằng năm); Điều 20 (hoạt động đầu tư của doanh nghiệp); Điều 23 (quản lý công ty do doanh nghiệp nắm giữ 100% vốn điều lệ)",
+   "ngay_doi_chieu_nguon": "",
+   "cap_van_ban": "1",
+   "quy_dinh_chi_tiet_cho": "",
    "sua_doi_cho": "",
    "ap_dung_uu_tien_cho": ""
   }
@@ -3130,9 +3240,9 @@ window.APP_DATA = {
    "luong": "Tất cả",
    "dau_vao": "Thư/đề xuất của đối tác, chỉ đạo của lãnh đạo, thông tin quy hoạch",
    "phoi_hop": "Ban PT&KD Sản phẩm mới (đầu mối); Các ban chuyên môn của PVEP",
-   "can_cu": "Quy chế nội bộ PVEP CẦN XÁC MINH",
-   "ho_so": "Mẫu 1 – Phiếu tiếp nhận",
-   "dau_ra": "Cơ hội có mã, người phụ trách",
+   "can_cu": "mục III.8 QĐ 1509/QĐ-BCT (Petrovietnam chủ động đầu mối phát triển dự án điện gió ngoài khơi); Quy chế nội bộ PVEP CẦN XÁC MINH",
+   "ho_so": "Mẫu 1 – Phiếu tiếp nhận và đăng ký cơ hội (tệp .docx đính kèm)",
+   "dau_ra": "Cơ hội có mã (ĐGNK-năm-số thứ tự), người phụ trách, mã tập hợp chi phí",
    "dieu_kien_chuyen_buoc": "Đủ thông tin tối thiểu về khu vực, đối tác",
    "rui_ro": "Tiếp nhận dữ liệu mật khi chưa có NDA",
    "trang_thai_phap_ly": "Nội bộ",
@@ -3140,6 +3250,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "1) Định hướng giao nhiệm vụ cho Petrovietnam: mục III.8 QĐ 1509/QĐ-BCT. 2) Mã cơ hội dùng chung cho hồ sơ và tập hợp chi phí riêng (khoản 1 Điều 10 NQ 253/2025; khoản 1 Điều 6 NĐ 272/2026). 3) Thông tin của bên đề xuất chỉ là dữ liệu đầu vào, kiểm chứng tại TT-1.1.2 và TT-1.1.3.",
+   "tep_dinh_kem": "mau/M1_Phieu_tiep_nhan_co_hoi_DGNK.docx",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3152,9 +3264,9 @@ window.APP_DATA = {
    "luong": "Tất cả",
    "dau_vao": "Tọa độ góc, bản đồ, báo cáo đối tác",
    "phoi_hop": "Ban PT&KD Sản phẩm mới (đầu mối); Các ban chuyên môn của PVEP; Đối tác, tư vấn",
-   "can_cu": "điểm b khoản 1 Điều 26 Luật Điện lực; khoản 6 Điều 27 NĐ 58/2025",
+   "can_cu": "điểm b khoản 1 Điều 26 Luật Điện lực; khoản 6 Điều 27 NĐ 58/2025; khoản 6 Điều 3, khoản 2 Điều 11, khoản 7 Điều 6 Luật Đo đạc và bản đồ 27/2018/QH14; QĐ 83/2000/QĐ-TTg; TT 973/2001/TT-TCĐC",
    "ho_so": "Mẫu 3 – Danh mục dữ liệu",
-   "dau_ra": "Đánh giá độ tin cậy A/B/C",
+   "dau_ra": "Tọa độ đã kiểm chứng, chuyển về VN-2000; đánh giá độ tin cậy A/B/C; phân loại mức bảo mật",
    "dieu_kien_chuyen_buoc": "Tọa độ khép kín, có nguồn",
    "rui_ro": "Dữ liệu đối tác sai hoặc có được trái quy định",
    "trang_thai_phap_ly": "Nội bộ",
@@ -3162,6 +3274,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "1) Hệ quy chiếu chuẩn: Hệ quy chiếu và hệ tọa độ quốc gia VN-2000 (QĐ 83/2000/QĐ-TTg). Lưới chiếu UTM; múi chiếu 3° cho bản đồ 1:2.000–1:10.000, múi chiếu 6° cho bản đồ 1:25.000–1:500.000; tính chuyển WGS-84 sang VN-2000 bằng 7 tham số theo TT 973/2001/TT-TCĐC. 2) Cơ sở pháp lý: khoản 6 Điều 3, khoản 2 Điều 11 Luật Đo đạc và bản đồ 27/2018/QH14 (hệ tọa độ quốc gia dùng thể hiện kết quả đo đạc, bản đồ); khoản 7 Điều 6 Luật Đo đạc và bản đồ (cấm làm lộ dữ liệu thuộc danh mục bí mật nhà nước). 3) Tọa độ dự án: quy hoạch không công bố tọa độ; theo ghi chú Bảng 17 Phụ lục II.1, Bảng 18 Phụ lục II.1 QĐ 1509/QĐ-BCT, tọa độ được xác định ở giai đoạn chuẩn bị dự án. Khu vực đã giao: tra phụ lục, sơ đồ kèm quyết định giao khu vực biển (ví dụ QĐ 138/QĐ-BNNMT cho NTB1). 4) Bước sau: sơ đồ khu vực biển thể hiện tọa độ các điểm góc (điểm d khoản 1 Điều 15 NĐ 11/2021, Mẫu số 05 – CẦN XÁC MINH nội dung sửa đổi tại NĐ 65/2025); bản đồ địa hình đáy biển dùng VN-2000, múi chiếu 3° (khoản 1 Điều 5 TT 63/2017/TT-BTNMT, sđ bởi TT 15/2025/TT-BNNMT). 5) Cách làm: ghi nguyên hệ tọa độ của nguồn vào mục D Mẫu 1; chuyển đổi bằng phần mềm, tham số chính thức (CẦN XÁC MINH phiên bản hiện hành); lưu tệp gốc và tệp đã chuyển đổi trong Mẫu 3.",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3172,18 +3286,20 @@ window.APP_DATA = {
    "cong_viec": "Đối chiếu tên dự án, công suất, vùng biển, tỉnh với QĐ 768/QĐ-TTg, Kế hoạch thực hiện và các lần điều chỉnh cập nhật",
    "muc_tieu": "Xác định có trong quy hoạch hay không",
    "luong": "Tất cả",
-   "dau_vao": "Bản gốc QĐ 768, QĐ 1509 và quyết định điều chỉnh cập nhật mới nhất",
+   "dau_vao": "QĐ 768/QĐ-TTg, QĐ 1509/QĐ-BCT (bản trong bộ tài liệu, đã đối chiếu 12/10/2026); quyết định điều chỉnh cập nhật sau 30/5/2025 (nếu có) CẦN XÁC MINH",
    "phoi_hop": "Ban PT&KD Sản phẩm mới (đầu mối); Các ban chuyên môn của PVEP; Cơ quan nhà nước: BCT nếu không rõ",
-   "can_cu": "Điều 4 NQ 253/2025; điểm a khoản 1 Điều 26 NĐ 58/2025 (sđ khoản 18 Điều 2 NĐ 243/2026); khoản 2 Điều 13 NĐ 272/2026",
+   "can_cu": "Bảng 17 Phụ lục III.1, Bảng 18 Phụ lục III.1 QĐ 768/QĐ-TTg; Bảng 17 Phụ lục II.1, Bảng 18 Phụ lục II.1 QĐ 1509/QĐ-BCT; mục III.1.b Điều 1 QĐ 768/QĐ-TTg; Điều 3 QĐ 768/QĐ-TTg; Điều 4 NQ 253/2025; điểm a khoản 1 Điều 26 NĐ 58/2025 (sđ khoản 18 Điều 2 NĐ 243/2026); khoản 2 Điều 13 NĐ 272/2026",
    "ho_so": "Mẫu 4 – Ma trận pháp lý",
    "dau_ra": "Kết luận: có / không / chưa rõ trong quy hoạch",
    "dieu_kien_chuyen_buoc": "Có trích dẫn phụ lục, dòng cụ thể",
    "rui_ro": "Dùng bản quy hoạch cũ",
-   "trang_thai_phap_ly": "CẦN XÁC MINH phụ lục QĐ 768, QĐ 1509",
+   "trang_thai_phap_ly": "Có căn cứ",
    "loai_buoc": "Công việc",
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "1) Danh mục dự án ĐGNK đến 2030: Bảng 17 Phụ lục III.1 QĐ 768/QĐ-TTg (Thủ tướng phê duyệt); nội dung trùng Bảng 17 Phụ lục II.1 QĐ 1509/QĐ-BCT. 2) Danh mục đến 2035 (dự án thành phần, điểm gom, giai đoạn vận hành): Bảng 18 Phụ lục III.1 QĐ 768/QĐ-TTg; Bảng 18 Phụ lục II.1 QĐ 1509/QĐ-BCT. 3) Tổng công suất 6.000–17.032 MW, vận hành 2030–2035: mục III.1.b Điều 1 QĐ 768/QĐ-TTg; mục II.1 QĐ 1509/QĐ-BCT. 4) Dự án trong quy hoạch trước được tiếp tục thực hiện: Điều 3 QĐ 768/QĐ-TTg. 5) Lưu ý: văn bản ghi 17.032 MW, Bảng 18 ghi tổng 17.000 MW – CẦN XÁC MINH khi trích số liệu. Quyết định điều chỉnh cập nhật sau 30/5/2025: tra Cổng thông tin Bộ Công Thương – CẦN XÁC MINH.",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3206,6 +3322,8 @@ window.APP_DATA = {
    "re_nhanh": "Vận hành 2025–2030 → Thủ tướng chấp thuận chủ trương đồng thời chấp thuận nhà đầu tư (Điều 11 NQ 253/2025; Điều 9 NĐ 272/2026) | Vận hành 2031–2035 → Chủ tịch UBND tỉnh nơi có điểm gom (Điều 12 NQ 253/2025; Điều 10 NĐ 272/2026) | Ngoài danh mục → pháp luật giao khu vực biển chung (khoản 2 Điều 13 NĐ 272/2026)",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3228,6 +3346,8 @@ window.APP_DATA = {
    "re_nhanh": "Đã giao cho chủ thể khác (không phải Petrovietnam/PVEP) → DỪNG luồng đầu tư mới, chuyển xét hợp tác (L2) hoặc M&A (L3) | Không/chưa rõ → tiếp tục TT-1.1.6",
    "diem_dung": "X1 – khu vực đã giao cho chủ thể khác",
    "de_xuat": "",
+   "nguon_tra_cuu": "1) Văn bản trả lời của Bộ Nông nghiệp và Môi trường (Cục Biển và Hải đảo Việt Nam) theo đề nghị của PVEP hoặc qua Petrovietnam. 2) Cơ sở dữ liệu tài nguyên, môi trường biển và hải đảo quốc gia: khoản 2 Điều 68, khoản 2 Điều 69 Luật Tài nguyên, môi trường biển và hải đảo 82/2015/QH13 (khai thác đúng mục đích). 3) Quyết định đã biết: QĐ 138/QĐ-BNNMT (PVN – NTB1); CV 435/BNNMT-BHĐ (EVN – Bắc Bộ 1.3, 1.4). 4) Hồ sơ chấp thuận chủ trương đang xử lý: hỏi Bộ Tài chính (luồng 2025–2030) hoặc UBND tỉnh nơi có điểm gom (luồng 2031–2035).",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3250,6 +3370,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3260,9 +3382,9 @@ window.APP_DATA = {
    "cong_viec": "Xác định điểm gom theo quy hoạch hoặc kế hoạch thực hiện",
    "muc_tieu": "Xác định vị trí trạm biến áp gom công suất gần bờ hoặc trên đất liền",
    "luong": "L1, L2, L3",
-   "dau_vao": "QĐ 768, Kế hoạch thực hiện",
+   "dau_vao": "QĐ 768/QĐ-TTg; QĐ 1509/QĐ-BCT",
    "phoi_hop": "Ban PT&KD Sản phẩm mới (đầu mối); Các ban chuyên môn của PVEP",
-   "can_cu": "khoản 2 Điều 3, điểm a khoản 3 Điều 12 NQ 253/2025",
+   "can_cu": "Bảng 18 Phụ lục III.1 QĐ 768/QĐ-TTg; Bảng 18 Phụ lục II.1 QĐ 1509/QĐ-BCT; khoản 2 Điều 3, điểm a khoản 3 Điều 12 NQ 253/2025",
    "ho_so": "Mẫu 4",
    "dau_ra": "Tên, vị trí điểm gom",
    "dieu_kien_chuyen_buoc": "Có trích dẫn văn bản",
@@ -3272,6 +3394,8 @@ window.APP_DATA = {
    "re_nhanh": "Đã xác định điểm gom → TT-1.2.3 | Chưa xác định → TT-1.2.2 (HOLD)",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "1) Cột “Dự kiến điểm gom công suất”: Bảng 18 Phụ lục III.1 QĐ 768/QĐ-TTg; Bảng 18 Phụ lục II.1 QĐ 1509/QĐ-BCT (Trạm BB 1–BB 4, NTB1–NTB3, NB1–NB3). 2) Trạm 500 kV tương ứng: Bảng 3 Phụ lục II.2, Bảng 11 Phụ lục II.2 QĐ 1509/QĐ-BCT. 3) Cập nhật vào quy hoạch tỉnh: khoản 3 Điều 2 QĐ 768/QĐ-TTg; mục III.3 QĐ 1509/QĐ-BCT.",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3294,6 +3418,8 @@ window.APP_DATA = {
    "re_nhanh": "HOLD: UBND tỉnh đề xuất, Bộ Công Thương thống nhất (điểm b khoản 3 Điều 12 NQ 253/2025) → đưa vào danh sách xin ý kiến TT-1.7.3",
    "diem_dung": "HOLD – chưa có điểm gom",
    "de_xuat": "",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3306,7 +3432,7 @@ window.APP_DATA = {
    "luong": "L1, L2, L3",
    "dau_vao": "Quy hoạch lưới trong QĐ 768, KH thực hiện; thông tin đơn vị hệ thống điện",
    "phoi_hop": "Ban PT&KD Sản phẩm mới (đầu mối); Các ban chuyên môn của PVEP; Cơ quan nhà nước: đơn vị vận hành, quản lý lưới (chỉ trao đổi thông tin); Đối tác, tư vấn",
-   "can_cu": "điểm c khoản 1 Điều 7 NĐ 272/2026 (hồ sơ CTĐT phải có sơ bộ phương án đấu nối – bước sau); quy định đấu nối của BCT CẦN XÁC MINH",
+   "can_cu": "Bảng 3 Phụ lục II.2, Bảng 11 Phụ lục II.2 QĐ 1509/QĐ-BCT; điểm c khoản 1 Điều 7 NĐ 272/2026 (hồ sơ CTĐT phải có sơ bộ phương án đấu nối – bước sau); quy định đấu nối của BCT CẦN XÁC MINH",
    "ho_so": "Mẫu 5",
    "dau_ra": "Đánh giá rủi ro đấu nối",
    "dieu_kien_chuyen_buoc": "Không phát hiện điểm loại trừ",
@@ -3316,6 +3442,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "1) Trạm 500 kV đồng bộ nguồn ĐGNK miền Bắc (BB 1–BB 4): Bảng 3 Phụ lục II.2 QĐ 1509/QĐ-BCT. 2) Miền Nam (NTB 1 giai đoạn 2025–2030; NTB 2, NTB 3 giai đoạn 2031–2035) và đường dây 500 kV NTB 1 – Hồng Phong: Bảng 11 Phụ lục II.2 QĐ 1509/QĐ-BCT. 3) Khả năng giải tỏa công suất: hỏi đơn vị vận hành hệ thống điện, Tổng công ty Truyền tải điện – CẦN XÁC MINH đầu mối.",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3338,6 +3466,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3360,6 +3490,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "1) Ranh giới vùng biển: Điều 8 (đường cơ sở), Điều 15 (vùng đặc quyền kinh tế), Điều 17 (thềm lục địa) Luật Biển Việt Nam 18/2012/QH13. 2) Tọa độ dùng để số hóa: tọa độ đã kiểm chứng, chuyển về VN-2000 tại TT-1.1.2. 3) Định mức diện tích: theo cột Căn cứ pháp lý.",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3382,6 +3514,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "1) Lô, mỏ, diện tích phát triển mỏ, công trình, đường ống: cơ sở dữ liệu nội bộ Petrovietnam, PVEP và hợp đồng dầu khí (dữ liệu dầu khí – xử lý theo chế độ bảo mật, không đưa lên bản đồ công khai). 2) Vùng an toàn công trình dầu khí: khoản 2 Điều 8 Luật Dầu khí 10/2026 (áp dụng từ 01/3/2027); trước thời điểm đó theo Luật Dầu khí 2022 – CẦN XÁC MINH điều.",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3404,6 +3538,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "1) Chỉ dùng thông tin công khai được phép sử dụng. 2) Khu vực quốc phòng, an ninh: xác định qua ý kiến Bộ Quốc phòng, Bộ Công an ở bước sau (điểm đ khoản 1 Điều 26 NĐ 58/2025).",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3426,6 +3562,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "1) Hải đồ được thành lập cho vùng nước cảng biển và luồng, tuyến hàng hải (khoản 1 Điều 27 Luật Đo đạc và bản đồ 27/2018/QH14). 2) Thông báo hàng hải, tuyến cáp ngầm: đơn vị bảo đảm an toàn hàng hải, chủ sở hữu tuyến cáp – CẦN XÁC MINH đơn vị cung cấp và điều kiện khai thác.",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3448,6 +3586,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "1) Cơ sở dữ liệu tài nguyên, môi trường biển và hải đảo quốc gia: khoản 2 Điều 68 Luật Tài nguyên, môi trường biển và hải đảo 82/2015/QH13. 2) Quy hoạch bảo tồn biển, ngư trường: CẦN XÁC MINH văn bản quy hoạch hiện hành.",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3470,6 +3610,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "1) Phân vùng Quy hoạch không gian biển quốc gia: NQ 139/2024/QH15 và hồ sơ quy hoạch kèm theo – CẦN XÁC MINH điều, phụ lục. 2) Quy hoạch tỉnh ven biển. 3) Quyết định giao khu vực biển đã ban hành (Bộ NN&MT, UBND tỉnh).",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3492,6 +3634,8 @@ window.APP_DATA = {
    "re_nhanh": "Đỏ → NO-GO hoặc điều chỉnh ranh giới | Vàng → danh sách xin ý kiến (TT-1.7.3) | Xanh → tiếp tục",
    "diem_dung": "X2 – chồng lấn loại trừ",
    "de_xuat": "",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3514,6 +3658,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "Có",
+   "nguon_tra_cuu": "1) Dữ liệu dầu khí: chỉ sử dụng khi được phép theo hợp đồng dầu khí và quy chế Petrovietnam, PVEP. 2) Dữ liệu gió tái phân tích, bản đồ gió toàn cầu: THAM KHẢO KỸ THUẬT, không thay thế đo gió tại hiện trường (GĐ03).",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3536,6 +3682,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "Có",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3558,6 +3706,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "Có",
+   "nguon_tra_cuu": "1) Khung giá phát điện: Bộ Công Thương xây dựng, ban hành (khoản 1 Điều 2 QĐ 768/QĐ-TTg) – CẦN XÁC MINH quyết định khung giá ĐGNK hiện hành. 2) Giá điện không cao hơn giá tối đa của khung giá tại năm đàm phán (khoản 4 Điều 11 NQ 253/2025).",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3570,7 +3720,7 @@ window.APP_DATA = {
    "luong": "Tất cả",
    "dau_vao": "Báo giá tham khảo, định mức nội bộ",
    "phoi_hop": "Ban PT&KD Sản phẩm mới (đầu mối); Các ban chuyên môn của PVEP",
-   "can_cu": "Quy chế tài chính PVEP CẦN XÁC MINH",
+   "can_cu": "khoản 1 Điều 10 NQ 253/2025; khoản 1, 3 Điều 6 NĐ 272/2026; Quy chế tài chính PVEP CẦN XÁC MINH",
    "ho_so": "Mẫu 6",
    "dau_ra": "Dự toán sơ bộ GĐ02",
    "dieu_kien_chuyen_buoc": "Được ban chuyên môn rà soát",
@@ -3580,6 +3730,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "Có",
+   "nguon_tra_cuu": "Xem thẻ “Tài chính, chi phí” (TC1-01 đến TC1-03).",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3602,6 +3754,8 @@ window.APP_DATA = {
    "re_nhanh": "Đủ 4 điều kiện và luật đã có hiệu lực (từ 01/3/2027) → L4, chờ nghị định hướng dẫn | Không đủ hoặc chưa có hiệu lực → dự án điện gió ngoài khơi độc lập (khoản 4 Điều 52 Luật Dầu khí 10/2026)",
    "diem_dung": "L4 – chưa có hướng dẫn chi tiết",
    "de_xuat": "",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3624,6 +3778,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3646,6 +3802,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3668,6 +3826,8 @@ window.APP_DATA = {
    "re_nhanh": "L1 Đầu tư mới | L2 Hợp tác, liên danh, liên doanh | L3 M&A | L4 Công trình năng lượng gắn hoạt động dầu khí",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3690,6 +3850,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3712,6 +3874,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3734,6 +3898,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "Xem thẻ “Tài chính, chi phí” (TC1-05, TC1-06).",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3756,6 +3922,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3778,6 +3946,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3790,7 +3960,7 @@ window.APP_DATA = {
    "luong": "Tất cả",
    "dau_vao": "Quy chế phân cấp PVEP, PVN",
    "phoi_hop": "Ban PT&KD Sản phẩm mới (đầu mối); Các ban chuyên môn của PVEP",
-   "can_cu": "Quy chế nội bộ CẦN XÁC MINH",
+   "can_cu": "khoản 3 Điều 20, Điều 23 Luật 68/2025/QH15; Quy chế nội bộ CẦN XÁC MINH",
    "ho_so": "Mẫu 6",
    "dau_ra": "Cấp phê duyệt và trình tự",
    "dieu_kien_chuyen_buoc": "Xác định được người quyết định G1",
@@ -3800,6 +3970,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "Xem thẻ “Tài chính, chi phí” (TC1-07).",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3822,6 +3994,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3834,7 +4008,7 @@ window.APP_DATA = {
    "luong": "Tất cả",
    "dau_vao": "ĐX-1.4.4",
    "phoi_hop": "Ban PT&KD Sản phẩm mới (đầu mối); Các ban chuyên môn của PVEP",
-   "can_cu": "Quy chế nội bộ CẦN XÁC MINH",
+   "can_cu": "khoản 1 Điều 18 Luật 68/2025/QH15 (kế hoạch kinh doanh hằng năm); khoản 1 Điều 10 NQ 253/2025; Quy chế nội bộ CẦN XÁC MINH",
    "ho_so": "Mẫu 6 (phụ lục)",
    "dau_ra": "Kế hoạch, dự toán",
    "dieu_kien_chuyen_buoc": "ban chuyên môn rà soát",
@@ -3844,6 +4018,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "Xem thẻ “Tài chính, chi phí” (TC1-01, TC1-07).",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3866,6 +4042,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3888,6 +4066,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   },
   {
@@ -3910,6 +4090,8 @@ window.APP_DATA = {
    "re_nhanh": "",
    "diem_dung": "",
    "de_xuat": "",
+   "nguon_tra_cuu": "",
+   "tep_dinh_kem": "",
    "ngay_cap_nhat": "2026-10-12"
   }
  ],
@@ -3924,7 +4106,7 @@ window.APP_DATA = {
    "thanh_phan": "Theo Mẫu 1 mục 6",
    "co_mau_phap_dinh": "Không",
    "van_ban_mau": "Không có; dùng Mẫu 1 nội bộ",
-   "duong_dan": "Không áp dụng",
+   "duong_dan": "mau/M1_Phieu_tiep_nhan_co_hoi_DGNK.docx",
    "thoi_diem": "TT-1.1.1",
    "pham_vi": "Giai đoạn 01 (nội bộ)",
    "mau_noi_bo": "M1"
@@ -4116,7 +4298,7 @@ window.APP_DATA = {
    "loai": "Nộp cơ quan nhà nước",
    "co_quan": "Bộ NN&MT",
    "can_cu": "NĐ 11/2021, NĐ 65/2025; khoản 4 Điều 5 NĐ 272/2026; TT 79/2025/TT-BNNMT (trường hợp DN 100% vốn NN)",
-   "thanh_phan": "Đơn, hồ sơ theo pháp luật biển; tài liệu chứng minh tài chính (BCTC kiểm toán 02 năm, hoặc cam kết công ty mẹ, hoặc tài liệu khác – khoản 3 Điều 5 NĐ 272/2026)",
+   "thanh_phan": "Thành phần chung theo khoản 1 Điều 15 NĐ 11/2021: đơn đề nghị (Mẫu số 01), sơ đồ khu vực biển thể hiện tọa độ các điểm góc (Mẫu số 05), văn bản cho phép khai thác, sử dụng tài nguyên biển, văn bản về môi trường (nếu có). Nội dung sửa đổi tại NĐ 65/2025 và quy định riêng cho khảo sát ĐGNK tại Điều 5 NĐ 272/2026, TT 79/2025 – CẦN XÁC MINH",
    "co_mau_phap_dinh": "Có theo pháp luật giao khu vực biển CẦN XÁC MINH số mẫu",
    "van_ban_mau": "CẦN XÁC MINH",
    "duong_dan": "CẦN XÁC MINH",
@@ -4164,7 +4346,7 @@ window.APP_DATA = {
    "go": "Có trích dẫn danh mục và giai đoạn",
    "hold": "Chưa có bản gốc Kế hoạch thực hiện mới nhất; đang chờ điều chỉnh cập nhật",
    "no_go": "Không có trong quy hoạch và không có cơ sở đề xuất điều chỉnh cập nhật",
-   "can_cu": "Điều 4, điểm b khoản 2 Điều 11, Điều 12 NQ 253/2025; điểm a khoản 1 Điều 26 NĐ 58/2025",
+   "can_cu": "Bảng 17 Phụ lục III.1, Bảng 18 Phụ lục III.1 QĐ 768/QĐ-TTg; Bảng 18 Phụ lục II.1 QĐ 1509/QĐ-BCT; Điều 4, điểm b khoản 2 Điều 11, Điều 12 NQ 253/2025; điểm a khoản 1 Điều 26 NĐ 58/2025",
    "quyet_dinh_no_go": "Có"
   },
   {
@@ -4241,7 +4423,7 @@ window.APP_DATA = {
    "go": "Có dự toán, nguồn kinh phí",
    "hold": "Chưa có nguồn",
    "no_go": "Vượt khả năng, không có nguồn",
-   "can_cu": "Quy chế tài chính PVEP CẦN XÁC MINH",
+   "can_cu": "khoản 1 Điều 10 NQ 253/2025; khoản 3 Điều 20 Luật 68/2025/QH15; Quy chế tài chính PVEP CẦN XÁC MINH",
    "quyet_dinh_no_go": ""
   },
   {
@@ -4363,12 +4545,12 @@ window.APP_DATA = {
    "thu_tu": "7",
    "ma_vb": "VB11",
    "van_ban": "Quyết định 768/QĐ-TTg phê duyệt Điều chỉnh Quy hoạch phát triển điện lực quốc gia thời kỳ 2021–2030, tầm nhìn 2050",
-   "co_quan_ngay": "Thủ tướng · 15/4/2025",
-   "dieu_khoan": "Danh mục và công suất điện gió ngoài khơi theo vùng, giai đoạn CẦN XÁC MINH phụ lục cụ thể",
-   "tinh_trang": "Còn hiệu lực; có thể được điều chỉnh cập nhật theo Điều 4 NQ 253/2025",
-   "nguon": "Project (tệp PDF chưa trích xuất được văn bản); số hiệu được QĐ giao biển cho PVN viện dẫn",
+   "co_quan_ngay": "Thủ tướng Chính phủ · 15/04/2025 · hiệu lực từ ngày ký",
+   "dieu_khoan": "mục III.1.b Điều 1 QĐ 768/QĐ-TTg (ĐGNK 6.000–17.032 MW, vận hành 2030–2035); Bảng 17 Phụ lục III.1, Bảng 18 Phụ lục III.1 QĐ 768/QĐ-TTg (danh mục, điểm gom, giai đoạn vận hành); mục V.2 Điều 1 QĐ 768/QĐ-TTg; khoản 1, 3 Điều 2 QĐ 768/QĐ-TTg; Điều 3 QĐ 768/QĐ-TTg",
+   "tinh_trang": "Còn hiệu lực từ 15/4/2025; thay thế QĐ 500/QĐ-TTg; có thể được điều chỉnh cập nhật theo Điều 4 NQ 253/2025",
+   "nguon": "Bản scan PDF QĐ 768/QĐ-TTg và Phụ lục I, III trong bộ tài liệu (OCR, đã soát)",
    "muc_do": "Trực tiếp",
-   "nhan_dinh": "Nguồn duy nhất để khẳng định dự án có trong quy hoạch; phải đối chiếu tên dự án, công suất, vùng, giai đoạn"
+   "nhan_dinh": "Căn cứ gốc xác định dự án ĐGNK trong quy hoạch: danh mục tại Phụ lục III.1 (Thủ tướng phê duyệt), Kế hoạch thực hiện (QĐ 1509/QĐ-BCT) nhắc lại cùng nội dung. Tọa độ dự án chưa được xác định trong quy hoạch. Khung giá phát điện do Bộ Công Thương ban hành (khoản 1 Điều 2 QĐ 768/QĐ-TTg)."
   },
   {
    "ma": "CC1-08",
@@ -4376,12 +4558,12 @@ window.APP_DATA = {
    "thu_tu": "8",
    "ma_vb": "VB28",
    "van_ban": "Quyết định 1509/QĐ-BCT phê duyệt Kế hoạch thực hiện QHĐ VIII điều chỉnh",
-   "co_quan_ngay": "Bộ Công Thương · 30/5/2025",
-   "dieu_khoan": "Danh mục dự án nguồn, lưới; tiến độ CẦN XÁC MINH",
-   "tinh_trang": "CẦN XÁC MINH các lần cập nhật",
-   "nguon": "Nguồn thứ cấp; chưa có bản gốc",
-   "muc_do": "Cần xác minh",
-   "nhan_dinh": "Dùng xác định giai đoạn vận hành dự kiến và điểm gom; bắt buộc lấy bản gốc mới nhất trước G1"
+   "co_quan_ngay": "Bộ Công Thương · 30/05/2025 · hiệu lực từ ngày ký",
+   "dieu_khoan": "mục II.1 QĐ 1509/QĐ-BCT; Bảng 17 Phụ lục II.1, Bảng 18 Phụ lục II.1 QĐ 1509/QĐ-BCT; Bảng 3 Phụ lục II.2, Bảng 11 Phụ lục II.2 QĐ 1509/QĐ-BCT; mục III.8 QĐ 1509/QĐ-BCT",
+   "tinh_trang": "Còn hiệu lực từ 30/5/2025 (Điều 2 QĐ 1509/QĐ-BCT); CẦN XÁC MINH các lần điều chỉnh cập nhật",
+   "nguon": "Tệp docx trong bộ tài liệu",
+   "muc_do": "Trực tiếp",
+   "nhan_dinh": "Căn cứ đối chiếu tên dự án, công suất, điểm gom, năm vận hành (TT-1.1.3, TT-1.2.1). Tọa độ dự án chưa được xác định trong quy hoạch (ghi chú Bảng 17, Bảng 18)."
   },
   {
    "ma": "CC1-09",
@@ -4416,8 +4598,8 @@ window.APP_DATA = {
    "ma_vb": "VB18;VB17",
    "van_ban": "Luật Biển Việt Nam số 18/2012/QH13; Luật Tài nguyên, môi trường biển và hải đảo",
    "co_quan_ngay": "Quốc hội · 2012; 2015",
-   "dieu_khoan": "CẦN XÁC MINH điều",
-   "tinh_trang": "Còn hiệu lực. Số hiệu Luật TNMT biển ghi 82/2015/QH13 tại CV 435 nhưng 83/2015/QH13 tại Điều 79 Luật Điện lực CẦN XÁC MINH",
+   "dieu_khoan": "Điều 8, Điều 15, Điều 17 Luật Biển Việt Nam 18/2012/QH13; khoản 2 Điều 68, khoản 2 Điều 69 Luật Tài nguyên, môi trường biển và hải đảo 82/2015/QH13",
+   "tinh_trang": "Còn hiệu lực. Số hiệu Luật Tài nguyên, môi trường biển và hải đảo là 82/2015/QH13 (đối chiếu vbpl.vn)",
    "nguon": "Viện dẫn tại QĐ giao biển cho PVN và CV 435",
    "muc_do": "Điều kiện sàng lọc",
    "nhan_dinh": "Khung pháp lý cho quyền sử dụng khu vực biển; áp dụng chính ở GĐ02"
@@ -4429,7 +4611,7 @@ window.APP_DATA = {
    "ma_vb": "VB19;VB30",
    "van_ban": "NĐ 11/2021/NĐ-CP giao khu vực biển; NĐ 65/2025/NĐ-CP sửa đổi NĐ 40/2016 và NĐ 11/2021",
    "co_quan_ngay": "Chính phủ · 10/02/2021; 12/3/2025",
-   "dieu_khoan": "Hồ sơ, trình tự giao khu vực biển CẦN XÁC MINH điều, mẫu",
+   "dieu_khoan": "điểm d khoản 1 Điều 15 NĐ 11/2021 (sơ đồ khu vực biển thể hiện tọa độ các điểm góc, Mẫu số 05); nội dung sửa đổi tại NĐ 65/2025 CẦN XÁC MINH",
    "tinh_trang": "Còn hiệu lực",
    "nguon": "Viện dẫn tại QĐ giao biển cho PVN",
    "muc_do": "Bước tiếp theo",
@@ -4564,6 +4746,185 @@ window.APP_DATA = {
    "nguon": "Chưa rà soát chi tiết",
    "muc_do": "Điều kiện sàng lọc",
    "nhan_dinh": "Trong GĐ01 chỉ dùng để xác định lớp dữ liệu GIS cần thu thập; không kết luận thay cơ quan có thẩm quyền"
+  },
+  {
+   "ma": "CC1-23",
+   "giai_doan_10": "1",
+   "thu_tu": "23",
+   "ma_vb": "VB33",
+   "van_ban": "Luật Đo đạc và bản đồ số 27/2018/QH14",
+   "co_quan_ngay": "Quốc hội · 14/06/2018 · hiệu lực 01/01/2019",
+   "dieu_khoan": "khoản 6 Điều 3, khoản 2 Điều 11, khoản 7 Điều 6, khoản 1 Điều 27 Luật Đo đạc và bản đồ",
+   "tinh_trang": "Còn hiệu lực",
+   "nguon": "Nguồn thứ cấp; chưa có nguyên văn trong bộ tài liệu",
+   "muc_do": "Điều kiện sàng lọc",
+   "nhan_dinh": "Hệ tọa độ quốc gia dùng thể hiện kết quả đo đạc, bản đồ; cấm làm lộ dữ liệu đo đạc thuộc bí mật nhà nước; hải đồ (TT-1.1.2, TT-1.3.4)"
+  },
+  {
+   "ma": "CC1-24",
+   "giai_doan_10": "1",
+   "thu_tu": "24",
+   "ma_vb": "VB34;VB35",
+   "van_ban": "QĐ 83/2000/QĐ-TTg về Hệ quy chiếu và Hệ tọa độ quốc gia VN-2000; TT 973/2001/TT-TCĐC hướng dẫn áp dụng",
+   "co_quan_ngay": "Thủ tướng Chính phủ · 12/07/2000; Tổng cục Địa chính · 20/06/2001",
+   "dieu_khoan": "Toàn văn QĐ 83/2000/QĐ-TTg; mục III, mục IV TT 973/2001/TT-TCĐC và Phụ lục (múi chiếu, kinh tuyến trục, tính chuyển WGS-84 sang VN-2000)",
+   "tinh_trang": "Cần xác minh hiệu lực hiện hành",
+   "nguon": "Nguồn thứ cấp",
+   "muc_do": "Điều kiện sàng lọc",
+   "nhan_dinh": "Chuẩn hóa tọa độ khu vực về VN-2000 trước khi số hóa, đối chiếu chồng lấn (TT-1.1.2, TT-1.3.1)"
+  },
+  {
+   "ma": "CC1-25",
+   "giai_doan_10": "1",
+   "thu_tu": "25",
+   "ma_vb": "VB36",
+   "van_ban": "TT 63/2017/TT-BTNMT quy định kỹ thuật đo vẽ bản đồ địa hình đáy biển tỷ lệ 1:5000 (sđ bởi TT 15/2025/TT-BNNMT)",
+   "co_quan_ngay": "Bộ TN&MT · 22/12/2017 · hiệu lực 15/02/2018",
+   "dieu_khoan": "khoản 1 Điều 5 TT 63/2017/TT-BTNMT",
+   "tinh_trang": "Còn hiệu lực – đã sửa đổi",
+   "nguon": "Văn bản hợp nhất trên datafiles.chinhphu.vn",
+   "muc_do": "Bước tiếp theo",
+   "nhan_dinh": "Yêu cầu hệ tọa độ VN-2000, múi chiếu 3° khi đặt hàng khảo sát địa hình đáy biển (GĐ03)"
+  },
+  {
+   "ma": "CC1-26",
+   "giai_doan_10": "1",
+   "thu_tu": "26",
+   "ma_vb": "VB37",
+   "van_ban": "Luật Quản lý và đầu tư vốn nhà nước tại doanh nghiệp số 68/2025/QH15",
+   "co_quan_ngay": "Quốc hội · 14/06/2025 · hiệu lực 01/08/2025",
+   "dieu_khoan": "khoản 1 Điều 18, khoản 3 Điều 20, Điều 23 Luật 68/2025/QH15",
+   "tinh_trang": "Còn hiệu lực; thay thế Luật 69/2014/QH13",
+   "nguon": "Nguồn thứ cấp; chưa có nguyên văn trong bộ tài liệu",
+   "muc_do": "Trực tiếp với TT-1.6, TT-1.7",
+   "nhan_dinh": "Kế hoạch kinh doanh hằng năm, thẩm quyền quyết định dự án đầu tư, quản lý công ty do doanh nghiệp nắm giữ 100% vốn điều lệ – cơ sở cho thủ tục tài chính nội bộ (thẻ Tài chính)"
+  },
+  {
+   "ma": "CC1-27",
+   "giai_doan_10": "1",
+   "thu_tu": "27",
+   "ma_vb": "VB09",
+   "van_ban": "Luật số 90/2025/QH15 sửa đổi Luật Đấu thầu và các luật liên quan",
+   "co_quan_ngay": "Quốc hội · 25/06/2025 · hiệu lực 01/07/2025",
+   "dieu_khoan": "điểm c khoản 1 Điều 1 Luật 90/2025; điểm c khoản 2 Điều 1 Luật 90/2025",
+   "tinh_trang": "Còn hiệu lực",
+   "nguon": "Tệp docx trong bộ tài liệu",
+   "muc_do": "Điều kiện sàng lọc",
+   "nhan_dinh": "Lựa chọn nhà thầu tư vấn, dữ liệu phục vụ sàng lọc bằng vốn doanh nghiệp (TC1-03)"
+  }
+ ],
+ "tai_chinh": [
+  {
+   "ma": "TC1-01",
+   "giai_doan_10": "1",
+   "thu_tu": "1",
+   "noi_dung": "Bố trí nguồn kinh phí cho công tác sàng lọc",
+   "buoc_lien_quan": "TT-1.1.1; TT-1.7.2",
+   "can_cu": "khoản 1 Điều 18 Luật 68/2025/QH15 (kế hoạch kinh doanh hằng năm); Quy chế tài chính PVEP CẦN XÁC MINH",
+   "viec_can_lam": "Xác định chi phí sàng lọc nằm trong kế hoạch, ngân sách năm đã duyệt; nếu chưa có, đề xuất bổ sung theo phân cấp trước khi phát sinh chi phí",
+   "ho_so": "Đề xuất bổ sung kế hoạch chi phí (nếu cần)",
+   "thoi_diem": "Trước khi phát sinh chi phí",
+   "trang_thai_phap_ly": "Nội bộ",
+   "ghi_chu": "Không ghi số liệu ngân sách trên website công khai",
+   "ngay_cap_nhat": "2026-10-12"
+  },
+  {
+   "ma": "TC1-02",
+   "giai_doan_10": "1",
+   "thu_tu": "2",
+   "noi_dung": "Tập hợp chi phí riêng theo mã cơ hội",
+   "buoc_lien_quan": "TT-1.1.1",
+   "can_cu": "khoản 1 Điều 10 NQ 253/2025; khoản 1, 3 Điều 6 NĐ 272/2026; khoản 3 Điều 27 Luật Điện lực",
+   "viec_can_lam": "Mở mã theo dõi chi phí theo mã cơ hội; lưu chứng từ theo từng cơ hội; ghi nhận chi phí nhân lực, tư vấn, dữ liệu, công tác",
+   "ho_so": "Mẫu 1 mục G; sổ theo dõi chi phí",
+   "thoi_diem": "Ngay khi cấp mã cơ hội",
+   "trang_thai_phap_ly": "Có căn cứ",
+   "ghi_chu": "Căn cứ áp dụng trực tiếp cho chi phí khảo sát, lập hồ sơ chấp thuận chủ trương của doanh nghiệp do Nhà nước nắm giữ 100% vốn điều lệ được giao khảo sát: dùng nguồn chi phí sản xuất, kinh doanh; phải kiểm toán trước khi được hoàn trả; hạch toán vào chi phí sản xuất, kinh doanh khi không có nhà đầu tư trúng thầu hoặc dự án không khả thi. Tập hợp riêng từ GĐ01 giúp đủ chứng từ ở bước sau.",
+   "ngay_cap_nhat": "2026-10-12"
+  },
+  {
+   "ma": "TC1-03",
+   "giai_doan_10": "1",
+   "thu_tu": "3",
+   "noi_dung": "Thuê tư vấn, mua dữ liệu phục vụ sàng lọc (nếu có)",
+   "buoc_lien_quan": "ĐX-1.4.1; TT-1.3.7",
+   "can_cu": "điểm c khoản 2 Điều 1 Luật 90/2025 (sửa điểm d khoản 7 Điều 3 Luật Đấu thầu số 22/2023/QH15); điểm c khoản 1 Điều 1 Luật 90/2025 (sửa khoản 4 Điều 2 Luật Đấu thầu số 22/2023/QH15)",
+   "viec_can_lam": "Lựa chọn nhà thầu theo quy chế mua sắm của Petrovietnam, PVEP bảo đảm công khai, minh bạch, hiệu quả, trách nhiệm giải trình; hợp đồng có điều khoản bảo mật, quyền sở hữu dữ liệu",
+   "ho_so": "Hồ sơ lựa chọn nhà thầu theo quy chế; hợp đồng tư vấn, mua dữ liệu",
+   "thoi_diem": "Khi phát sinh",
+   "trang_thai_phap_ly": "CẦN XÁC MINH",
+   "ghi_chu": "Cần xác minh PVEP thuộc diện “doanh nghiệp nhà nước” theo Luật Doanh nghiệp hiện hành để áp dụng điểm d khoản 7 Điều 3 Luật Đấu thầu số 22/2023/QH15; quy chế mua sắm nội bộ CẦN XÁC MINH",
+   "ngay_cap_nhat": "2026-10-12"
+  },
+  {
+   "ma": "TC1-04",
+   "giai_doan_10": "1",
+   "thu_tu": "4",
+   "noi_dung": "Chi phí làm việc với đối tác; ký NDA, MOU",
+   "buoc_lien_quan": "TT-1.6.4",
+   "can_cu": "Quy chế phân cấp Petrovietnam, PVEP CẦN XÁC MINH",
+   "viec_can_lam": "NDA, MOU giai đoạn sàng lọc không nên phát sinh nghĩa vụ tài chính; điều khoản chia sẻ chi phí (nếu có) trình phê duyệt theo phân cấp",
+   "ho_so": "NDA; MOU; tờ trình (nếu có chia sẻ chi phí)",
+   "thoi_diem": "Trước khi ký",
+   "trang_thai_phap_ly": "Nội bộ",
+   "ghi_chu": "",
+   "ngay_cap_nhat": "2026-10-12"
+  },
+  {
+   "ma": "TC1-05",
+   "giai_doan_10": "1",
+   "thu_tu": "5",
+   "noi_dung": "Năng lực tài chính cho bước khảo sát",
+   "buoc_lien_quan": "TT-1.6.3",
+   "can_cu": "điểm a khoản 2 Điều 5 NĐ 272/2026; khoản 3 Điều 27 Luật Điện lực",
+   "viec_can_lam": "Tính vốn chủ sở hữu yêu cầu = 01 tỷ đồng × số MW đề nghị giao khu vực biển để khảo sát; đối chiếu báo cáo tài chính kiểm toán của chủ thể dự kiến đứng tên; xác định ai thu xếp chi phí khảo sát và cơ chế góp vốn hoặc hoàn trả",
+   "ho_so": "Bảng tính năng lực tài chính (Mẫu 5, phụ lục)",
+   "thoi_diem": "Trước Cổng G1",
+   "trang_thai_phap_ly": "Có căn cứ",
+   "ghi_chu": "Chủ thể đứng tên khảo sát (PVN hay PVEP) xác định tại TT-1.6.1",
+   "ngay_cap_nhat": "2026-10-12"
+  },
+  {
+   "ma": "TC1-06",
+   "giai_doan_10": "1",
+   "thu_tu": "6",
+   "noi_dung": "Năng lực tài chính cho bước chấp thuận chủ trương đầu tư",
+   "buoc_lien_quan": "TT-1.6.3",
+   "can_cu": "điểm a khoản 1 Điều 8 NĐ 272/2026; khoản 2 Điều 30 NĐ 58/2025; khoản 4 Điều 26 Luật Điện lực",
+   "viec_can_lam": "Ước tính sơ bộ tổng vốn đầu tư theo dải tham khảo; xác định vốn chủ sở hữu tối thiểu 20% tổng vốn đầu tư và nguồn cam kết cho vay; tỷ lệ góp vốn khi liên doanh; khả năng miễn bảo đảm thực hiện dự án đầu tư",
+   "ho_so": "Mẫu 5; tờ trình G1 (Mẫu 6)",
+   "thoi_diem": "Sơ bộ trước Cổng G1; chi tiết ở GĐ02",
+   "trang_thai_phap_ly": "Có căn cứ",
+   "ghi_chu": "khoản 4 Điều 26 Luật Điện lực áp dụng cho doanh nghiệp do Nhà nước nắm giữ 100% vốn điều lệ: tư cách của PVEP CẦN XÁC MINH (TT-1.6.1). Không đưa số liệu tổng vốn đầu tư lên website công khai",
+   "ngay_cap_nhat": "2026-10-12"
+  },
+  {
+   "ma": "TC1-07",
+   "giai_doan_10": "1",
+   "thu_tu": "7",
+   "noi_dung": "Thẩm quyền phê duyệt chi phí, chủ trương nghiên cứu, góp vốn",
+   "buoc_lien_quan": "TT-1.6.6; TT-1.7.5",
+   "can_cu": "khoản 3 Điều 20, Điều 23 Luật 68/2025/QH15; Điều lệ, quy chế Petrovietnam, PVEP CẦN XÁC MINH",
+   "viec_can_lam": "Xác định cấp phê duyệt dự toán GĐ02, chủ trương nghiên cứu và mức góp vốn dự kiến; nêu trong tờ trình G1",
+   "ho_so": "Tờ trình G1 (Mẫu 6) kèm dự toán GĐ02",
+   "thoi_diem": "Cổng G1",
+   "trang_thai_phap_ly": "CẦN XÁC MINH",
+   "ghi_chu": "",
+   "ngay_cap_nhat": "2026-10-12"
+  },
+  {
+   "ma": "TC1-08",
+   "giai_doan_10": "1",
+   "thu_tu": "8",
+   "noi_dung": "Chi phí cho nhánh L4 (gắn hoạt động dầu khí)",
+   "buoc_lien_quan": "TT-1.5.1",
+   "can_cu": "khoản 2, 3 Điều 52 Luật Dầu khí 10/2026; hợp đồng dầu khí cụ thể",
+   "viec_can_lam": "Theo dõi riêng; không tính vào chi phí hoạt động dầu khí khi chưa đáp ứng đủ điều kiện Điều 52 và hợp đồng dầu khí cho phép",
+   "ho_so": "Mẫu 4 (phần L4)",
+   "thoi_diem": "Khi đề xuất nhánh L4",
+   "trang_thai_phap_ly": "CHƯA CÓ HƯỚNG DẪN CHI TIẾT",
+   "ghi_chu": "Luật Dầu khí 10/2026 có hiệu lực từ 01/3/2027",
+   "ngay_cap_nhat": "2026-10-12"
   }
  ]
 };

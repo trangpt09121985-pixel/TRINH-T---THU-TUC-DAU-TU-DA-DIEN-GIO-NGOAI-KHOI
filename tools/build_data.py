@@ -28,6 +28,7 @@ TABLES = {
     'bieu_mau':         ('bieu_mau.csv', 'ma'),
     'tieu_chi_cong':    ('tieu_chi_cong.csv', 'ma'),
     'can_cu_giai_doan': ('can_cu_giai_doan.csv', 'ma'),
+    'tai_chinh':        ('tai_chinh.csv', 'ma'),
 }
 LABELS = {'ĐÃ XÁC MINH', 'CẦN XÁC MINH', 'CHƯA CÓ HƯỚNG DẪN CHI TIẾT', 'CẦN Ý KIẾN CƠ QUAN CÓ THẨM QUYỀN'}
 ALLOWED = {
@@ -117,6 +118,13 @@ def validate(db):
         for m in filter(None, (x.strip() for x in r.get('ma_vb', '').split(';'))):
             if m not in vb_ids:
                 errs.append(f'can_cu_giai_doan {r["ma"]}: mã văn bản {m} không có trong van_ban')
+    step_ids = {r['ma'] for r in db.get('buoc_chi_tiet', [])} | tt_ids
+    for r in db.get('tai_chinh', []):
+        if r.get('giai_doan_10') not in ph_ids:
+            errs.append(f'tai_chinh {r["ma"]}: giai_doan_10 không hợp lệ')
+        for m in filter(None, (x.strip() for x in r.get('buoc_lien_quan', '').split(';'))):
+            if m not in step_ids:
+                errs.append(f'tai_chinh {r["ma"]}: bước {m} không có trong buoc_chi_tiet/thu_tuc')
     for r in db['ma_tran_phap_ly']:
         if r['ma_vb'] not in vb_ids:
             errs.append(f'ma_tran_phap_ly {r["ma"]}: mã văn bản {r["ma_vb"]} không có trong van_ban')

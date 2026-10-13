@@ -1,13 +1,10 @@
-# Báo cáo kiểm thử chức năng – phiên bản 2.3
+# Báo cáo kiểm thử chức năng – phiên bản 2.4
 
-Kết quả: **74/74 trường hợp đạt, 0 trường hợp không đạt.** Kiểm thử tự động ngày 12/10/2026 bằng Chromium (Playwright) trên bộ dữ liệu công khai (44 đầu việc, 10 giai đoạn, 6 cổng quyết định, 32 văn bản, 28 dòng ma trận, 14 rủi ro, 14 việc lộ trình; 36 bước chi tiết, 16 hồ sơ, 11 tiêu chí cổng, 22 căn cứ giai đoạn); máy tính 1440×900 và điện thoại 390×844. Bộ dữ liệu nội bộ chạy cùng bộ kiểm thử: 74/74 đạt.
+Kết quả: **81/81 trường hợp đạt, 0 trường hợp không đạt.** Kiểm thử tự động ngày 12/10/2026 bằng Chromium (Playwright) trên bộ dữ liệu công khai (44 đầu việc, 37 văn bản, 36 bước chi tiết, 16 hồ sơ, 11 tiêu chí cổng, 27 căn cứ giai đoạn, 8 nội dung tài chính); máy tính 1440×900 và điện thoại 390×844. Bộ dữ liệu nội bộ chạy cùng bộ kiểm thử: 81/81 đạt.
 
-Kiểm tra dẫn chiếu (`node tools/check_refs.js`): 650 đích dẫn chiếu (điều, khoản, điểm) trong 11 bảng dữ liệu, trang tổng quan, sơ đồ pháp lý và nội dung quy trình chi tiết đều tồn tại trong nguyên văn; 0 lỗi; 6 đích thuộc văn bản chưa có nguyên văn trong bộ tài liệu.
+Kiểm tra dẫn chiếu (`node tools/check_refs.js`): 728 đích dẫn chiếu (điều, khoản, điểm, trích đoạn mục/bảng/phụ lục) đều tồn tại trong kho nguyên văn; 0 lỗi; 34 đích thuộc văn bản chưa có nguyên văn trong bộ tài liệu (Luật Đo đạc và bản đồ, Luật Biển Việt Nam, Luật 68/2025/QH15, NĐ 11/2021…) – bấm vào sẽ hiện thông tin văn bản và nhãn CẦN XÁC MINH.
 
-Điểm đã xử lý trong phiên bản 2.3:
-- Chuyển dẫn chiếu rút gọn trong tài liệu GĐ01 (ví dụ “NQ 253 Đ11 k2–k3”) sang dạng đầy đủ “khoản 2–3 Điều 11 NQ 253/2025” để website gắn nút xem nguyên văn; mọi dẫn chiếu đã đối chiếu tự động.
-- Hai dòng căn cứ CC1-02, CC1-03 có điều khoản ghi lẫn văn bản; đã tách đúng văn bản.
-- Tên ban ở phần phối hợp được thống nhất theo quy ước trách nhiệm PVEP.
+Điểm mới được kiểm thử trong phiên bản 2.4: tổng quan rút gọn (KT75); Mẫu 1 đính kèm và tải về (KT76, KT77, KT81); cơ sở tra cứu tọa độ, hệ quy chiếu (KT78); trích đoạn Bảng 18 Phụ lục (KT79); thẻ Tài chính, chi phí (KT80).
 
 ## Kết quả chi tiết
 
@@ -46,7 +43,7 @@ Kiểm tra dẫn chiếu (`node tools/check_refs.js`): 650 đích dẫn chiếu 
 | KT24 | Có liên kết nguồn chính thức cho văn bản đã tra cứu | ĐẠT |  |
 | KT25 | So sánh “Quy định đã rõ” và “Khoảng trống” | ĐẠT | 18 quy định đã rõ · 10 khoảng trống |
 | KT26 | Tìm văn bản trong danh mục văn bản | ĐẠT |  |
-| KT27 | Xuất danh sách CẦN XÁC MINH | ĐẠT | 69 nội dung |
+| KT27 | Xuất danh sách CẦN XÁC MINH | ĐẠT | 74 nội dung |
 | KT28 | Bảng rủi ro đủ 13 trường; bản đồ nhiệt đủ mã | ĐẠT |  |
 | KT29 | Lọc rủi ro theo nhóm | ĐẠT |  |
 | KT30 | Xuất “Nội dung cần xin ý kiến Lãnh đạo PVEP/Petrovietnam” | ĐẠT | 24 nội dung |
@@ -70,18 +67,25 @@ Kiểm tra dẫn chiếu (`node tools/check_refs.js`): 650 đích dẫn chiếu 
 | KT58 | Liên kết lồng trong cửa sổ nguyên văn và nút Quay lại | ĐẠT |  |
 | KT59 | Quay lại đúng điều trước; Esc đóng cửa sổ nhưng giữ khung chi tiết | ĐẠT |  |
 | KT60 | Các nhãn căn cứ tĩnh ở trang tổng quan được gắn nút | ĐẠT | 27 |
-| KT61 | Sơ đồ pháp lý: đủ văn bản theo 5 tầng, rê chuột hiện quan hệ | ĐẠT | 32 văn bản |
+| KT61 | Sơ đồ pháp lý: đủ văn bản theo 5 tầng, rê chuột hiện quan hệ | ĐẠT | 37 văn bản |
 | KT62 | Sơ đồ pháp lý: chuỗi 7 bước xác lập quyền và thẻ thẩm quyền cơ quan có dẫn chiếu | ĐẠT |  |
 | KT64 | Quy trình chi tiết GĐ01: đủ các bước nhỏ, nhóm theo đầu việc và Cổng G1 | ĐẠT | 36 bước |
 | KT65 | Bước quyết định, điểm dừng và rẽ nhánh được thể hiện | ĐẠT |  |
 | KT66 | Bấm một bước mở ngăn chi tiết có căn cứ bấm được và nút chuyển bước | ĐẠT |  |
 | KT67 | Căn cứ trong ngăn bước mở nguyên văn điều luật | ĐẠT |  |
 | KT68 | Hồ sơ, biểu mẫu: 16 hồ sơ và 6 khung mẫu nội bộ | ĐẠT |  |
-| KT69 | Căn cứ pháp lý giai đoạn: 22 văn bản, tên văn bản mở được nguyên văn | ĐẠT |  |
+| KT69 | Căn cứ pháp lý giai đoạn: đủ văn bản theo dữ liệu, tên văn bản mở được nguyên văn | ĐẠT |  |
 | KT70 | Cổng quyết định: 11 tiêu chí có cột GO/HOLD/NO-GO | ĐẠT |  |
 | KT71 | Cần xác minh: kết luận theo ba mức | ĐẠT |  |
 | KT72 | Bảng chi tiết có đủ cột và tải được CSV | ĐẠT |  |
 | KT73 | Ngăn thủ tục TT-1.1 liệt kê bước chi tiết và dẫn sang quy trình chi tiết | ĐẠT | 6 |
+| KT75 | Tổng quan rút gọn: 4 thẻ, 7 đầu việc + Cổng G1, phần chi tiết thu gọn | ĐẠT |  |
+| KT76 | Bước TT-1.1.1 có Mẫu 1 đính kèm (.docx) và xem nhanh nội dung | ĐẠT | mau/M1_Phieu_tiep_nhan_co_hoi_DGNK.docx |
+| KT77 | Tải được tệp Mẫu 1 | ĐẠT | M1_Phieu_tiep_nhan_co_hoi_DGNK.docx |
+| KT78 | Bước TT-1.1.2 ghi rõ cơ sở tra cứu tọa độ, hệ quy chiếu VN-2000 | ĐẠT |  |
+| KT79 | Trích đoạn Bảng 18 Phụ lục (QĐ 1509) mở được, có bảng danh mục | ĐẠT |  |
+| KT80 | Thẻ Tài chính, chi phí: 8 nội dung có căn cứ bấm được | ĐẠT |  |
+| KT81 | Hồ sơ, biểu mẫu: Mẫu 1 có nút tải .docx | ĐẠT |  |
 | KT42 | Điện thoại: không tràn ngang, có nút menu và logo | ĐẠT | scrollWidth=390 |
 | KT43 | Điện thoại: mở menu, chuyển phân hệ, menu tự đóng | ĐẠT |  |
 | KT63 | Điện thoại: sơ đồ pháp lý và cửa sổ nguyên văn không tràn ngang | ĐẠT | 390/390 |

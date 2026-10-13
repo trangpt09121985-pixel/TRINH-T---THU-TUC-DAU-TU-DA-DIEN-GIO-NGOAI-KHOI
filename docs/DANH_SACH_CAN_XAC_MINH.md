@@ -167,3 +167,25 @@ Dành cho Ban PT&KD Sản phẩm mới (đầu mối) và các ban chuyên môn 
 | 8 | Bộ Tài chính | Xác nhận đơn vị tiếp nhận, thẩm định hồ sơ CTĐT dự án dự kiến vận hành 2025–2030 và thành phần hồ sơ theo pháp luật đầu tư |
 | 9 | Bộ Công Thương; BQP, BCA, BNG (theo trình tự pháp luật, thường ở bước sau) | Cơ chế lấy ý kiến khi PVEP liên danh hoặc nhận chuyển nhượng có nhà đầu tư nước ngoài |
 | 10 | UBND tỉnh nơi có điểm gom (luồng 2031–2035) | Điểm gom chưa xác định thì tỉnh có kế hoạch đề xuất BCT thống nhất không? |
+
+## 8. Kết quả xử lý theo tài liệu bổ sung ngày 12/10/2026 (phiên bản 2.4)
+
+| Nội dung trước đây | Kết quả | Căn cứ đã đối chiếu |
+| --- | --- | --- |
+| Phụ lục QĐ 768/QĐ-TTg | ĐÃ XÁC MINH. Danh mục ĐGNK tại Bảng 17 (đến 2030) và Bảng 18 (đến 2035, có điểm gom, giai đoạn vận hành) Phụ lục III.1; Phụ lục I là đề án/dự án ưu tiên về chính sách, năng lực | Bản scan QĐ 768 và Phụ lục I, III trong bộ tài liệu |
+| Bản gốc QĐ 1509/QĐ-BCT | ĐÃ XÁC MINH. Ký 30/5/2025, hiệu lực từ ngày ký; Bảng 17, 18 Phụ lục II.1 trùng nội dung QĐ 768; mục III.8 giao Petrovietnam chủ động đầu mối phát triển dự án ĐGNK | Tệp docx QĐ 1509 trong bộ tài liệu |
+| Số hiệu Luật Tài nguyên, môi trường biển và hải đảo | ĐÃ XÁC MINH: 82/2015/QH13 | vbpl.vn |
+| QĐ 768/QĐ-TTg: ngày ký, hiệu lực | 15/4/2025, hiệu lực từ ngày ký, thay thế QĐ 500/QĐ-TTg (Điều 3) | Bản scan QĐ 768 |
+
+Nội dung mới cần xác minh:
+
+| Nội dung | Ghi nhận | Việc cần làm |
+| --- | --- | --- |
+| Tổng công suất ĐGNK đến 2035 | Văn bản ghi 6.000–17.032 MW; Bảng 18 ghi tổng 17.000 MW | Thống nhất số liệu khi trích dẫn trong báo cáo |
+| Quyết định điều chỉnh cập nhật QHĐ VIII, Kế hoạch thực hiện sau 30/5/2025 | Chưa có trong bộ tài liệu | Tra Cổng thông tin Bộ Công Thương |
+| QĐ 83/2000/QĐ-TTg, TT 973/2001/TT-TCĐC | Đối chiếu qua nguồn thứ cấp; chưa có nguyên văn | Xác minh hiệu lực, phần mềm và tham số tính chuyển WGS-84 sang VN-2000 hiện hành |
+| Luật Đo đạc và bản đồ 27/2018/QH14; TT 63/2017/TT-BTNMT (sđ TT 15/2025/TT-BNNMT) | Điều khoản đối chiếu qua nguồn thứ cấp | Bổ sung nguyên văn vào bộ tài liệu |
+| Mẫu số 05 NĐ 11/2021 sau sửa đổi tại NĐ 65/2025 | Yêu cầu hệ tọa độ, tỷ lệ của sơ đồ khu vực biển | Bổ sung nguyên văn NĐ 11/2021, NĐ 65/2025 |
+| Luật 68/2025/QH15 (Điều 18, 20, 23) | Đối chiếu qua nguồn thứ cấp | Bổ sung nguyên văn; xác định nghị định hướng dẫn |
+| PVEP có thuộc diện “doanh nghiệp nhà nước” | Ảnh hưởng áp dụng điểm d khoản 7 Điều 3 Luật Đấu thầu số 22/2023/QH15 khi thuê tư vấn | Xin ý kiến bộ phận pháp chế |
+| Quy chế tài chính, mua sắm của Petrovietnam, PVEP | Chưa có trong bộ tài liệu | Bổ sung để hoàn thiện thẻ Tài chính, chi phí |

@@ -1,4 +1,4 @@
-/* Nội dung chi tiết hóa giai đoạn (sinh từ tài liệu GĐ01 ngày 12/10/2026). Bảng bước, hồ sơ, tiêu chí cổng nằm trong các tệp CSV. */
+/* Nội dung chi tiết hóa giai đoạn (cập nhật v2.4 ngày 12/10/2026). Bảng bước, hồ sơ, tiêu chí cổng, tài chính nằm trong các tệp CSV. */
 window.QT_GIAI_DOAN = {
  "1": {
   "ten": "Giai đoạn 01 – Khởi tạo dự án · Nhánh 1 – Sàng lọc và xác lập cơ hội",
@@ -115,42 +115,60 @@ window.QT_GIAI_DOAN = {
    {
     "ma": "M1",
     "ten": "Phiếu tiếp nhận và đăng ký cơ hội đầu tư điện gió ngoài khơi",
+    "tep": "mau/M1_Phieu_tiep_nhan_co_hoi_DGNK.docx",
     "muc": [
      {
-      "t": "Mục đích: ghi nhận cơ hội, cấp mã, xác định nguồn và người phụ trách.",
+      "t": "Mã cơ hội: ĐGNK-[năm]-[số thứ tự 3 chữ số], dùng chung cho hồ sơ và tập hợp chi phí (quy tắc đề xuất, cần PVEP xác nhận).",
       "con": []
      },
      {
-      "t": "Người lập: chuyên viên Phòng PT&KD ĐGNK. Người kiểm tra: Trưởng phòng PT&KD ĐGNK.",
-      "con": []
-     },
-     {
-      "t": "Căn cứ: quy chế nội bộ PVEP CẦN XÁC MINH.",
-      "con": []
-     },
-     {
-      "t": "Dữ liệu đầu vào: văn bản, email, tài liệu của bên đề xuất.",
-      "con": []
-     },
-     {
-      "t": "Nội dung chính:",
+      "t": "A. Thông tin tiếp nhận:",
       "con": [
-       "Mã cơ hội; ngày tiếp nhận; người tiếp nhận.",
-       "Nguồn: chỉ đạo lãnh đạo / PVN / đối tác (tên, quốc tịch, pháp nhân) / tự phát hiện.",
-       "Khu vực: tên gọi, tỉnh, tọa độ góc, hệ quy chiếu, diện tích theo nguồn.",
-       "Công suất dự kiến theo nguồn; tên dự án trong quy hoạch nếu có.",
-       "Loại cơ hội sơ bộ: L1 / L2 / L3 / L4.",
-       "Tình trạng NDA; mức bảo mật của tài liệu nhận được.",
-       "Danh mục tài liệu đã nhận."
+       "Ngày, người tiếp nhận; hình thức tiếp nhận; số, ngày văn bản đến."
       ]
      },
      {
-      "t": "Kết luận/kiến nghị: chuyển sàng lọc nhanh / trả lại do thiếu thông tin.",
-      "con": []
+      "t": "B. Nguồn cơ hội:",
+      "con": [
+       "Chỉ đạo Lãnh đạo PVEP / Petrovietnam / đối tác / cơ quan nhà nước / PVEP tự phát hiện.",
+       "Pháp nhân, quốc tịch bên đề xuất; có yếu tố nước ngoài không (khoản 1 Điều 28 NĐ 58/2025)."
+      ]
      },
      {
-      "t": "Phụ lục bắt buộc: bản sao tài liệu nguồn; NDA (nếu có).",
-      "con": []
+      "t": "C. Thông tin dự án theo nguồn:",
+      "con": [
+       "Tên dự án; tên tương ứng trong Bảng 17 Phụ lục III.1, Bảng 18 Phụ lục III.1 QĐ 768/QĐ-TTg (trùng Phụ lục II.1 QĐ 1509/QĐ-BCT); vùng, tỉnh; công suất; giai đoạn vận hành; điểm gom; khoảng cách bờ, độ sâu."
+      ]
+     },
+     {
+      "t": "D. Tọa độ, hệ quy chiếu, diện tích:",
+      "con": [
+       "Hệ tọa độ của nguồn (VN-2000 – kinh tuyến trục, múi chiếu; WGS-84; khác); bảng tọa độ các điểm góc chép đúng như nguồn; tệp gốc; diện tích."
+      ]
+     },
+     {
+      "t": "E. Phân loại sơ bộ:",
+      "con": [
+       "Mô hình (độc lập / gắn dầu khí); luồng L1–L4; mục đích tiêu thụ."
+      ]
+     },
+     {
+      "t": "F. Bảo mật và danh mục tài liệu:",
+      "con": [
+       "Tình trạng NDA; mức bảo mật; danh mục tài liệu đã nhận."
+      ]
+     },
+     {
+      "t": "G. Theo dõi chi phí:",
+      "con": [
+       "Có phát sinh chi phí không; mã tập hợp chi phí = mã cơ hội."
+      ]
+     },
+     {
+      "t": "H. Đề xuất xử lý và ký:",
+      "con": [
+       "Chuyển Mẫu 2 / yêu cầu bổ sung / lưu hồ sơ; người phụ trách; thời hạn. Ký: người lập, Trưởng phòng, Lãnh đạo Ban."
+      ]
      }
     ]
    },
@@ -426,9 +444,9 @@ window.QT_GIAI_DOAN = {
     [
      "4",
      "Bộ Công Thương",
-     "Tên dự án, công suất, giai đoạn vận hành dự kiến và điểm gom công suất của khu vực theo Kế hoạch thực hiện QHĐ VIII điều chỉnh bản mới nhất; có điều chỉnh cập nhật theo Điều 4 NQ 253/2025 không?",
+     "Quyết định điều chỉnh cập nhật Kế hoạch thực hiện QHĐ VIII sau QĐ 1509/QĐ-BCT (nếu có); điểm gom công suất cho khu vực chưa xác định (Điều 4 NQ 253/2025)",
      "Phân luồng 2025–2030 / 2031–2035 quyết định cơ quan thẩm quyền và trình tự",
-     "Trích dẫn QĐ 768; bản đồ"
+     "Trích Bảng 18 Phụ lục II.1 QĐ 1509/QĐ-BCT; bản đồ"
     ],
     [
      "5",
@@ -490,9 +508,9 @@ window.QT_GIAI_DOAN = {
     ],
     [
      "2",
-     "Phụ lục QĐ 768/QĐ-TTg; bản gốc QĐ 1509/QĐ-BCT và các quyết định điều chỉnh cập nhật",
+     "Phụ lục QĐ 768/QĐ-TTg; bản gốc QĐ 1509/QĐ-BCT: đã đối chiếu bản trong bộ tài liệu ngày 12/10/2026. Còn phải kiểm tra quyết định điều chỉnh cập nhật sau 30/5/2025",
      "Ban PT&KD Sản phẩm mới chủ trì; các ban chuyên môn phối hợp",
-     "CẦN XÁC MINH"
+     "ĐÃ XÁC MINH (phần còn lại CẦN XÁC MINH)"
     ],
     [
      "3",
@@ -502,9 +520,9 @@ window.QT_GIAI_DOAN = {
     ],
     [
      "4",
-     "Số hiệu Luật Tài nguyên, môi trường biển và hải đảo (82/2015/QH13 hay 83/2015/QH13)",
+     "Số hiệu Luật Tài nguyên, môi trường biển và hải đảo: 82/2015/QH13 (đối chiếu vbpl.vn)",
      "Ban PT&KD Sản phẩm mới chủ trì; các ban chuyên môn phối hợp",
-     "CẦN XÁC MINH"
+     "ĐÃ XÁC MINH"
     ],
     [
      "5",
@@ -541,6 +559,36 @@ window.QT_GIAI_DOAN = {
      "Xác nhận PVEP về mã và phạm vi \"Đề xuất bổ sung TT-1.4\"",
      "Ban PT&KD Sản phẩm mới chủ trì; các ban chuyên môn phối hợp",
      "CẦN XÁC MINH"
+    ],
+    [
+     "11",
+     "Phần mềm, tham số tính chuyển WGS-84 sang VN-2000 hiện hành; hiệu lực QĐ 83/2000/QĐ-TTg, TT 973/2001/TT-TCĐC",
+     "Ban PT&KD Sản phẩm mới chủ trì; các ban chuyên môn phối hợp",
+     "CẦN XÁC MINH"
+    ],
+    [
+     "12",
+     "Mẫu số 05 (sơ đồ khu vực biển) NĐ 11/2021 sau sửa đổi tại NĐ 65/2025: yêu cầu hệ tọa độ, tỷ lệ",
+     "Ban PT&KD Sản phẩm mới chủ trì; các ban chuyên môn phối hợp",
+     "CẦN XÁC MINH"
+    ],
+    [
+     "13",
+     "PVEP có thuộc diện “doanh nghiệp nhà nước” theo Luật Doanh nghiệp hiện hành (áp dụng điểm d khoản 7 Điều 3 Luật Đấu thầu số 22/2023/QH15 và Luật 68/2025/QH15)",
+     "Ban PT&KD Sản phẩm mới chủ trì; các ban chuyên môn phối hợp",
+     "CẦN XÁC MINH"
+    ],
+    [
+     "14",
+     "Nguyên văn Luật 68/2025/QH15 (Điều 18, 20, 23) và nghị định hướng dẫn; quy chế tài chính, mua sắm của Petrovietnam, PVEP",
+     "Ban PT&KD Sản phẩm mới chủ trì; các ban chuyên môn phối hợp",
+     "CẦN XÁC MINH"
+    ],
+    [
+     "15",
+     "Chênh lệch tổng công suất ĐGNK năm 2035: 17.032 MW (mục III.1.b Điều 1 QĐ 768/QĐ-TTg; mục II.1 QĐ 1509/QĐ-BCT) và 17.000 MW (Bảng 18 Phụ lục III.1 QĐ 768/QĐ-TTg)",
+     "Ban PT&KD Sản phẩm mới chủ trì; các ban chuyên môn phối hợp",
+     "CẦN XÁC MINH"
     ]
    ]
   },
@@ -548,6 +596,99 @@ window.QT_GIAI_DOAN = {
    "Phần sàng lọc nội bộ TT-1.1, TT-1.2, TT-1.3, TT-1.5, TT-1.7 và Cổng G1: có thể chuyển bước. Bộ quy trình có thể đưa vào bản đồ và áp dụng thử cho cơ hội cụ thể; căn cứ chính (Luật Điện lực, NĐ 58/2025, NĐ 243/2026, NQ 253/2025, NĐ 272/2026) đã được đối chiếu bản gốc.",
    "TT-1.6 (mô hình tham gia của PVEP) và các cơ hội luồng L1, L2: cần hoàn thiện điều kiện. Tư cách pháp lý của PVEP, văn bản phân công của PVN và tình trạng giao khu vực biển phải được xác nhận trước khi PVEP đứng tên bất kỳ hồ sơ nào ở GĐ02–GĐ03.",
    "Nhánh L4 (công trình năng lượng ngoài khơi gắn với hoạt động dầu khí), đặc biệt cơ chế tính vào chi phí được phép thu hồi: chưa đủ cơ sở triển khai cho đến khi Luật Dầu khí 2026 có hiệu lực (01/3/2027), có nghị định hướng dẫn và điều khoản HĐDK cụ thể cho phép."
-  ]
+  ],
+  "tong_quan": {
+   "mot_cau": "Giai đoạn 01 là bước sàng lọc nội bộ: PVEP xác định một khu vực, dự án điện gió ngoài khơi có đáng đầu tư nguồn lực nghiên cứu tiếp hay không. Giai đoạn này chưa có thủ tục phải nộp Bộ, ngành và chưa tạo ra quyền gì cho PVEP.",
+   "the": [
+    [
+     "Mục đích",
+     "Loại sớm cơ hội không khả thi; chọn đúng luồng thủ tục cho cơ hội được giữ lại"
+    ],
+    [
+     "Kết quả",
+     "Báo cáo sàng lọc, bản đồ chồng lấn, ma trận pháp lý – rủi ro, tờ trình Cổng G1"
+    ],
+    [
+     "Thực hiện",
+     "Đầu mối: Ban PT&KD Sản phẩm mới. Phối hợp: các ban chuyên môn của PVEP"
+    ],
+    [
+     "Kết thúc",
+     "Lãnh đạo PVEP quyết định GO / HOLD / NO-GO tại Cổng G1"
+    ]
+   ],
+   "buoc": [
+    [
+     "TT-1.1",
+     "Tiếp nhận và đối chiếu quy hoạch",
+     "Cấp mã (Mẫu 1), kiểm tra tọa độ, đối chiếu QĐ 768/QĐ-TTg, QĐ 1509/QĐ-BCT, xác định giai đoạn vận hành"
+    ],
+    [
+     "TT-1.2",
+     "Xác định điểm gom công suất",
+     "Theo Bảng 18 Phụ lục III.1 QĐ 768/QĐ-TTg (trùng Bảng 18 Phụ lục II.1 QĐ 1509/QĐ-BCT); rà soát lưới truyền tải"
+    ],
+    [
+     "TT-1.3",
+     "Rà soát chồng lấn không gian biển",
+     "Dầu khí, quốc phòng, hàng hải, bảo tồn, quy hoạch biển; phân loại Đỏ / Vàng / Xanh"
+    ],
+    [
+     "TT-1.4",
+     "Đánh giá kỹ thuật – kinh tế sơ bộ",
+     "Gió, độ sâu, cảng, tiêu thụ điện, chi phí GĐ02 (nhóm ĐX-1.4.x, cần PVEP xác nhận)"
+    ],
+    [
+     "TT-1.5",
+     "Phân loại mô hình dự án",
+     "ĐGNK độc lập hay gắn hoạt động dầu khí (Điều 52 Luật Dầu khí 10/2026)"
+    ],
+    [
+     "TT-1.6",
+     "Xác định vai trò và năng lực của PVEP",
+     "Tư cách pháp lý, vốn chủ sở hữu, đối tác, thẩm quyền nội bộ"
+    ],
+    [
+     "TT-1.7",
+     "Trình Cổng G1",
+     "Hoàn thiện báo cáo, xin ý kiến Petrovietnam khi cần, trình Lãnh đạo"
+    ]
+   ],
+   "luong": {
+    "cot": [
+     "Luồng",
+     "Khi nào",
+     "Bước tiếp theo nếu GO"
+    ],
+    "dong": [
+     [
+      "L1 – Đầu tư mới",
+      "Khu vực chưa giao khảo sát cho chủ thể khác",
+      "Dự án vận hành 2025–2030: hồ sơ chấp thuận chủ trương trình Thủ tướng (Điều 11 NQ 253/2025). Dự án 2031–2035: khảo sát trước, chấp thuận chủ trương tại UBND tỉnh (Điều 12 NQ 253/2025)"
+     ],
+     [
+      "L2 – Hợp tác, liên danh",
+      "Khu vực Petrovietnam hoặc đối tác đang giữ quyền",
+      "Văn bản phân công của Petrovietnam hoặc thỏa thuận hợp tác hợp lệ"
+     ],
+     [
+      "L3 – M&A",
+      "Dự án đã có pháp nhân, hồ sơ, quyền",
+      "Thẩm định quyền thực có; điều kiện chuyển nhượng (Điều 32 NĐ 58/2025)"
+     ],
+     [
+      "L4 – Gắn dầu khí",
+      "Công trình phục vụ mỏ dầu khí hiện hữu hoặc lân cận",
+      "Chờ Luật Dầu khí 10/2026 có hiệu lực (01/3/2027) và nghị định hướng dẫn"
+     ]
+    ]
+   },
+   "luu_y": [
+    "Có tên trong quy hoạch chưa phải là có quyền. Quyền khảo sát, quyền sử dụng khu vực biển, tư cách nhà đầu tư chỉ phát sinh từ quyết định của cơ quan có thẩm quyền ở các bước sau.",
+    "Quy hoạch không công bố tọa độ dự án (ghi chú Bảng 17 Phụ lục III.1, Bảng 18 Phụ lục III.1 QĐ 768/QĐ-TTg). Mọi tọa độ phải được kiểm chứng và chuyển về hệ VN-2000 trước khi dùng.",
+    "Tập hợp chi phí riêng theo mã cơ hội ngay từ đầu (khoản 1 Điều 10 NQ 253/2025; khoản 1 Điều 6 NĐ 272/2026).",
+    "Không tự giả định giá điện, không đưa số liệu tài chính, dữ liệu dầu khí lên website công khai."
+   ]
+  }
  }
 };
